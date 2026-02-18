@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOT•BYTE - Understanding the Foundation of Technology</title>
+    <meta name="description" content="Explore the ROOT and foundation of technology. Educational content about fundamental tech concepts, explained simply and thoroughly.">
+    <meta name="keywords" content="technology, programming, foundations, tech education, root concepts">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ROOT•BYTE - Understanding the Foundation of Technology">
+    <meta property="og:description" content="Explore the ROOT and foundation of technology. Educational content about fundamental tech concepts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rootbyte.vercel.app">
+    <meta property="og:image" content="/images/rootbyte-og.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ROOT•BYTE">
+    <meta name="twitter:description" content="Understanding the Foundation of Technology">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- AdSense Auto Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="/" class="nav__logo">
+                    <span class="logo__root">ROOT</span><span class="logo__bullet">•</span><span class="logo__byte">BYTE</span>
+                </a>
+                <p class="nav__tagline">Understanding the Foundation of Technology</p>
+            </div>
+
+            <div class="nav__menu" id="navMenu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link nav__link--active">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/contact.html" class="nav__link">Contact</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/advertise.html" class="nav__link">Advertise</a>
+                    </li>
+                </ul>
+
+                <div class="nav__toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Trending News Ticker -->
+    <div class="trending-ticker">
+        <div class="trending-ticker__container">
+            <div class="trending-ticker__label">
+                <i class="fas fa-fire"></i> Trending
+            </div>
+            <div class="trending-ticker__content" id="trendingContent">
+                <div class="trending-ticker__item">Loading latest tech news...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AdSense Leaderboard - Above Fold -->
+    <div class="ad-container ad-leaderboard">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main container">
+        <!-- Featured Article Section -->
+        <section class="featured" id="featuredSection">
+            <article class="featured__article">
+                <div class="featured__image">
+                    <img src="/images/featured-placeholder.webp" alt="Featured Article" id="featuredImage">
+                    <div class="featured__category" id="featuredCategory">Foundations</div>
+                </div>
+                <div class="featured__content">
+                    <h1 class="featured__title" id="featuredTitle">
+                        The ROOT of the Internet: How TCP/IP Changed Everything
+                    </h1>
+                    <p class="featured__description" id="featuredDescription">
+                        Before the internet became the backbone of modern communication, there was a fundamental protocol that made it all possible. Let's explore how TCP/IP became the ROOT foundation that connects our digital world.
+                    </p>
+                    <div class="featured__meta">
+                        <span class="featured__date" id="featuredDate">February 18, 2026</span>
+                        <span class="featured__reading-time" id="featuredReadingTime">8 min read</span>
+                        <span class="featured__root-connection">🌱 ROOT Connection: Network Protocols</span>
+                    </div>
+                    <a href="#" class="btn btn--primary" id="featuredReadMore">
+                        Read Full Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Articles Column -->
+            <div class="articles-column">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Articles</h2>
+                    <div class="section-filter">
+                        <button class="filter-btn filter-btn--active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="foundations">Foundations</button>
+                        <button class="filter-btn" data-category="history">History</button>
+                        <button class="filter-btn" data-category="explained">Explained</button>
+                    </div>
+                </div>
+
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- Articles will be dynamically loaded here -->
+                    <article class="article-card">
+                        <div class="article-card__image">
+                            <img src="/images/article-placeholder.webp" alt="Article">
+                            <div class="article-card__category">History</div>
+                        </div>
+                        <div class="article-card__content">
+                            <h3 class="article-card__title">
+                                <a href="#">The First Computer: ENIAC and the Birth of Digital Computing</a>
+                            </h3>
+                            <p class="article-card__excerpt">
+                                In 1946, a room-sized machine changed the world forever. ENIAC wasn't just the first computer—it was the ROOT of everything...
+                            </p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">Feb 17, 2026</span>
+                                <span class="article-card__reading-time">6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AdSense In-Feed Ad -->
+                    <div class="ad-container ad-in-feed">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-format="fluid"
+                             data-ad-layout-key="-fb+5w+4e-db+86"
+                             data-ad-client="ca-pub-XXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <article class="article-card">
+                        <div class="article-card__image">
+                            <img src="/images/article-placeholder.webp" alt="Article">
+                            <div class="article-card__category">Explained</div>
+                        </div>
+                        <div class="article-card__content">
+                            <h3 class="article-card__title">
+                                <a href="#">How Operating Systems Work: The ROOT Layer of All Software</a>
+                            </h3>
+                            <p class="article-card__excerpt">
+                                Every app you use, every file you save, every click you make—it all goes through the operating system. Let's understand this crucial ROOT layer...
+                            </p>
+                            <div class="article-card__meta">
+                                <span class="article-card__date">Feb 16, 2026</span>
+                                <span class="article-card__reading-time">9 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more">
+                    <button class="btn btn--secondary" id="loadMoreBtn">
+                        Load More Articles <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Newsletter Signup -->
+                <div class="widget widget--newsletter">
+                    <h3 class="widget__title">Join the ROOT Community</h3>
+                    <p class="widget__description">
+                        Get weekly insights into the foundations of technology. No spam, just pure tech education.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" class="newsletter-form__input" required>
+                        <button type="submit" class="newsletter-form__submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="newsletter-form__privacy">
+                        We respect your privacy. Unsubscribe anytime.
+                    </p>
+                </div>
+
+                <!-- AdSense Sidebar Ad #1 -->
+                <div class="ad-container ad-sidebar">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <!-- On This Day Widget -->
+                <div class="widget widget--on-this-day">
+                    <h3 class="widget__title">
+                        <i class="fas fa-calendar-day"></i> On This Day in Tech
+                    </h3>
+                    <div class="on-this-day__content" id="onThisDayContent">
+                        <div class="on-this-day__date">February 18, 1996</div>
+                        <div class="on-this-day__event">
+                            The first web browser for mobile devices was released, laying the foundation for mobile internet as we know it today.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Did You Know Widget -->
+                <div class="widget widget--dyk">
+                    <h3 class="widget__title">
+                        <i class="fas fa-lightbulb"></i> Did You Know?
+                    </h3>
+                    <div class="dyk-cards" id="dykCards">
+                        <div class="dyk-card dyk-card--active">
+                            <p class="dyk-card__fact">
+                                The first computer bug was an actual bug—a moth trapped in Harvard's Mark II computer in 1947.
+                            </p>
+                            <div class="dyk-card__tag">History</div>
+                        </div>
+                    </div>
+                    <div class="dyk-controls">
+                        <button class="dyk-control dyk-control--prev" id="dykPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="dyk-control dyk-control--next" id="dykNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AdSense Sidebar Ad #2 -->
+                <div class="ad-container ad-sidebar">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <!-- Tomorrow's Teaser -->
+                <div class="widget widget--tomorrow">
+                    <h3 class="widget__title">
+                        <i class="fas fa-clock"></i> Tomorrow's Deep Dive
+                    </h3>
+                    <div class="tomorrow__content" id="tomorrowContent">
+                        <div class="tomorrow__title">
+                            The ROOT of Artificial Intelligence: How Neural Networks Really Work
+                        </div>
+                        <div class="tomorrow__teaser">
+                            Everyone talks about AI, but few understand the mathematical foundations that make it possible. Tomorrow, we're diving deep into the ROOT concepts...
+                        </div>
+                        <div class="tomorrow__time">
+                            <i class="fas fa-clock"></i> Publishing at 9:00 AM PHT
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="logo__root">ROOT</span><span class="logo__bullet">•</span><span class="logo__byte">BYTE</span>
+                    </div>
+                    <p class="footer__tagline">
+                        Understanding the Foundation of Technology
+                    </p>
+                    <p class="footer__description">
+                        Built in the Philippines 🇵🇭 with Claude Code integration.
+                        Explaining the ROOT concepts that power our digital world.
+                    </p>
+                </div>
+
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Content</h4>
+                        <ul class="footer__list">
+                            <li><a href="/">Latest Articles</a></li>
+                            <li><a href="/foundations">Foundations</a></li>
+                            <li><a href="/history">Tech History</a></li>
+                            <li><a href="/explained">Explained</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Company</h4>
+                        <ul class="footer__list">
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                            <li><a href="/advertise.html">Advertise</a></li>
+                            <li><a href="/privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h4 class="footer__heading">Connect</h4>
+                        <ul class="footer__list">
+                            <li><a href="#" target="_blank">Newsletter</a></li>
+                            <li><a href="#" target="_blank">Twitter</a></li>
+                            <li><a href="#" target="_blank">GitHub</a></li>
+                            <li><a href="#" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2026 ROOT•BYTE. All rights reserved. |
+                    <a href="/privacy.html">Privacy Policy</a> |
+                    Made with ❤️ by KreativLoops
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "last_updated": "2026-02-18T10:00:00Z",
+  "news": [
+    {
+      "id": 1,
+      "title": "Breaking: New quantum computing breakthrough achieves 99.9% fidelity",
+      "url": "https://example.com/quantum-breakthrough",
+      "source": "TechCrunch",
+      "publishedAt": "2026-02-18T09:30:00Z",
+      "category": "quantum-computing"
+    },
+    {
+      "id": 2,
+      "title": "Apple announces next-generation M4 chips with enhanced AI capabilities",
+      "url": "https://example.com/apple-m4-chips",
+      "source": "The Verge",
+      "publishedAt": "2026-02-18T08:45:00Z",
+      "category": "hardware"
+    },
+    {
+      "id": 3,
+      "title": "Meta unveils new VR headset with 8K resolution and haptic feedback",
+      "url": "https://example.com/meta-vr-headset",
+      "source": "Ars Technica",
+      "publishedAt": "2026-02-18T07:20:00Z",
+      "category": "virtual-reality"
+    },
+    {
+      "id": 4,
+      "title": "Google releases Gemini 2.0 with improved reasoning and coding abilities",
+      "url": "https://example.com/gemini-2-0",
+      "source": "Wired",
+      "publishedAt": "2026-02-18T06:15:00Z",
+      "category": "artificial-intelligence"
+    },
+    {
+      "id": 5,
+      "title": "Tesla opens FSD beta to all users worldwide",
+      "url": "https://example.com/tesla-fsd-beta",
+      "source": "Electrek",
+      "publishedAt": "2026-02-18T05:30:00Z",
+      "category": "autonomous-vehicles"
+    },
+    {
+      "id": 6,
+      "title": "OpenAI announces ChatGPT-5 with multimodal capabilities",
+      "url": "https://example.com/chatgpt-5-announcement",
+      "source": "MIT Technology Review",
+      "publishedAt": "2026-02-18T04:45:00Z",
+      "category": "artificial-intelligence"
+    }
+  ],
+  "categories": [
+    "artificial-intelligence",
+    "quantum-computing",
+    "hardware",
+    "virtual-reality",
+    "autonomous-vehicles",
+    "cybersecurity",
+    "blockchain",
+    "web-development"
+  ],
+  "filter_keywords": [
+    "technology",
+    "tech",
+    "computing",
+    "software",
+    "hardware",
+    "AI",
+    "machine learning",
+    "blockchain",
+    "cybersecurity",
+    "programming",
+    "developer",
+    "startup",
+    "innovation"
+  ]
+}

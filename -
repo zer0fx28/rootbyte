@@ -1,0 +1,227 @@
+ROOT•BYTE
+━━━━━━━━━━━━━━━━━━━━━━━━
+WebStorm + Claude Code Setup Guide
+Complete developer setup for building and shipping
+KreativLoops · Version 1.0 · February 2026
+
+1. Before You Start
+You need 3 things installed on your Windows machine before anything else.
+
+Required Software
+	•	Node.js v20+ — Download from nodejs.org — choose the LTS version. This powers Claude Code and your build scripts.
+	•	Git — Download from git-scm.com. Required for version control and Vercel deployment.
+	•	WebStorm — Your IDE. Available at jetbrains.com/webstorm — student/freelancer license available.
+
+✅
+Quick Check
+Open Command Prompt and run: node --version && git --version
+Both should return version numbers. If not, install them first.
+
+Your Subscription
+Claude Code works with your existing Claude.ai Pro or Max subscription — no extra billing needed.
+	•	Claude Pro — Works. Good for moderate daily use.
+	•	Claude Max — Recommended for heavy daily content creation.
+	•	Anthropic Console — API key billing — works but can get expensive with heavy use. Pro/Max is safer.
+
+2. Install Claude Code
+Anthropic now has a native installer — no Node.js path issues, no sudo problems.
+
+Windows Installation
+Open PowerShell as Administrator and run:
+irm https://claude.ai/install.ps1 | iex
+
+Then verify it worked:
+claude --version
+claude doctor
+
+💡  If claude doctor shows PATH warnings
+Run: echo $env:PATH in PowerShell and check that %USERPROFILE%\.local\bin appears. If not, restart your terminal after installation — the installer modifies your PATH but your current session hasn't reloaded it yet.
+
+Authenticate
+First time you run claude, it opens your browser to authenticate:
+claude
+Log in with your Claude.ai account. Done — credentials are saved permanently.
+
+3. Set Up the RootByte Project
+
+Step 1 — Create Your Project Folder
+Choose where you want the project. Recommended: your Documents folder.
+mkdir C:\Users\YourName\Documents\rootbyte
+cd C:\Users\YourName\Documents\rootbyte
+
+Step 2 — Copy the Project Files
+Paste all the project files (index.html, CLAUDE.md, package.json, scripts/, src/) into this folder.
+Your folder structure should look like this:
+rootbyte/
+  CLAUDE.md          ← Claude Code reads this first
+  package.json
+  .env.example       ← copy to .env and add your keys
+  .gitignore
+  src/
+    index.html       ← the main website
+    content/
+      articles/      ← .md files, one per article
+      trending.json  ← live trending data
+  scripts/
+    new-article.js
+    fetch-trending.js
+
+Step 3 — Set Up Environment Variables
+Copy .env.example to .env and fill in your API keys:
+copy .env.example .env
+Open .env in WebStorm and fill in:
+NEWS_API_KEY=your_key_from_newsapi.org
+BREVO_API_KEY=your_key_from_brevo.com
+🔑  Where to get free API keys
+NewsAPI.org: Sign up free → 100 requests/day. Use for the trending section.
+Brevo.com: Sign up free → 300 emails/day. Use for the newsletter.
+
+Step 4 — Open in WebStorm
+Open WebStorm → File → Open → select your rootbyte folder.
+WebStorm will auto-detect the project structure. You should see the file tree on the left.
+
+Step 5 — Set Up Git
+git init
+git add .
+git commit -m "Initial RootByte project setup"
+
+Then create a GitHub repo and push:
+git remote add origin https://github.com/yourusername/rootbyte.git
+git push -u origin main
+
+4. Configure WebStorm for Claude Code
+
+Open the Built-in Terminal
+WebStorm has a built-in terminal at the bottom. This is where you run Claude Code.
+Keyboard shortcut: Alt + F12 (Windows) or use View → Tool Windows → Terminal.
+
+Add Claude Code to External Tools (Optional but useful)
+File → Settings → Tools → External Tools → Click + to add:
+	•	Name: Claude Code
+	•	Program: claude
+	•	Arguments: (leave blank)
+	•	Working directory: $ProjectFileDir$
+Now you can launch Claude Code from the Tools menu directly inside WebStorm.
+
+⚡  Power Tip: Run Claude Code in the Terminal Panel
+Keep WebStorm open with your files on the left, and Claude Code running in the bottom terminal panel. You can edit code manually AND ask Claude Code to make changes — both at the same time. Claude Code will see your changes in real time.
+
+5. Daily Content Workflow
+This is how you create and publish a new article. Takes 10-15 minutes once you have the routine.
+
+In the WebStorm Terminal, start Claude Code:
+claude
+
+Tell Claude Code what to do:
+Type in natural language — Claude Code reads your CLAUDE.md and knows the project:
+
+What you say
+What Claude Code does
+"new article about the history of WiFi"
+Creates scaffolded .md file, researches ROOT connection, fills in content
+"fetch trending tech news"
+Runs fetch-trending.js, updates trending.json, filters bad content
+"update the tomorrow teaser to XRP article"
+Edits index.html tomorrow box content directly
+"add a new DYK card about the first hard drive"
+Creates DYK JSON entry, updates the reel deck in TikTok mode
+"deploy to Vercel"
+Commits changes, pushes to GitHub, triggers Vercel auto-deploy
+
+
+6. Deploy to Vercel (Free)
+
+One-time Setup
+	•	Go to vercel.com and sign up with your GitHub account
+	•	Click "Add New Project" → Import your rootbyte GitHub repo
+	•	Framework preset: Other (it's a static site)
+	•	Root directory: src
+	•	Click Deploy — Vercel will give you a URL like rootbyte.vercel.app
+	•	Add your custom domain in Settings → Domains (optional)
+
+Every Deploy After That
+Just push to GitHub and Vercel deploys automatically:
+git add .
+git commit -m "New article: History of WiFi"
+git push
+Or tell Claude Code: "deploy to Vercel" and it does all three commands.
+
+🚀  Vercel Free Tier
+Handles millions of requests per month for free. Your static HTML loads in under 200ms globally via Vercel's CDN. This speed directly affects your AdSense RPM — faster sites earn more per thousand pageviews.
+
+7. AdSense Setup
+
+Before Applying
+Google checks these things before approval. Have all of them ready:
+	•	15-20 published articles (800-1,200 words each)
+	•	About page — explain what RootByte is and who runs it
+	•	Privacy Policy page — use privacypolicygenerator.info (free)
+	•	Contact page — your email or a contact form
+	•	Advertise page — rate card for direct sponsors
+	•	Domain age — 3-6 months preferred (not required but helps)
+
+Apply at
+adsense.google.com → Sign up → Add your site URL
+Google places a verification code in your site head. Claude Code will add it for you:
+"add the AdSense verification meta tag: ca-pub-XXXXXXXXXX"
+
+Ad Slot Positions (already in index.html)
+	•	Leaderboard (728×90) — above the fold, after masthead
+	•	In-feed (300×250 responsive) — between articles in the grid
+	•	Sidebar #1 (300×250) — top of sidebar, below newsletter
+	•	Sidebar #2 (300×250) — below On This Day widget
+
+Block Bad Ads
+In AdSense Dashboard → Blocking Controls → Content → Block by category:
+	•	Dangerous products and services
+	•	Get rich quick schemes
+	•	Gambling
+	•	Adult
+	•	Weight loss programs
+	•	Dating and personals
+These match the CLEAN ADS POLICY built into your CLAUDE.md.
+
+8. Receiving Your Earnings (Philippines)
+
+Method
+How it works
+Best for
+Wire → BPI / UnionBank / BDO
+AdSense sends USD internationally. Bank converts to PHP automatically. Payout 21st–26th monthly.
+AdSense, Ezoic, Mediavine
+Wire → GCash via Instapay
+Receive to UnionBank → send via Instapay to GCash. UnionBank is Google Pay partner.
+If you prefer GCash withdrawals
+Payoneer
+Acts as a USD virtual bank. All ad networks send here. You withdraw to any PH bank.
+Multiple networks: Ezoic + affiliates + sponsors
+Direct sponsors
+Invoice directly. They pay via Wise, GCash, or bank transfer. 100% yours, no platform cut.
+ROOT segment sponsors ₱5K–₱20K/month
+
+9. Claude Code Quick Reference
+Useful commands to run in the WebStorm terminal with Claude Code active:
+
+Content Commands
+"new article about [topic]"
+"fetch trending tech news and update the ticker"
+"write a DYK card about [fact]"
+"update tomorrow's teaser to [story title]"
+"add the On This Day entry for [date] — [event]"
+
+Tech Commands
+"add AdSense code to all ad slots: ca-pub-XXXXXX"
+"optimize images in public/images/ to WebP"
+"check Lighthouse score and list improvements"
+"add a new language translation for [language]"
+"fix the mobile menu on [specific screen size]"
+
+Deploy Commands
+"commit and push all changes with message: [description]"
+"deploy to Vercel"
+"create a new git branch called feature/[name]"
+
+🧠  CLAUDE.md is your secret weapon
+The CLAUDE.md file in your project root is read by Claude Code automatically on every session. It contains your entire site's rules, article format, ad policy, and workflow. You never have to re-explain anything. When you onboard this to Claude Code, it already knows everything about RootByte.
+
+ROOT•BYTE  ·  KreativLoops  ·  Built in the Philippines 🇵🇭

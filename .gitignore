@@ -1,0 +1,217 @@
+# ROOT•BYTE .gitignore
+
+# =============================================================================
+# Environment and Configuration
+# =============================================================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.local
+
+# =============================================================================
+# Node.js
+# =============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# =============================================================================
+# Build and Distribution
+# =============================================================================
+dist/
+build/
+.next/
+out/
+
+# Static files (keep src/content but ignore generated)
+/public/generated/
+*.tgz
+*.tar.gz
+
+# =============================================================================
+# Editor and IDE
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# =============================================================================
+# Operating System
+# =============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Logs
+# =============================================================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# =============================================================================
+# Temporary and Cache
+# =============================================================================
+.cache/
+.temp/
+.tmp/
+tmp/
+temp/
+
+# =============================================================================
+# Package Managers
+# =============================================================================
+# npm
+package-lock.json
+yarn.lock
+
+# pnpm
+pnpm-lock.yaml
+
+# =============================================================================
+# Vercel Deployment
+# =============================================================================
+.vercel
+
+# =============================================================================
+# Content and Media (Generated)
+# =============================================================================
+# Keep source images but ignore optimized versions
+/src/images/optimized/
+/public/images/generated/
+/public/images/thumbnails/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# =============================================================================
+# Development and Testing
+# =============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nyc_output
+coverage.xml
+*.cover
+.hypothesis/
+
+# =============================================================================
+# Documentation (Auto-generated)
+# =============================================================================
+/docs/generated/
+/docs/api/
+
+# =============================================================================
+# Security and API Keys
+# =============================================================================
+secrets.json
+credentials.json
+service-account-key.json
+firebase-admin-key.json
+
+# =============================================================================
+# Analytics and Tracking
+# =============================================================================
+google-analytics-key.json
+mixpanel-key.json
+
+# =============================================================================
+# Database (if using local development)
+# =============================================================================
+*.sqlite
+*.sqlite3
+*.db
+
+# =============================================================================
+# ROOT•BYTE Specific
+# =============================================================================
+# Keep these files/folders:
+# - src/content/articles/ (markdown files)
+# - src/content/trending.json
+# - public/images/ (source images)
+# - scripts/
+
+# Ignore these:
+/reports/
+/backups/
+/archive/
+
+# Temporary article drafts (use .draft.md extension for local drafts)
+*.draft.md
+
+# Generated sitemap and feeds
+/public/sitemap.xml
+/public/feed.xml
+/public/feed.json
+
+# =============================================================================
+# Claude Code Integration
+# =============================================================================
+# Keep CLAUDE.md - this is important for Claude Code integration
+# !CLAUDE.md
+
+# Temporary files created during Claude Code sessions
+.claude-temp/
