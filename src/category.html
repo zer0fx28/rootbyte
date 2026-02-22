@@ -868,8 +868,17 @@
             { slug: 'wifi-hidden-inventor', title: "The WiFi Inventor <em>Australia Doesn't Know It Has</em>", excerpt: "CSIRO scientists hunting for black holes accidentally invented the math that powers all WiFi.", root_year: 1992, root_who: "John O'Sullivan & CSIRO", future_year: '2030–2035', category: 'internet', date: 'Feb 22, 2026', reading_time: 7 }
         ];
 
+        // Handle both /category/ai and /category.html?cat=ai formats
+        let catKey = 'ai';
         const params = new URLSearchParams(window.location.search);
-        const catKey = params.get('cat') || 'ai';
+        const queryParam = params.get('cat');
+        const pathMatch = window.location.pathname.match(/\/category\/(\w+)/);
+
+        if (queryParam) {
+            catKey = queryParam;
+        } else if (pathMatch) {
+            catKey = pathMatch[1];
+        }
         const cat = CATS[catKey] || CATS.ai;
         document.documentElement.style.setProperty('--cat', cat.color);
 
@@ -928,7 +937,7 @@
         // Related categories sidebar
         const relCats = Object.entries(CATS).filter(([k]) => k !== catKey);
         document.getElementById('related-cats').innerHTML = relCats.map(([k, c]) =>
-            `<a href="category.html?cat=${k}" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg2);border:1px solid var(--border);font-family:var(--cond);font-weight:700;font-size:0.78rem;letter-spacing:1px;transition:background .2s;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">${c.icon} ${c.label}</a>`
+            `<a href="/category/${k}" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg2);border:1px solid var(--border);font-family:var(--cond);font-weight:700;font-size:0.78rem;letter-spacing:1px;transition:background .2s;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">${c.icon} ${c.label}</a>`
         ).join('');
 
         // Era filter buttons
