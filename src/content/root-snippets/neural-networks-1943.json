@@ -1,0 +1,14 @@
+{
+  "id": "neural-networks-1943",
+  "category": "root",
+  "root_year": 1943,
+  "modern_topic": "ChatGPT and AI",
+  "headline": "ChatGPT's Ancestor Was Written in 1943 — Before TV Was Common",
+  "body": "Warren McCulloch and Walter Pitts published a paper in 1943 describing a mathematical model of a neuron. No computer could run it. No one funded it. It sat in obscurity for decades. That paper is the direct ancestor of every neural network running today.",
+  "timeline": "1943 paper → 1956 AI named → 1986 backpropagation → 2012 deep learning → 2022 ChatGPT. 79 years from concept to product.",
+  "root_who": "Warren McCulloch & Walter Pitts",
+  "root_where": "University of Chicago",
+  "time_gap": "79 years",
+  "tags": ["ai", "neural-networks", "history", "machine-learning"],
+  "created_date": "2026-02-18"
+}

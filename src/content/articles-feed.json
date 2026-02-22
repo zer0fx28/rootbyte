@@ -1,0 +1,24 @@
+{
+  "generated": "2026-02-21T16:27:59.227Z",
+  "totalArticles": 2,
+  "articles": [
+    {
+      "slug": "2026-02-18-tcp-ip-foundation",
+      "title": "The ROOT of the Internet: How TCP/IP Changed Everything",
+      "date": "2026-02-18",
+      "category": "Foundations",
+      "tags": "[\"networking\", \"protocols\", \"internet\", \"tcp-ip\", \"foundations\"]",
+      "reading_time": "8 min read"
+    },
+    {
+      "slug": "first-touchscreen-1965",
+      "title": "The First Touchscreen Wasn't Apple — It Was Made in 1965",
+      "date": "2026-02-18",
+      "category": "devices",
+      "tags": "[touchscreen, apple, iphone, hardware, history]",
+      "reading_time": "6",
+      "root_year": "1965",
+      "root_who": "E.A. Johnson"
+    }
+  ]
+}

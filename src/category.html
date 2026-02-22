@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">RootByte — Category</title>
+    <meta name="description" id="meta-desc" content="Tech history connecting past, present, and future.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RootByte">
+    <meta property="og:title" id="og-title" content="RootByte">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --amber: #d4730f;
+            --green: #2a6e4a;
+            --blue: #1a4e8c;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --muted2: #a89e8a;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+            --cat: #c9342a;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --muted2: #605a50;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--cat);
+            width: 0%;
+            z-index: 9999;
+            transition: width .1s;
+            pointer-events: none;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+            color: var(--ink);
+        }
+
+        .logo .dot {
+            color: var(--red);
+        }
+
+        .breadcrumb {
+            font-family: var(--mono);
+            font-size: 0.52rem;
+            letter-spacing: 1.5px;
+            color: var(--muted2);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--red);
+        }
+
+        .mh-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+            transition: all .2s;
+        }
+
+        .btn-icon:hover {
+            background: var(--bg2);
+        }
+
+        .btn-sub {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 6px 14px;
+        }
+
+        .ad-wrap {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 8px 16px;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-family: var(--mono);
+            font-size: 0.48rem;
+            letter-spacing: 3px;
+            color: var(--muted2);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .ad-slot {
+            background: var(--bg3);
+            border: 1px dashed var(--border);
+            max-width: 728px;
+            margin: 0 auto;
+            padding: 14px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            color: var(--muted2);
+        }
+
+        /* Category Hero */
+        .cat-hero {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 36px 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cat-hero::before {
+            content: attr(data-icon);
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12rem;
+            opacity: .04;
+            pointer-events: none;
+        }
+
+        .cat-eyebrow {
+            font-family: var(--mono);
+            font-size: 0.55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            margin-bottom: 10px;
+        }
+
+        .cat-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(2rem, 8vw, 4rem);
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .cat-title .cat-accent {
+            color: var(--cat);
+        }
+
+        .cat-tagline {
+            font-size: 0.9rem;
+            color: rgba(245, 240, 232, .6);
+            font-style: italic;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .cat-stats {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cat-stat {
+            text-align: center;
+        }
+
+        .cat-stat-num {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: var(--cat);
+            line-height: 1;
+        }
+
+        .cat-stat-lbl {
+            font-family: var(--mono);
+            font-size: 0.48rem;
+            letter-spacing: 2px;
+            color: rgba(245, 240, 232, .4);
+            text-transform: uppercase;
+        }
+
+        /* Timeline strip */
+        .era-nav {
+            background: var(--bg2);
+            border-bottom: 2px solid var(--ink);
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .era-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .era-btn {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding: 10px 20px;
+            border-right: 1px solid var(--border);
+            white-space: nowrap;
+            transition: all .2s;
+            flex-shrink: 0;
+        }
+
+        .era-btn:hover,
+        .era-btn.active {
+            color: var(--ink);
+            background: var(--bg3);
+        }
+
+        .era-btn.active {
+            border-bottom: 3px solid var(--cat);
+            margin-bottom: -2px;
+        }
+
+        /* Page layout */
+        .page {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 28px 16px;
+        }
+
+        .section-rule {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 28px 0 16px;
+        }
+
+        .section-rule h2 {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .section-rule::before,
+        .section-rule::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: var(--ink);
+        }
+
+        .section-rule::before {
+            flex: 0 0 14px;
+        }
+
+        /* Featured article card (large) */
+        .featured-card {
+            border: 2px solid var(--ink);
+            margin-bottom: 28px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .featured-img {
+            background: var(--bg3);
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: 0.6rem;
+            color: var(--muted2);
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .featured-body {
+            padding: 20px;
+        }
+
+        .featured-cat {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .featured-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            line-height: 1.05;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .featured-title em {
+            font-style: italic;
+            color: var(--cat);
+        }
+
+        .featured-excerpt {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+
+        .triptych-strip {
+            display: flex;
+            gap: 0;
+            border: 1px solid var(--border);
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .ts-node {
+            flex: 1;
+            padding: 8px 10px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .ts-node:last-child {
+            border-right: none;
+        }
+
+        .ts-icon {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .ts-lbl {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: 0.58rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .ts-val {
+            font-family: var(--mono);
+            font-size: 0.5rem;
+            color: var(--muted2);
+            display: block;
+            margin-top: 2px;
+        }
+
+        .ts-node.past {
+            background: rgba(42, 110, 74, .06);
+        }
+
+        .ts-node.future {
+            background: rgba(100, 60, 200, .06);
+        }
+
+        .read-btn {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cat);
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 1px;
+            display: inline-block;
+            transition: letter-spacing .2s;
+        }
+
+        .read-btn:hover {
+            letter-spacing: 5px;
+        }
+
+        /* Articles grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .article-card {
+            border-top: 2px solid var(--ink);
+            padding-top: 12px;
+        }
+
+        .card-cat {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            color: var(--cat);
+        }
+
+        .card-title {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 1.15rem;
+            line-height: 1.1;
+            margin-bottom: 7px;
+        }
+
+        .card-excerpt {
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .root-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: var(--mono);
+            font-size: 0.52rem;
+            color: var(--muted2);
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 3px 8px;
+            margin-bottom: 8px;
+        }
+
+        .root-pill::before {
+            content: '🌱';
+        }
+
+        /* Sidebar */
+        .sidebar {
+            margin-top: 0;
+        }
+
+        .nl-box {
+            background: var(--red);
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .nl-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+        }
+
+        .nl-sub {
+            font-size: 0.78rem;
+            opacity: .85;
+            font-style: italic;
+            margin-bottom: 14px;
+            line-height: 1.55;
+        }
+
+        .nl-input {
+            width: 100%;
+            background: rgba(255, 255, 255, .15);
+            border: 1px solid rgba(255, 255, 255, .3);
+            padding: 9px 12px;
+            color: #fff;
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            outline: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .nl-input::placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .nl-btn {
+            width: 100%;
+            background: var(--ink);
+            color: var(--bg);
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 10px;
+            transition: opacity .2s;
+        }
+
+        .nl-btn:hover {
+            opacity: .85;
+        }
+
+        .sidebar-ad {
+            background: var(--bg2);
+            border: 1px dashed var(--border);
+            padding: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-ad-inner {
+            background: var(--bg3);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            color: var(--muted2);
+        }
+
+        .sidebar-head {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            padding-top: 8px;
+            margin-bottom: 12px;
+            border-top: 3px solid var(--cat);
+            color: var(--cat);
+        }
+
+        /* Empty state */
+        .empty-cat {
+            text-align: center;
+            padding: 48px 16px;
+            border: 2px dashed var(--border);
+        }
+
+        .empty-cat-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .empty-cat-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .empty-cat-sub {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .empty-cat-pill {
+            display: inline-block;
+            margin-top: 14px;
+            font-family: var(--mono);
+            font-size: 0.55rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 5px 14px;
+            color: var(--muted2);
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 28px 16px 20px;
+            margin-top: 32px;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 12px;
+            font-family: var(--mono);
+            font-size: 0.52rem;
+            color: rgba(255, 255, 255, .2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity .5s, transform .5s;
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media(min-width:640px) {
+            .page {
+                padding: 28px 24px;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(min-width:900px) {
+            .page {
+                padding: 36px 32px;
+                display: grid;
+                grid-template-columns: 1fr 300px;
+                gap: 48px;
+                align-items: start;
+            }
+
+            .main-col {
+                min-width: 0;
+            }
+
+            .sidebar {
+                position: sticky;
+                top: 80px;
+            }
+
+            .featured-card {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .featured-img {
+                border-bottom: none;
+                border-right: 2px solid var(--ink);
+                min-height: 280px;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .cat-hero {
+                padding: 48px 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="progress"></div>
+
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> ›
+                <span id="bc-cat">Category</span>
+            </div>
+            <div class="mh-actions">
+                <button class="btn-icon" id="theme-btn" title="Toggle theme">🌓</button>
+                <a href="index.html" class="btn-sub">← Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="ad-wrap">
+        <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+        <div class="ad-slot" id="ad-leaderboard">728 × 90 Leaderboard</div>
+    </div>
+
+    <div class="cat-hero" id="cat-hero" data-icon="🤖">
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="cat-eyebrow" id="cat-eyebrow">RootByte · Category</div>
+            <div class="cat-title" id="cat-title">AI <span class="cat-accent">&amp;</span> ML</div>
+            <div class="cat-tagline" id="cat-tagline">The machines didn't think themselves up. Humans did — 80 years
+                before anyone noticed.</div>
+            <div class="cat-stats">
+                <div class="cat-stat">
+                    <div class="cat-stat-num" id="stat-articles">4</div>
+                    <div class="cat-stat-lbl">Articles</div>
+                </div>
+                <div class="cat-stat">
+                    <div class="cat-stat-num" id="stat-roots">1943</div>
+                    <div class="cat-stat-lbl">Oldest Root</div>
+                </div>
+                <div class="cat-stat">
+                    <div class="cat-stat-num" id="stat-future">2035+</div>
+                    <div class="cat-stat-lbl">Future Range</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="era-nav" id="era-nav">
+        <button class="era-btn active" data-era="all">All Time</button>
+        <button class="era-btn" data-era="1800s">1800s</button>
+        <button class="era-btn" data-era="1940s-60s">1940s–60s</button>
+        <button class="era-btn" data-era="1970s-80s">1970s–80s</button>
+        <button class="era-btn" data-era="1990s">1990s</button>
+        <button class="era-btn" data-era="2000s">2000s</button>
+        <button class="era-btn" data-era="2010s">2010s</button>
+        <button class="era-btn" data-era="now">Now</button>
+    </nav>
+
+    <div class="page">
+        <main class="main-col">
+            <div id="featured-wrap" class="reveal"></div>
+            <div class="section-rule reveal">
+                <h2>All Stories</h2>
+            </div>
+            <div class="articles-grid reveal" id="articles-grid"></div>
+            <div id="empty-state" class="empty-cat reveal" style="display:none;">
+                <div class="empty-cat-icon" id="empty-icon">📡</div>
+                <div class="empty-cat-title">Coming Soon</div>
+                <div class="empty-cat-sub">Our journalists are digging up the roots right now.<br>Subscribe to be first
+                    when this section launches.</div>
+                <div class="empty-cat-pill">New stories weekly</div>
+            </div>
+            <div style="margin:24px 0;text-align:center;">
+                <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+                <div class="ad-slot" id="ad-infeed" style="max-width:100%;margin-top:6px;">In-Feed · 300×250</div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="nl-box">
+                <div class="nl-title">DAILY ROOTS</div>
+                <div class="nl-sub">One story every morning. Always traced back to where it started.</div>
+                <input class="nl-input" type="email" id="nl-email" placeholder="your@email.com">
+                <button class="nl-btn" id="nl-btn">Subscribe Free</button>
+            </div>
+            <div class="sidebar-head">Related Sections</div>
+            <div id="related-cats" style="display:grid;gap:6px;margin-bottom:20px;"></div>
+            <div class="sidebar-ad">
+                <div class="ad-label">Advertisement · Vetted</div>
+                <div class="sidebar-ad-inner" id="ad-sidebar">300×250</div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <p
+                style="font-size:.78rem;color:rgba(245,240,232,.45);font-style:italic;max-width:440px;margin-bottom:16px;line-height:1.65;">
+                Every piece of technology has a root — a forgotten inventor, a failed first attempt. We dig those roots
+                up daily.</p>
+            <div class="footer-bottom">
+                <div>© 2026 RootByte Media · Built in the Philippines 🇵🇭</div>
+                <div style="color:rgba(42,110,74,.7);margin-top:5px;">🛡️ CLEAN ADS POLICY · <a href="privacy.html"
+                        style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="terms.html"
+                        style="color:inherit;text-decoration:underline;">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const CATS = {
+            ai: { label: 'AI & ML', icon: '🤖', color: '#1a4e8c', tagline: "The machines didn't think themselves up. Humans did — 80 years before anyone noticed.", oldest: 1943, future: '2035+' },
+            devices: { label: 'Devices', icon: '📱', color: '#d4730f', tagline: "Every touchscreen, hard drive, and camera traces back to an inventor nobody named a building after.", oldest: 1873, future: '2040+' },
+            internet: { label: 'Internet', icon: '🌐', color: '#2a6e4a', tagline: "The Web was invented once, for free. Everything built on top of it was built on that gift.", oldest: 1969, future: '2035+' },
+            crypto: { label: 'Crypto', icon: '₿', color: '#c9342a', tagline: "Digital money was theorized in the 1980s. It took 30 more years and a pseudonym to launch it.", oldest: 1983, future: '2035+' },
+            gaming: { label: 'Gaming', icon: '🎮', color: '#5b21b6', tagline: "Gaming survived a total industry collapse in 1983. The company that saved it was a playing card manufacturer.", oldest: 1958, future: '2040+' },
+            space: { label: 'Space Tech', icon: '🚀', color: '#1e40af', tagline: "We landed on the Moon with 4KB of RAM. The next landing will use AI trained on the first.", oldest: 1957, future: '2040+' }
+        };
+
+        // Inline article data (in production, fetched from categories.json)
+        const ALL_ARTICLES = [
+            { slug: 'chatgpt-neural-network-history', title: "ChatGPT Is 3 Years Old. The Math Behind It Is <em>83.</em>", excerpt: "Everyone know about ChatGPT. Almost nobody knows the 83-year chain that had to happen first.", root_year: 1943, root_who: 'McCulloch & Pitts', future_year: '2028–2035', category: 'ai', date: 'Feb 22, 2026', reading_time: 8 },
+            { slug: 'first-touchscreen-1965', title: "The First Touchscreen Wasn't Apple — It Was <em>Made in 1965</em>", excerpt: "E.A. Johnson built a capacitive touch display 42 years before the iPhone. Same technology. Zero credit.", root_year: 1965, root_who: 'E.A. Johnson', future_year: '2030+', category: 'devices', date: 'Feb 18, 2026', reading_time: 7 },
+            { slug: 'first-hard-drive-ibm', title: "IBM's First Hard Drive Weighed a Ton. Its Inventor Was <em>Almost Erased.</em>", excerpt: "Reynold Johnson gave every computer its memory in 1956. Almost nobody knows who he was.", root_year: 1956, root_who: 'Reynold B. Johnson', future_year: '2030–2040', category: 'devices', date: 'Feb 22, 2026', reading_time: 7 },
+            { slug: 'wifi-hidden-inventor', title: "The WiFi Inventor <em>Australia Doesn't Know It Has</em>", excerpt: "CSIRO scientists hunting for black holes accidentally invented the math that powers all WiFi.", root_year: 1992, root_who: "John O'Sullivan & CSIRO", future_year: '2030–2035', category: 'internet', date: 'Feb 22, 2026', reading_time: 7 }
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const catKey = params.get('cat') || 'ai';
+        const cat = CATS[catKey] || CATS.ai;
+        document.documentElement.style.setProperty('--cat', cat.color);
+
+        // Populate header
+        document.title = `RootByte — ${cat.label}`;
+        document.getElementById('og-title').content = `RootByte — ${cat.label}`;
+        document.getElementById('meta-desc').content = cat.tagline;
+        document.getElementById('bc-cat').textContent = cat.label;
+        document.getElementById('cat-hero').setAttribute('data-icon', cat.icon);
+        document.getElementById('cat-eyebrow').textContent = `RootByte · ${cat.label}`;
+        document.getElementById('cat-title').textContent = cat.label;
+        document.getElementById('cat-tagline').textContent = cat.tagline;
+        document.getElementById('stat-roots').textContent = cat.oldest;
+        document.getElementById('stat-future').textContent = cat.future;
+
+        // Filter articles
+        const catArticles = ALL_ARTICLES.filter(a => a.category === catKey);
+        document.getElementById('stat-articles').textContent = catArticles.length || '—';
+
+        function articleCard(a, large = false) {
+            if (large) {
+                return `<div class="featured-card">
+      <div class="featured-img">[Hero Image]</div>
+      <div class="featured-body">
+        <div class="featured-cat">${cat.icon} ${cat.label}</div>
+        <div class="featured-title">${a.title}</div>
+        <div class="featured-excerpt">${a.excerpt}</div>
+        <div class="triptych-strip">
+          <div class="ts-node past"><span class="ts-icon">🌱</span><span class="ts-lbl">Root</span><span class="ts-val">${a.root_year} · ${a.root_who}</span></div>
+          <div class="ts-node"><span class="ts-icon">⚡</span><span class="ts-lbl">Today</span><span class="ts-val">Present</span></div>
+          <div class="ts-node future"><span class="ts-icon">🔮</span><span class="ts-lbl">Future</span><span class="ts-val">${a.future_year}</span></div>
+        </div>
+        <a class="read-btn" href="article.html?slug=${a.slug}">Read Full Story →</a>
+      </div>
+    </div>`;
+            }
+            return `<div class="article-card">
+    <div class="card-cat">${cat.icon} ${cat.label}</div>
+    <h3 class="card-title">${a.title}</h3>
+    <p class="card-excerpt">${a.excerpt}</p>
+    <div class="root-pill">${a.root_year} · ${a.root_who}</div><br>
+    <a class="read-btn" href="article.html?slug=${a.slug}">Read More →</a>
+  </div>`;
+        }
+
+        if (catArticles.length > 0) {
+            document.getElementById('featured-wrap').innerHTML = `<div class="section-rule reveal"><h2>Featured</h2></div>` + articleCard(catArticles[0], true);
+            document.getElementById('articles-grid').innerHTML = catArticles.slice(1).map(a => articleCard(a)).join('') + (catArticles.length <= 1 ? articleCard(catArticles[0]) : '');
+        } else {
+            document.getElementById('featured-wrap').style.display = 'none';
+            document.getElementById('articles-grid').style.display = 'none';
+            document.getElementById('empty-state').style.display = 'block';
+            document.getElementById('empty-icon').textContent = cat.icon;
+        }
+
+        // Related categories sidebar
+        const relCats = Object.entries(CATS).filter(([k]) => k !== catKey);
+        document.getElementById('related-cats').innerHTML = relCats.map(([k, c]) =>
+            `<a href="category.html?cat=${k}" style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg2);border:1px solid var(--border);font-family:var(--cond);font-weight:700;font-size:0.78rem;letter-spacing:1px;transition:background .2s;" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background='var(--bg2)'">${c.icon} ${c.label}</a>`
+        ).join('');
+
+        // Era filter buttons
+        document.querySelectorAll('.era-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.era-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Theme toggle
+        document.getElementById('theme-btn').addEventListener('click', () => {
+            const cur = document.documentElement.getAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', cur === 'dark' ? '' : 'dark');
+        });
+
+        // Newsletter
+        document.getElementById('nl-btn').addEventListener('click', function () {
+            const v = document.getElementById('nl-email').value;
+            if (v.includes('@') && v.includes('.')) { this.textContent = "✓ You're In!"; this.style.background = '#2a6e4a'; document.getElementById('nl-email').value = ''; setTimeout(() => { this.textContent = 'Subscribe Free'; this.style.background = ''; }, 3000); } else { this.textContent = 'Need valid email'; setTimeout(() => this.textContent = 'Subscribe Free', 2000); }
+        });
+
+        // Progress bar
+        window.addEventListener('scroll', () => { const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100; document.getElementById('progress').style.width = Math.min(p, 100) + '%'; }, { passive: true });
+
+        // Reveal
+        const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), { threshold: .07 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>

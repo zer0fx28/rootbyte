@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — RootByte</title>
+    <meta name="description"
+        content="RootByte Privacy Policy — Compliant with Republic Act 10173 (Philippine Data Privacy Act of 2012).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --green: #2a6e4a;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+        }
+
+        a {
+            color: var(--red);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .logo .dot {
+            color: var(--red);
+        }
+
+        .btn-sub {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 6px 14px;
+            text-decoration: none;
+        }
+
+        .page-hero {
+            background: var(--ink);
+            padding: 36px 16px;
+            color: var(--bg);
+        }
+
+        .ph-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, .35);
+            margin-bottom: 10px;
+        }
+
+        .page-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .eff-date {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, .4);
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px 16px 48px;
+        }
+
+        .toc {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 18px;
+            margin-bottom: 28px;
+        }
+
+        .toc-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .toc ol {
+            padding-left: 18px;
+        }
+
+        .toc li {
+            font-size: .82rem;
+            line-height: 2;
+            color: var(--muted);
+        }
+
+        .toc a {
+            color: var(--red);
+        }
+
+        h2 {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 32px 0 12px;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 7px;
+        }
+
+        h3 {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 20px 0 8px;
+            color: var(--red);
+        }
+
+        p {
+            font-size: .9rem;
+            line-height: 1.85;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        p strong,
+        li strong {
+            color: var(--ink);
+        }
+
+        ul,
+        ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            font-size: .88rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .law-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--mono);
+            font-size: .52rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(42, 110, 74, .1);
+            border: 1px solid rgba(42, 110, 74, .25);
+            padding: 5px 12px;
+            color: var(--green);
+            margin-bottom: 16px;
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 14px 0;
+        }
+
+        .right-item {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 12px 14px;
+        }
+
+        .right-title {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: .72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            color: var(--green);
+        }
+
+        .right-desc {
+            font-size: .78rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .npc-box {
+            background: rgba(42, 110, 74, .07);
+            border: 1px solid rgba(42, 110, 74, .2);
+            padding: 16px;
+            margin: 14px 0;
+        }
+
+        .npc-label {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 24px 16px 18px;
+            margin-top: 0;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 10px;
+            font-family: var(--mono);
+            font-size: .5rem;
+            color: rgba(255, 255, 255, .2);
+            margin-top: 10px;
+        }
+
+        @media(min-width:640px) {
+            .page {
+                padding: 40px 32px 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div
+                style="font-family:var(--mono);font-size:.52rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;">
+                Privacy Policy</div>
+            <a class="btn-sub" href="index.html">← Home</a>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="ph-inner">
+            <div class="eyebrow">RootByte · Legal</div>
+            <div class="page-title">PRIVACY POLICY</div>
+            <div class="eff-date">Effective Date: February 22, 2026 · Version 1.0</div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="law-badge">🛡️ Compliant with RA 10173 — Philippine Data Privacy Act of 2012</div>
+
+        <div class="toc">
+            <div class="toc-title">Contents</div>
+            <ol>
+                <li><a href="#who-we-are">Who We Are</a></li>
+                <li><a href="#what-we-collect">What Data We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Data</a></li>
+                <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+                <li><a href="#third-parties">Third Parties</a></li>
+                <li><a href="#ads">Advertising &amp; Google AdSense</a></li>
+                <li><a href="#your-rights">Your Rights (RA 10173)</a></li>
+                <li><a href="#retention">Data Retention</a></li>
+                <li><a href="#children">Children's Privacy</a></li>
+                <li><a href="#changes">Changes to This Policy</a></li>
+                <li><a href="#contact-dpo">Contact &amp; DPO</a></li>
+                <li><a href="#npc">National Privacy Commission</a></li>
+            </ol>
+        </div>
+
+        <h2 id="who-we-are">1. Who We Are</h2>
+        <p><strong>RootByte Media</strong> ("RootByte", "we", "us", or "our") operates the website at
+            <strong>rootbyte.com</strong> (the "Website"). We are established and operate under the laws of the
+            <strong>Republic of the Philippines</strong>.</p>
+        <p>This Privacy Policy governs the collection, use, and disclosure of personal data you provide when using our
+            Website, including subscribing to our newsletter, contacting us, or browsing our content.</p>
+
+        <h2 id="what-we-collect">2. What Data We Collect</h2>
+        <h3>2.1 Data You Provide Voluntarily</h3>
+        <ul>
+            <li><strong>Email address</strong> — when you subscribe to our newsletter or fill in a contact/advertising
+                form.</li>
+            <li><strong>Name</strong> — when provided in contact and advertising enquiry forms (optional).</li>
+            <li><strong>Message content</strong> — when using our contact form.</li>
+        </ul>
+        <h3>2.2 Data Collected Automatically</h3>
+        <ul>
+            <li><strong>Page views and navigation data</strong> — collected via Vercel Analytics (aggregated, no
+                cookies, no cross-site tracking).</li>
+            <li><strong>Device type, browser type, country</strong> — via Vercel Analytics, used in aggregate only.</li>
+            <li><strong>IP address</strong> — temporarily logged by our hosting provider (Vercel) for security and abuse
+                prevention; not stored by RootByte beyond 30 days.</li>
+        </ul>
+        <h3>2.3 Data We Do Not Collect</h3>
+        <ul>
+            <li>We do <strong>not</strong> collect payment information (no e-commerce on this site).</li>
+            <li>We do <strong>not</strong> build individual user profiles for advertising targeting (third-party
+                advertisers may collect their own data — see Section 6).</li>
+            <li>We do <strong>not</strong> collect sensitive personal data (health, political opinions, religion,
+                biometrics).</li>
+        </ul>
+
+        <h2 id="how-we-use">3. How We Use Your Data</h2>
+        <p>We use your personal data for the following purposes, each with a lawful basis under RA 10173:</p>
+        <ul>
+            <li><strong>Newsletter delivery</strong> (email) — Basis: Consent. You may unsubscribe at any time using the
+                link in every email.</li>
+            <li><strong>Responding to enquiries</strong> (email + name + message) — Basis: Legitimate interest /
+                contract performance.</li>
+            <li><strong>Improving our content and website</strong> (aggregate analytics) — Basis: Legitimate interest.
+                No individual profiling.</li>
+            <li><strong>Security and fraud prevention</strong> (IP address, server logs) — Basis: Legitimate interest.
+            </li>
+        </ul>
+        <p>We will <strong>never</strong> sell, rent, or trade your personal data to any third party for marketing
+            purposes.</p>
+
+        <h2 id="cookies">4. Cookies &amp; Tracking</h2>
+        <p>RootByte uses <strong>functional cookies only</strong> for preferences (theme toggle, mode preference). These
+            cookies:</p>
+        <ul>
+            <li>Are stored in your browser's <code>localStorage</code>, not as HTTP cookies.</li>
+            <li>Contain no personal data.</li>
+            <li>Are never sent to any third-party server.</li>
+        </ul>
+        <p><strong>Google AdSense</strong> — if activated — sets its own cookies for ad personalization. You may opt out
+            via Google's <a href="https://adssettings.google.com" target="_blank">Ads Settings</a> or by using our ad
+            settings link in the footer. We have enabled <strong>Non-Personalized Ads</strong> mode for Philippine users
+            by default.</p>
+        <p><strong>We do not use any third-party analytics tracking cookies</strong> (no Google Analytics, no Facebook
+            Pixel, no Hotjar).</p>
+
+        <h2 id="third-parties">5. Third Parties</h2>
+        <p>The following third-party services process data on our behalf:</p>
+        <ul>
+            <li><strong>Vercel Inc.</strong> (hosting, aggregate analytics) — <a
+                    href="https://vercel.com/legal/privacy-policy" target="_blank">Privacy Policy</a></li>
+            <li><strong>Brevo / Sendinblue</strong> (newsletter delivery) — <a
+                    href="https://www.brevo.com/legal/privacypolicy/" target="_blank">Privacy Policy</a></li>
+            <li><strong>Formspree</strong> (contact/advertising forms) — <a
+                    href="https://formspree.io/legal/privacy-policy/" target="_blank">Privacy Policy</a></li>
+            <li><strong>Google LLC</strong> (AdSense advertising) — <a href="https://policies.google.com/privacy"
+                    target="_blank">Privacy Policy</a></li>
+        </ul>
+        <p>Each of these processors is bound by a Data Processing Agreement consistent with applicable data protection
+            law.</p>
+
+        <h2 id="ads">6. Advertising &amp; Google AdSense</h2>
+        <p>RootByte displays advertisements served by <strong>Google AdSense</strong>. Google may use cookies to serve
+            ads based on your prior visits to our website or other websites. You can opt out of personalized advertising
+            by visiting <a href="https://adssettings.google.com" target="_blank">Google's Ads Settings</a>.</p>
+        <p>RootByte enforces a <a href="ad-policy.html">Clean Ads Policy</a> blocking gambling, adult content,
+            cryptocurrency scams, predatory lending, and other harmful ad categories. If you see a violating ad, please
+            <a href="contact.html">report it to us</a>.</p>
+
+        <h2 id="your-rights">7. Your Rights Under RA 10173 (Data Privacy Act of 2012)</h2>
+        <p>As a data subject under Philippine law, you have the following rights:</p>
+        <div class="rights-grid">
+            <div class="right-item">
+                <div class="right-title">Right to be Informed</div>
+                <div class="right-desc">Know what data we collect, why, and how it's processed before we collect it.
+                </div>
+            </div>
+            <div class="right-item">
+                <div class="right-title">Right to Access</div>
+                <div class="right-desc">Request a copy of your personal data held by us.</div>
+            </div>
+            <div class="right-item">
+                <div class="right-title">Right to Correction</div>
+                <div class="right-desc">Request that inaccurate personal data be corrected.</div>
+            </div>
+            <div class="right-item">
+                <div class="right-title">Right to Erasure</div>
+                <div class="right-desc">Request deletion of your data, subject to legal retention requirements.</div>
+            </div>
+            <div class="right-item">
+                <div class="right-title">Right to Object</div>
+                <div class="right-desc">Object to processing of your data, including direct marketing.</div>
+            </div>
+            <div class="right-item">
+                <div class="right-title">Right to Data Portability</div>
+                <div class="right-desc">Receive your data in a structured, machine-readable format.</div>
+            </div>
+            <div class="right-item">
+                <div class="right-title">Right to Damages</div>
+                <div class="right-desc">Claim compensation if your rights are violated.</div>
+            </div>
+            <div class="right-item">
+                <div class="right-title">Right to Complain</div>
+                <div class="right-desc">Lodge a complaint with the National Privacy Commission (NPC).</div>
+            </div>
+        </div>
+        <p>To exercise any of these rights, contact us at <a href="contact.html">our contact page</a> or email
+            <strong>privacy@rootbyte.com</strong>. We will respond within <strong>15 working days</strong> as required
+            by RA 10173 IRR.</p>
+
+        <h2 id="retention">8. Data Retention</h2>
+        <ul>
+            <li><strong>Newsletter subscribers</strong> — retained until you unsubscribe or request deletion.</li>
+            <li><strong>Contact form submissions</strong> — retained for 12 months for follow-up purposes, then deleted.
+            </li>
+            <li><strong>Server logs (IP)</strong> — automatically deleted by Vercel after 30 days.</li>
+            <li><strong>Analytics data</strong> — aggregate, non-personal, retained indefinitely.</li>
+        </ul>
+
+        <h2 id="children">9. Children's Privacy</h2>
+        <p>RootByte does not knowingly collect personal data from children under 18 years of age. Our content is
+            intended for general audiences. If you believe a child has provided personal data, contact us for immediate
+            deletion.</p>
+
+        <h2 id="changes">10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy to reflect changes in law, our data practices, or third-party services. We
+            will post the updated version with a new effective date on this page. Material changes will be announced via
+            our newsletter. Continued use of the Website after updates constitutes acceptance of the revised Policy.</p>
+
+        <h2 id="contact-dpo">11. Contact &amp; Data Protection Officer</h2>
+        <p>For privacy-related inquiries, data subject requests, or complaints:</p>
+        <ul>
+            <li><strong>Email:</strong> privacy@rootbyte.com</li>
+            <li><strong>Form:</strong> <a href="contact.html">Contact page</a></li>
+            <li><strong>Response time:</strong> 15 working days (RA 10173 IRR, Section 39)</li>
+        </ul>
+
+        <h2 id="npc">12. National Privacy Commission (NPC)</h2>
+        <div class="npc-box">
+            <div class="npc-label">🇵🇭 Filipino Residents May File a Complaint With:</div>
+            <p>If you believe your data privacy rights under RA 10173 have been violated, you may lodge a complaint with
+                the <strong>National Privacy Commission (NPC)</strong>:</p>
+            <ul>
+                <li><strong>Website:</strong> <a href="https://www.privacy.gov.ph" target="_blank">privacy.gov.ph</a>
+                </li>
+                <li><strong>Address:</strong> 5th Floor, Delegation Building, PICC Complex, Pasay City, Metro Manila,
+                    Philippines</li>
+                <li><strong>Hotline:</strong> (02) 8234-2228</li>
+                <li><strong>Email:</strong> complaints@privacy.gov.ph</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <div class="footer-bottom">© 2026 RootByte Media · RA 10173 Compliant · <a href="terms.html"
+                    style="color:inherit;text-decoration:underline;">Terms</a> · <a href="contact.html"
+                    style="color:inherit;text-decoration:underline;">Contact</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>

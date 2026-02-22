@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title id="page-title">RootByte — Article</title>
+<meta name="description" id="meta-desc" content="Tech history connecting past, present, and future.">
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RootByte">
+<meta property="og:title" id="og-title" content="RootByte Article">
+<meta property="og:description" id="og-desc" content="Tech history connecting past, present, and future.">
+<meta property="og:image" id="og-image" content="/images/og-default.webp">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@rootbyte">
+<meta name="twitter:title" id="tw-title" content="RootByte Article">
+<meta name="twitter:description" id="tw-desc" content="Tech history connecting past, present, and future.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red:#c9342a; --amber:#d4730f; --green:#2a6e4a; --blue:#1a4e8c;
+  --bg:#f5f0e8; --bg2:#ede8dc; --bg3:#e4ddd0;
+  --ink:#0f0e0c; --muted:#7a7060; --muted2:#a89e8a; --border:rgba(15,14,12,0.12);
+  --serif:'Libre Baskerville',Georgia,serif;
+  --cond:'Barlow Condensed',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+[data-theme="dark"]{--bg:#12110e;--bg2:#1a1916;--bg3:#222018;--ink:#f0ebe0;--muted:#8a8070;--muted2:#605a50;--border:rgba(240,235,224,0.1);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);overflow-x:hidden;transition:background .3s,color .3s;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:inherit;border:none;background:none;}
+img{max-width:100%;display:block;}
+
+/* ── Reading Progress ── */
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--red);width:0%;z-index:9999;transition:width .1s;pointer-events:none;}
+
+/* ── Masthead ── */
+.masthead{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:3px solid var(--ink);transition:background .3s;}
+.mh-top{display:flex;align-items:center;gap:12px;padding:10px 16px;justify-content:space-between;}
+.logo{font-family:var(--cond);font-weight:900;font-size:1.6rem;letter-spacing:5px;color:var(--ink);}
+.logo .dot{color:var(--red);}
+.breadcrumb{font-family:var(--mono);font-size:0.52rem;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;display:flex;align-items:center;gap:6px;flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.breadcrumb a:hover{color:var(--red);}
+.mh-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.btn-icon{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.9rem;transition:all .2s;}
+.btn-icon:hover{background:var(--bg2);transform:scale(1.05);}
+.btn-sub{font-family:var(--cond);font-weight:800;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;background:var(--red);color:#fff;padding:6px 14px;}
+
+/* ── Ad wrap ── */
+.ad-wrap{background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 16px;text-align:center;}
+.ad-label{font-family:var(--mono);font-size:0.48rem;letter-spacing:3px;color:var(--muted2);text-transform:uppercase;margin-bottom:5px;}
+.ad-slot{background:var(--bg3);border:1px dashed var(--border);max-width:728px;margin:0 auto;padding:14px 20px;min-height:60px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.62rem;color:var(--muted2);}
+
+/* ── Layout ── */
+.article-wrap{max-width:1180px;margin:0 auto;padding:28px 16px;display:grid;grid-template-columns:1fr;gap:40px;}
+
+/* ── Timeline Navigator ── */
+.triptych-nav{display:flex;align-items:center;gap:0;margin-bottom:32px;border:2px solid var(--ink);overflow:hidden;}
+.tn-node{flex:1;padding:12px 8px;text-align:center;cursor:pointer;transition:all .25s;position:relative;border-right:2px solid var(--ink);}
+.tn-node:last-child{border-right:none;}
+.tn-icon{font-size:1.2rem;display:block;margin-bottom:4px;}
+.tn-label{font-family:var(--cond);font-weight:900;font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;display:block;}
+.tn-year{font-family:var(--mono);font-size:0.52rem;color:var(--muted2);display:block;margin-top:3px;}
+.tn-node.past{background:var(--bg2);}
+.tn-node.past:hover,.tn-node.past.active{background:var(--green);color:#fff;}
+.tn-node.past.active .tn-year{color:rgba(255,255,255,.7);}
+.tn-node.present{background:var(--bg);}
+.tn-node.present:hover,.tn-node.present.active{background:var(--ink);color:var(--bg);}
+.tn-node.present.active .tn-year{color:rgba(245,240,232,.6);}
+.tn-node.future{background:var(--bg2);}
+.tn-node.future:hover,.tn-node.future.active{background:linear-gradient(135deg,#1a0a2e,#2d1060);color:#fff;}
+.tn-node.future.active .tn-year{color:rgba(200,180,255,.7);}
+
+/* ── Article header ── */
+.article-header{margin-bottom:24px;}
+.eyebrow{font-family:var(--cond);font-weight:700;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.eyebrow::after{content:'';flex:1;height:1px;background:var(--red);opacity:.3;}
+h1.art-hed{font-family:var(--cond);font-weight:900;font-size:clamp(1.8rem,5vw,3.2rem);line-height:1;letter-spacing:1px;margin-bottom:14px;}
+h1.art-hed em{font-style:italic;color:var(--red);}
+.art-meta{font-family:var(--mono);font-size:0.56rem;color:var(--muted2);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.art-deck{font-size:1rem;line-height:1.75;color:var(--muted);font-style:italic;margin-bottom:20px;border-left:3px solid var(--border);padding-left:14px;}
+.hero-img-wrap{background:var(--bg3);border:1px solid var(--border);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-family:var(--mono);font-size:0.6rem;color:var(--muted2);text-align:center;overflow:hidden;}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;}
+
+/* ── Share bar ── */
+.share-bar{display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:32px;}
+.share-label{font-family:var(--mono);font-size:0.52rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);margin-right:4px;}
+.share-btn{font-family:var(--mono);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border:1px solid var(--border);border-radius:100px;transition:all .2s;display:flex;align-items:center;gap:5px;}
+.share-btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+
+/* ══════════════════════════════
+   THE THREE PANELS
+══════════════════════════════ */
+
+/* PAST panel */
+.panel-past{background:var(--bg2);border:2px solid var(--ink);padding:28px 24px;margin-bottom:32px;position:relative;overflow:hidden;}
+.panel-past::before{content:'ROOT';position:absolute;top:-12px;left:20px;font-family:var(--cond);font-weight:900;font-size:0.62rem;letter-spacing:4px;background:var(--green);color:#fff;padding:3px 10px;}
+.panel-label{font-family:var(--cond);font-weight:900;font-size:0.65rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.panel-label.past-lbl{color:var(--green);}
+.panel-label.present-lbl{color:var(--ink);}
+.panel-label.future-lbl{color:#a070ff;}
+.panel-label::after{content:'';flex:1;height:1px;background:currentColor;opacity:.25;}
+.root-year-big{font-family:var(--cond);font-weight:900;font-size:clamp(3rem,10vw,5.5rem);color:var(--green);line-height:1;margin-bottom:8px;opacity:.85;}
+.root-who-line{font-family:var(--mono);font-size:0.62rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;}
+.panel-past .art-body{color:var(--ink);}
+
+/* PRESENT panel */
+.panel-present{margin-bottom:32px;}
+.panel-present .panel-band{background:var(--ink);color:var(--bg);padding:10px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.panel-band-icon{font-size:1.1rem;}
+.panel-band-text{font-family:var(--cond);font-weight:900;font-size:1rem;letter-spacing:3px;text-transform:uppercase;}
+
+/* In-content ad */
+.incontent-ad{background:var(--bg2);padding:12px;text-align:center;margin:28px 0;border:1px dashed var(--border);}
+
+/* DYK box */
+.dyk-box{background:var(--amber);color:#fff;padding:18px 20px;margin:24px 0;border-radius:2px;}
+.dyk-box-label{font-family:var(--cond);font-weight:900;font-size:0.6rem;letter-spacing:3px;opacity:.8;margin-bottom:6px;}
+.dyk-box-body{font-size:0.9rem;line-height:1.65;font-style:italic;}
+
+/* FUTURE panel */
+.panel-future{background:linear-gradient(160deg,#0d0820 0%,#1a0f40 60%,#0d0820 100%);color:#e8e0ff;padding:32px 24px;margin-bottom:32px;position:relative;overflow:hidden;}
+.panel-future::before{content:'FUTURE';position:absolute;top:-12px;left:20px;font-family:var(--cond);font-weight:900;font-size:0.62rem;letter-spacing:4px;background:#7c3aed;color:#fff;padding:3px 10px;}
+.future-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--cond);font-weight:900;font-size:clamp(5rem,25vw,12rem);color:rgba(255,255,255,.02);letter-spacing:-4px;white-space:nowrap;pointer-events:none;user-select:none;}
+.speculation-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:0.52rem;letter-spacing:2px;text-transform:uppercase;background:rgba(255,200,50,.12);border:1px solid rgba(255,200,50,.3);color:#ffd580;padding:5px 12px;border-radius:100px;margin-bottom:20px;}
+.future-year-big{font-family:var(--cond);font-weight:900;font-size:clamp(2.5rem,8vw,4.5rem);color:rgba(200,170,255,.3);line-height:1;margin-bottom:12px;}
+.future-hed{font-family:var(--cond);font-weight:900;font-size:clamp(1.4rem,4vw,2rem);color:#fff;letter-spacing:1px;line-height:1.05;margin-bottom:16px;}
+.panel-future .art-body{color:rgba(232,224,255,.75);}
+.panel-future .art-body strong{color:#fff;}
+.panel-future h3{font-family:var(--cond);font-weight:800;font-size:1.1rem;letter-spacing:2px;text-transform:uppercase;color:#c4a0ff;margin:20px 0 8px;}
+.prediction-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-left:3px solid #7c3aed;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;}
+.prediction-label{font-family:var(--mono);font-size:0.5rem;letter-spacing:2px;text-transform:uppercase;color:#a070ff;margin-bottom:5px;}
+.prediction-text{font-size:0.85rem;color:rgba(232,224,255,.8);line-height:1.55;}
+
+/* ── Article body text ── */
+.art-body{font-size:1rem;line-height:1.85;margin-bottom:0;}
+.art-body p{margin-bottom:1.2em;}
+.art-body h2{font-family:var(--cond);font-weight:900;font-size:1.4rem;letter-spacing:2px;text-transform:uppercase;margin:28px 0 12px;padding-top:4px;}
+.art-body h3{font-family:var(--cond);font-weight:700;font-size:1.1rem;letter-spacing:1.5px;margin:20px 0 8px;}
+.art-body strong{font-weight:700;}
+.art-body em{font-style:italic;}
+.art-body ul,.art-body ol{padding-left:20px;margin-bottom:1.2em;}
+.art-body li{margin-bottom:.5em;}
+.art-body blockquote{border-left:3px solid var(--red);padding-left:16px;color:var(--muted);font-style:italic;margin:20px 0;}
+
+/* ── Sidebar ── */
+.article-sidebar{display:none;}
+.nl-box{background:var(--red);color:#fff;padding:20px;margin-bottom:20px;}
+.nl-title{font-family:var(--cond);font-weight:900;font-size:1.3rem;letter-spacing:3px;margin-bottom:6px;}
+.nl-sub{font-size:0.78rem;opacity:.85;font-style:italic;margin-bottom:14px;line-height:1.55;}
+.nl-input{width:100%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:9px 12px;color:#fff;font-family:var(--mono);font-size:0.7rem;outline:none;margin-bottom:8px;display:block;}
+.nl-input::placeholder{color:rgba(255,255,255,.5);}
+.nl-btn{width:100%;background:var(--ink);color:var(--bg);font-family:var(--cond);font-weight:800;font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;padding:10px;transition:opacity .2s;}
+.nl-btn:hover{opacity:.85;}
+.sidebar-ad{background:var(--bg2);border:1px dashed var(--border);padding:12px;text-align:center;margin-bottom:20px;}
+.sidebar-ad-inner{background:var(--bg3);min-height:250px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.62rem;color:var(--muted2);}
+
+/* Related articles */
+.related-wrap{border-top:2px solid var(--ink);padding-top:24px;margin-top:8px;}
+.related-title{font-family:var(--cond);font-weight:900;font-size:0.9rem;letter-spacing:4px;text-transform:uppercase;color:var(--red);border-top:3px solid var(--red);padding-top:8px;margin-bottom:16px;}
+.related-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.related-card{border-top:1px solid var(--border);padding-top:10px;}
+.related-cat{font-family:var(--cond);font-weight:700;font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.related-hed{font-family:var(--cond);font-weight:800;font-size:1.05rem;line-height:1.1;margin-bottom:4px;}
+.related-root{font-family:var(--mono);font-size:0.52rem;color:var(--muted2);}
+.related-card a:hover .related-hed{color:var(--red);}
+
+/* Footer */
+footer{background:var(--ink);color:var(--bg);padding:28px 16px 20px;margin-top:32px;}
+.footer-logo{font-family:var(--cond);font-weight:900;font-size:1.8rem;letter-spacing:5px;margin-bottom:8px;}
+.footer-logo .dot{color:var(--red);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:12px;font-family:var(--mono);font-size:0.52rem;color:rgba(255,255,255,.2);letter-spacing:1px;text-transform:uppercase;margin-top:16px;}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s;}
+.reveal.in{opacity:1;transform:none;}
+
+@media(min-width:640px){
+  .article-wrap{padding:28px 24px;}
+  .related-grid{grid-template-columns:1fr 1fr;}
+}
+@media(min-width:900px){
+  .article-wrap{padding:36px 32px;grid-template-columns:1fr 300px;gap:48px;}
+  .article-main{min-width:0;}
+  .article-sidebar{display:block;position:sticky;top:80px;}
+  footer{padding:36px 32px 24px;}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="mh-top">
+    <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> ›
+      <span id="bc-cat">Tech</span> ›
+      <span id="bc-title" style="color:var(--ink);overflow:hidden;text-overflow:ellipsis;">Article</span>
+    </div>
+    <div class="mh-actions">
+      <button class="btn-icon" id="theme-btn" title="Toggle theme">🌓</button>
+      <button class="btn-sub">Subscribe</button>
+    </div>
+  </div>
+</header>
+
+<!-- Leaderboard Ad -->
+<div class="ad-wrap">
+  <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+  <div class="ad-slot" id="ad-leaderboard">728 × 90 Leaderboard</div>
+</div>
+
+<!-- Article -->
+<div class="article-wrap">
+  <main class="article-main">
+
+    <!-- Triptych Navigator -->
+    <div class="triptych-nav" id="triptych-nav">
+      <div class="tn-node past" onclick="scrollToPanel('panel-past')" id="nav-past">
+        <span class="tn-icon">🌱</span>
+        <span class="tn-label">The Root</span>
+        <span class="tn-year" id="nav-past-year">Past</span>
+      </div>
+      <div class="tn-node present" onclick="scrollToPanel('panel-present')" id="nav-present">
+        <span class="tn-icon">⚡</span>
+        <span class="tn-label">Today</span>
+        <span class="tn-year">Present</span>
+      </div>
+      <div class="tn-node future" onclick="scrollToPanel('panel-future')" id="nav-future">
+        <span class="tn-icon">🔮</span>
+        <span class="tn-label">What's Next</span>
+        <span class="tn-year" id="nav-future-year">Future</span>
+      </div>
+    </div>
+
+    <!-- Article Header -->
+    <div class="article-header reveal">
+      <div class="eyebrow" id="art-eyebrow">Category</div>
+      <h1 class="art-hed" id="art-title">Article Title</h1>
+      <div class="art-meta">
+        <span id="art-date">February 22, 2026</span>
+        <span>·</span>
+        <span id="art-reading">6 min read</span>
+        <span>·</span>
+        <span>RootByte Desk</span>
+      </div>
+      <p class="art-deck" id="art-deck">Loading article…</p>
+      <div class="hero-img-wrap" id="hero-img-wrap">
+        [HERO IMAGE]
+      </div>
+    </div>
+
+    <!-- Share Bar -->
+    <div class="share-bar">
+      <span class="share-label">Share</span>
+      <button class="share-btn" id="share-copy">📋 Copy Link</button>
+      <button class="share-btn" id="share-x">𝕏 Post</button>
+      <button class="share-btn" id="share-fb">📘 Facebook</button>
+    </div>
+
+    <!-- ════ PANEL 1: PAST / ROOT ════ -->
+    <section class="panel-past reveal" id="panel-past">
+      <div class="panel-label past-lbl">🌱 The Root — Where It Started</div>
+      <div class="root-year-big" id="root-year-display">1943</div>
+      <div class="root-who-line" id="root-who-display">Loading…</div>
+      <div class="art-body" id="root-body">
+        <p>Loading historical content…</p>
+      </div>
+    </section>
+
+    <!-- ════ PANEL 2: PRESENT ════ -->
+    <section class="panel-present reveal" id="panel-present">
+      <div class="panel-band">
+        <span class="panel-band-icon">⚡</span>
+        <span class="panel-band-text">The Modern Story — Today</span>
+      </div>
+      <div class="art-body" id="present-body">
+        <p>Loading present content…</p>
+      </div>
+
+      <!-- In-content ad -->
+      <div class="incontent-ad">
+        <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+        <div class="ad-slot" id="ad-incontent" style="max-width:100%;">In-Feed · 300×250</div>
+      </div>
+
+      <!-- DYK box -->
+      <div class="dyk-box reveal" id="dyk-box">
+        <div class="dyk-box-label">💡 Did You Know</div>
+        <div class="dyk-box-body" id="dyk-body">Loading…</div>
+      </div>
+    </section>
+
+    <!-- ════ PANEL 3: FUTURE ════ -->
+    <section class="panel-future reveal" id="panel-future">
+      <div class="future-bg-text">2030</div>
+      <div class="speculation-badge">⚠️ Speculative — Based on Active Research</div>
+      <div class="future-year-big" id="future-year-display">2030+</div>
+      <div class="future-hed" id="future-hed">What Comes Next</div>
+      <div class="art-body" id="future-body">
+        <p>Loading future content…</p>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <div class="related-wrap reveal">
+      <div class="related-title">Follow the Roots</div>
+      <div class="related-grid" id="related-grid">
+        <a class="related-card" href="article.html?slug=wifi-hidden-inventor">
+          <div class="related-cat">🌐 Internet</div>
+          <div class="related-hed">The WiFi Inventor Australia Doesn't Know It Has</div>
+          <div class="related-root">🌱 1992 · CSIRO Sydney</div>
+        </a>
+        <a class="related-card" href="article.html?slug=chatgpt-neural-network-history">
+          <div class="related-cat">🤖 AI &amp; ML</div>
+          <div class="related-hed">ChatGPT Is 3 Years Old. The Math Behind It Is 83.</div>
+          <div class="related-root">🌱 1943 · McCulloch &amp; Pitts</div>
+        </a>
+        <a class="related-card" href="article.html?slug=first-hard-drive-ibm">
+          <div class="related-cat">💾 Devices</div>
+          <div class="related-hed">IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased from History.</div>
+          <div class="related-root">🌱 1956 · IBM San Jose</div>
+        </a>
+        <a class="related-card" href="article.html?slug=first-touchscreen-1965">
+          <div class="related-cat">📱 Devices</div>
+          <div class="related-hed">The First Touchscreen Wasn't Apple — It Was Made in 1965</div>
+          <div class="related-root">🌱 1965 · Royal Radar Establishment, UK</div>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="article-sidebar">
+    <div class="nl-box">
+      <div class="nl-title">GET TOMORROW'S ROOT</div>
+      <div class="nl-sub">One story every morning. Always traced to where it started.</div>
+      <input class="nl-input" type="email" id="nl-email" placeholder="your@email.com">
+      <button class="nl-btn" id="nl-btn">Subscribe Free</button>
+    </div>
+    <div class="sidebar-ad">
+      <div class="ad-label">Advertisement · Vetted</div>
+      <div class="sidebar-ad-inner" id="ad-sidebar-1">300×250</div>
+    </div>
+    <div class="sidebar-ad">
+      <div class="ad-label">Advertisement · Vetted</div>
+      <div class="sidebar-ad-inner" id="ad-sidebar-2">300×600</div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+    <p style="font-size:.78rem;color:rgba(245,240,232,.45);font-style:italic;max-width:440px;margin-bottom:16px;line-height:1.65;">Every piece of technology has a root — a forgotten inventor, a failed first attempt. We dig those roots up daily.</p>
+    <div class="footer-bottom">
+      <div>© 2026 RootByte Media · Built in the Philippines 🇵🇭</div>
+      <div style="color:rgba(42,110,74,.7);margin-top:5px;">🛡️ CLEAN ADS POLICY — Blocks malware, scams, adult content, gambling &amp; political propaganda.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Article data (will be replaced by build system reading .md files) ──
+const ARTICLES = {
+  'first-touchscreen-1965': {
+    title: "The First Touchscreen Wasn't Apple — It Was <em>Made in 1965</em>",
+    category: 'devices', catLabel: '📱 Devices',
+    date: 'February 18, 2026', reading_time: 7,
+    deck: 'E.A. Johnson built a capacitive touch display 42 years before the iPhone. Same technology. Zero credit.',
+    root_year: '1965', root_who: 'E.A. Johnson · Royal Radar Establishment, Malvern UK',
+    root_body: `<p>Every time you tap your phone screen, you're using technology that Apple didn't invent, didn't fund, and didn't discover.</p>
+<p>E.A. Johnson was an engineer at the Royal Radar Establishment in Malvern, England. In 1965, he published a paper describing a touch screen that worked by detecting the electrical properties of a human finger — the exact principle called <strong>capacitive sensing</strong>.</p>
+<p>He demonstrated it. He wrote about it. He had working prototypes used for air traffic control systems by the late 1960s. He never patented it commercially. He received no royalties. His name appears in almost zero mainstream tech history coverage.</p>`,
+    present_body: `<p>When Steve Jobs held up the first iPhone in 2007 and called multi-touch "revolutionary," he wasn't wrong about its impact. He was wrong about its origin.</p>
+<p>Today, capacitive touchscreens are in <strong>every smartphone, tablet, ATM, kiosk, and car dashboard</strong> on the planet. The market was valued at over $60 billion in 2025. The underlying physics is identical to what Johnson published in a UK defense research journal 60 years ago.</p>`,
+    dyk: 'Between E.A. Johnson\'s 1965 paper and the 2007 iPhone launch — <strong>42 years passed</strong>. Every capacitive touchscreen made in those 42 years operates on the same physics Johnson published for free.',
+    future_year: '2030+', future_hed: 'Touch Without Touching — What Comes After the Finger',
+    future_body: `<h3>Mid-Air Haptic Interfaces</h3><p>Companies like Ultraleap use focused ultrasonic waves to create the sensation of touch in open air — no screen required. Originally developed for sterile medical environments, now being tested in automotive dashboards and retail kiosks.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028–2029</div><div class="prediction-text">Mid-air haptic panels will appear in premium car interiors as standard options.</div></div>
+<h3>Brainwave Input</h3><p>Neuralink, Synchron, and labs at MIT are working on BCIs that translate motor-intent signals into device commands. Paralyzed patients already use early versions to control computers.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2032</div><div class="prediction-text">Consumer-grade EEG-based input for basic smartphone navigation.</div></div>
+<p>Johnson replaced physical knobs with fingers. The next inventor will replace fingers with thought. The root is the same — remove the physical barrier between human intent and machine response.</p>`
+  },
+  'chatgpt-neural-network-history': {
+    title: 'ChatGPT Is 3 Years Old. The Math Behind It Is <em>83.</em>',
+    category: 'ai', catLabel: '🤖 AI &amp; ML',
+    date: 'February 22, 2026', reading_time: 8,
+    deck: 'Everyone talks about what AI does today. Nobody talks about the 83-year chain of human thought that had to happen first.',
+    root_year: '1943', root_who: 'Warren McCulloch &amp; Walter Pitts · MIT / University of Illinois',
+    root_body: `<p>Warren McCulloch was a neurologist. Walter Pitts was a 15-year-old runaway living under a bridge in Chicago, who had read Bertrand Russell's <em>Principia Mathematica</em> and memorized it. McCulloch found him. Together, they wrote a 17-page paper.</p>
+<p>Published in 1943, it described a mathematical model of how neurons fire. The model was simple: inputs come in, if they cross a threshold, the neuron fires. They showed mathematically that a network of these could compute <strong>anything</strong>. No computer could run it. The paper sat ignored for over a decade.</p>
+<p><strong>The chain:</strong> 1943 paper → 1956 AI named at Dartmouth ($7,500 budget) → 1969 AI Winter → 1986 backpropagation → 2012 deep learning → 2017 Transformer architecture → 2022 ChatGPT. <strong>79 years from concept to product.</strong></p>`,
+    present_body: `<p>On November 30, 2022, OpenAI launched ChatGPT. In five days: 1 million users. In two months: 100 million — the fastest consumer product adoption in history.</p>
+<p>By 2026, it's used by hundreds of millions daily for writing, coding, research, and conversation. The AI industry is valued in the trillions. Multiple competing models exist from Google, Anthropic, Meta, Mistral, and dozens more.</p>
+<p>All of them run on the same fundamental architecture — the transformer — which itself is a scaled-up, GPU-powered descendant of the McCulloch-Pitts artificial neuron.</p>`,
+    dyk: 'The term <strong>"Artificial Intelligence"</strong> was coined at a 1956 Dartmouth workshop with a budget of <strong>$7,500</strong>. That question is now a multi-trillion dollar global industry.',
+    future_year: '2028–2035', future_hed: 'From Assistant to Agent — The Road to AGI',
+    future_body: `<h3>The Agentic Shift (2025–2028)</h3><p>Current AI tools wait for you to ask them something. The next phase — already underway — is <strong>agentic AI</strong>: systems that accept a goal, plan sub-tasks, use tools, self-correct, and run autonomously until done.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">At least 3 Fortune 500 companies will have an AI system as a standing member of a product team, assigned to a role with deliverables.</div></div>
+<h3>Artificial General Intelligence</h3><p>AGI — a system that matches or exceeds human performance across all cognitive tasks — is the 1943 paper's ultimate destination. Expert estimates range from 5 to 50 years. What McCulloch and Pitts couldn't have imagined: when it arrives, the hardest problem won't be building it. It'll be deciding what it's allowed to do.</p>
+<div class="prediction-card"><div class="prediction-label">The Thread</div><div class="prediction-text">Every AI milestone traces back to that 1943 paper written by a neurologist and a teenage runaway who had nowhere to sleep. The next milestone will too.</div></div>`
+  },
+  'wifi-hidden-inventor': {
+    title: 'The WiFi Inventor <em>Australia Doesn\'t Know It Has</em>',
+    category: 'internet', catLabel: '🌐 Internet',
+    date: 'February 22, 2026', reading_time: 7,
+    deck: 'A failed attempt to detect exploding mini black holes led to the math that powers all modern WiFi.',
+    root_year: '1992', root_who: "John O'Sullivan &amp; CSIRO Team · Sydney, Australia",
+    root_body: `<p>In the late 1980s, physicist John O'Sullivan at Australia's CSIRO was trying to detect <strong>exploding mini black holes</strong> — Stephen Hawking had theorized they might release detectable radio waves as they evaporated.</p>
+<p>They never found the black holes. What they found was a math problem: radio waves bouncing off walls create multipath interference that scrambles signals. O'Sullivan solved it using an inverse Fourier transform to reconstruct the original clean signal from the echoes.</p>
+<p>In 1992, CSIRO patented this approach. Applied to wireless data, it solved the indoor interference problem that had made high-speed wireless communication essentially impossible. That patent became the core of <strong>802.11</strong> — the standard you know as WiFi.</p>`,
+    present_body: `<p>By 2026, there are over <strong>5 billion WiFi-enabled devices</strong> on the planet. Your phone, laptop, TV, thermostat, doorbell — all of them running on math developed while hunting for black holes.</p>
+<p>After years of unlicensed use, CSIRO sued Intel, Dell, HP, T-Mobile, AT&T, and 11 other major companies. Every single one settled. Australia's government science agency collected over <strong>$430 million USD</strong> in royalties — from the country that claims to have invented the technology world.</p>`,
+    dyk: "Australia's CSIRO collected over <strong>$430 million USD</strong> in WiFi patent royalties. The technology inside 5 billion devices was invented while looking for <strong>evaporating black holes</strong>.",
+    future_year: '2030–2035', future_hed: '6G, Terahertz Waves, and Wireless That Powers Your Devices',
+    future_body: `<h3>6G — 100x Faster, Starting 2030</h3><p>The global race for <strong>6G</strong> is underway — South Korea, China, Japan, the EU, and the US all have funded programs. Target: commercial deployment by 2030 using terahertz (THz) frequencies fast enough to download every movie ever made in ~3 seconds.</p>
+<div class="prediction-card"><div class="prediction-label">The Challenge</div><div class="prediction-text">Terahertz waves don't travel through walls or rain — engineers are solving the same multipath problem O'Sullivan solved, at 100x the frequency.</div></div>
+<h3>Wireless Power — No Charging Required</h3><p>Research teams at MIT, ETH Zurich, and Samsung are developing <strong>ambient RF energy harvesting</strong> — small devices extracting enough energy from ordinary WiFi and 5G signals to operate indefinitely.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2032–2035</div><div class="prediction-text">Earbuds, medical sensors, and smart home devices will ship with "no charging required" as a feature.</div></div>
+<p>O'Sullivan solved interference to transmit data wirelessly. The next breakthrough will transmit <em>power</em> wirelessly. Same spectrum. Same physics. Different century.</p>`
+  },
+  'first-hard-drive-ibm': {
+    title: "IBM's First Hard Drive Weighed a Ton and Stored 5 Megabytes. Its Inventor Was <em>Almost Erased.</em>",
+    category: 'devices', catLabel: '💾 Devices',
+    date: 'February 22, 2026', reading_time: 7,
+    deck: 'The man who gave every computer its memory never got a building named after him. IBM named a lab annex after him. Almost nobody knows he existed.',
+    root_year: '1956', root_who: 'Reynold B. Johnson · IBM San Jose Research Lab, California',
+    root_body: `<p>Reynold B. Johnson had already invented the IBM test-scoring machine used to grade standardized tests across America when his management told him to figure out how to <strong>store data magnetically on a spinning disk</strong>.</p>
+<p>Working at IBM's San Jose lab, Johnson's team spent years figuring out magnetic coating, read/write head geometry, and servo positioning. The result: the <strong>IBM 350 Disk Storage Unit</strong>, announced September 13, 1956.</p>
+<p>Specs: <strong>4.4 MB</strong> storage. <strong>971 kg</strong> weight. 50 magnetic platters, 24 inches each. Rental: $3,200/month. First customer: United Airlines, for reservation management. IBM flew it to customers in cargo planes.</p>`,
+    present_body: `<p>The world generates approximately <strong>2.5 quintillion bytes of data every day</strong>. The cloud stores it. Your phone holds 256GB in a chip thin as a credit card. A modern data center holds exabytes.</p>
+<p>All of it descends from Johnson's 1956 machine. HDDs still use his core concept: floating magnetic read/write heads above spinning platters in addressable sectors. SSDs replaced the platter with flash cells but kept the random-access concept. The NVMe protocol in your MacBook traces its lineage directly to RAMAC.</p>`,
+    dyk: "The IBM RAMAC 350 (1956) stored 5 megabytes and weighed over 900kg. A modern <strong>microSD card</strong> the size of your thumbnail stores <strong>1 terabyte</strong> — 200,000× more data, at 0.002% of the physical space.",
+    future_year: '2030–2040', future_hed: 'DNA Storage and the Drive That Lasts 10,000 Years',
+    future_body: `<h3>DNA Data Storage — The Science Is Real</h3><p>Researchers at UW, MIT, ETH Zurich, and Microsoft have demonstrated storing arbitrary binary data in synthesized DNA strands — and reading it back with 100% accuracy. In 2021, a team stored <strong>1 petabyte in 1 gram of DNA</strong>.</p>
+<div class="prediction-card"><div class="prediction-label">Density Comparison</div><div class="prediction-text">IBM RAMAC 1956: ~1 bit per cm² · Modern HDD: ~1 terabit per cm² · DNA storage: a million-billion times denser than any silicon medium.</div></div>
+<h3>Why It Isn't Here Yet</h3><p>Writing data to DNA costs ~$1,000 per megabyte today. Reading takes hours to days. It's only viable for cold archival — legal records, historical archives, government data.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2030</div><div class="prediction-text">A DNA storage company will offer commercial archival-tier cold storage for enterprise customers.</div></div>
+<p>Reynold Johnson encoded information in magnetic states on metal platters. DNA storage encodes information in molecular states on a biological medium. The questions are identical. The scale is unimaginable. Johnson never got famous. The next Johnson is probably writing a paper right now in a lab nobody is watching.</p>`
+  }
+};
+
+// ── Routing ──
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('slug') || 'first-touchscreen-1965';
+const article = ARTICLES[slug] || ARTICLES['first-touchscreen-1965'];
+
+// ── Populate ──
+document.title = `RootByte — ${article.title.replace(/<[^>]+>/g,'')}`;
+document.getElementById('og-title').content = article.title.replace(/<[^>]+>/g,'');
+document.getElementById('tw-title').content = article.title.replace(/<[^>]+>/g,'');
+document.getElementById('meta-desc').content = article.deck;
+document.getElementById('og-desc').content = article.deck;
+document.getElementById('tw-desc').content = article.deck;
+document.getElementById('page-title').textContent = `RootByte — ${article.title.replace(/<[^>]+>/g,'')}`;
+
+document.getElementById('bc-cat').textContent = article.catLabel.replace(/<[^>]+>/g,'').replace(/[^\w\s&]/g,'').trim();
+document.getElementById('bc-title').textContent = article.title.replace(/<[^>]+>/g,'').substring(0,50)+'…';
+document.getElementById('art-eyebrow').innerHTML = article.catLabel + ' · RootByte Desk';
+document.getElementById('art-title').innerHTML = article.title;
+document.getElementById('art-date').textContent = article.date;
+document.getElementById('art-reading').textContent = `${article.reading_time} min read`;
+document.getElementById('art-deck').textContent = article.deck;
+
+document.getElementById('root-year-display').textContent = article.root_year;
+document.getElementById('root-who-display').innerHTML = article.root_who;
+document.getElementById('nav-past-year').textContent = article.root_year;
+document.getElementById('nav-future-year').textContent = article.future_year;
+document.getElementById('root-body').innerHTML = article.root_body;
+document.getElementById('present-body').innerHTML = article.present_body;
+document.getElementById('dyk-body').innerHTML = article.dyk;
+document.getElementById('future-year-display').textContent = article.future_year;
+document.getElementById('future-hed').textContent = article.future_hed;
+document.getElementById('future-body').innerHTML = article.future_body;
+document.querySelector('.future-bg-text').textContent = article.future_year.split('–')[0].replace('+','');
+
+// ── Triptych nav active state on scroll ──
+const panels = [
+  {el: document.getElementById('panel-past'), nav: document.getElementById('nav-past')},
+  {el: document.getElementById('panel-present'), nav: document.getElementById('nav-present')},
+  {el: document.getElementById('panel-future'), nav: document.getElementById('nav-future')}
+];
+const panelObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      panels.forEach(p => p.nav.classList.remove('active'));
+      const hit = panels.find(p => p.el === entry.target);
+      if(hit) hit.nav.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+panels.forEach(p => panelObs.observe(p.el));
+
+function scrollToPanel(id) {
+  document.getElementById(id).scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// ── Progress bar ──
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  document.getElementById('progress').style.width = Math.min(p,100) + '%';
+}, {passive:true});
+
+// ── Share buttons ──
+document.getElementById('share-copy').addEventListener('click', function() {
+  navigator.clipboard.writeText(window.location.href);
+  this.textContent = '✓ Copied!';
+  setTimeout(() => this.textContent = '📋 Copy Link', 2000);
+});
+document.getElementById('share-x').addEventListener('click', () => {
+  const text = encodeURIComponent(article.title.replace(/<[^>]+>/g,'') + ' — RootByte');
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(window.location.href)}`, '_blank');
+});
+document.getElementById('share-fb').addEventListener('click', () => {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+});
+
+// ── Theme toggle ──
+const themeBtn = document.getElementById('theme-btn');
+themeBtn.addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur === 'dark' ? '' : 'dark');
+  themeBtn.textContent = cur === 'dark' ? '🌓' : '🌙';
+});
+
+// ── Newsletter ──
+document.getElementById('nl-btn').addEventListener('click', function() {
+  const v = document.getElementById('nl-email').value;
+  if(v.includes('@') && v.includes('.')) {
+    this.textContent = "✓ You're In!";
+    this.style.background = '#2a6e4a';
+    document.getElementById('nl-email').value = '';
+    setTimeout(() => { this.textContent = 'Subscribe Free'; this.style.background = ''; }, 3000);
+  } else {
+    this.textContent = 'Need valid email';
+    setTimeout(() => this.textContent = 'Subscribe Free', 2000);
+  }
+});
+
+// ── Reveal ──
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+}), {threshold:.07});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── Init nav ──
+document.getElementById('nav-past').classList.add('active');
+</script>
+</body>
+</html>

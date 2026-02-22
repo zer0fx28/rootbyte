@@ -1,0 +1,105 @@
+{
+    "version": 2,
+    "public": true,
+    "buildCommand": "node scripts/build.js",
+    "outputDirectory": "src",
+    "rewrites": [
+        {
+            "source": "/article/:slug",
+            "destination": "/article.html"
+        },
+        {
+            "source": "/category/:cat",
+            "destination": "/category.html"
+        },
+        {
+            "source": "/breaking",
+            "destination": "/breaking.html"
+        },
+        {
+            "source": "/roots-archive",
+            "destination": "/roots-archive.html"
+        },
+        {
+            "source": "/did-you-know",
+            "destination": "/did-you-know.html"
+        },
+        {
+            "source": "/on-this-day",
+            "destination": "/on-this-day.html"
+        },
+        {
+            "source": "/about",
+            "destination": "/about.html"
+        },
+        {
+            "source": "/advertise",
+            "destination": "/advertise.html"
+        },
+        {
+            "source": "/contact",
+            "destination": "/contact.html"
+        },
+        {
+            "source": "/privacy",
+            "destination": "/privacy.html"
+        },
+        {
+            "source": "/terms",
+            "destination": "/terms.html"
+        },
+        {
+            "source": "/ad-policy",
+            "destination": "/ad-policy.html"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "SAMEORIGIN"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                },
+                {
+                    "key": "Permissions-Policy",
+                    "value": "camera=(), microphone=(), geolocation=()"
+                }
+            ]
+        },
+        {
+            "source": "/content/(.*).json",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, s-maxage=300, stale-while-revalidate=60"
+                },
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "https://rootbyte.com"
+                }
+            ]
+        },
+        {
+            "source": "/content/breaking.json",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, s-maxage=60, stale-while-revalidate=30"
+                }
+            ]
+        }
+    ]
+}

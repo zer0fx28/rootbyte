@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RootByte — Did You Know?</title>
+    <meta name="description"
+        content="The most surprising facts in tech history — one bite-sized fact at a time. Shareable, verified, and connected to the full story.">
+    <meta property="og:title" content="RootByte — Did You Know?">
+    <meta property="og:description" content="The most surprising facts in tech history.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --amber: #d4730f;
+            --green: #2a6e4a;
+            --blue: #1a4e8c;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --muted2: #a89e8a;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --muted2: #605a50;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+            color: var(--ink);
+        }
+
+        .logo .dot {
+            color: var(--red);
+        }
+
+        .btn-sub {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 6px 14px;
+        }
+
+        .ad-wrap {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 8px 16px;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-family: var(--mono);
+            font-size: 0.48rem;
+            letter-spacing: 3px;
+            color: var(--muted2);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .ad-slot {
+            background: var(--bg3);
+            border: 1px dashed var(--border);
+            max-width: 728px;
+            margin: 0 auto;
+            padding: 14px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            color: var(--muted2);
+        }
+
+        .page-hero {
+            background: var(--amber);
+            color: #fff;
+            padding: 36px 16px;
+            text-align: center;
+        }
+
+        .page-hero-icon {
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+
+        .page-hero-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .page-hero-sub {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: .8;
+        }
+
+        .filter-bar {
+            background: var(--bg2);
+            border-bottom: 2px solid var(--ink);
+            padding: 0;
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .filter-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-btn {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding: 10px 20px;
+            border-right: 1px solid var(--border);
+            white-space: nowrap;
+            transition: all .2s;
+            flex-shrink: 0;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            color: var(--ink);
+            background: var(--bg3);
+        }
+
+        .filter-btn.active {
+            border-bottom: 3px solid var(--amber);
+            margin-bottom: -2px;
+        }
+
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 28px 16px;
+        }
+
+        .dyk-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .dyk-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 20px;
+            cursor: pointer;
+            transition: all .2s;
+            position: relative;
+        }
+
+        .dyk-card:hover {
+            background: var(--bg3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+        }
+
+        .dyk-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .dyk-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .dyk-cat {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: 0.58rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 3px;
+        }
+
+        .dyk-year {
+            font-family: var(--mono);
+            font-size: 0.5rem;
+            letter-spacing: 1px;
+            color: var(--muted2);
+        }
+
+        .dyk-fact {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .dyk-fact strong {
+            font-weight: 700;
+        }
+
+        .dyk-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .dyk-share-btn {
+            font-family: var(--mono);
+            font-size: 0.52rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dyk-share-btn:hover {
+            background: var(--ink);
+            color: var(--bg);
+            border-color: var(--ink);
+        }
+
+        .dyk-read-link {
+            font-family: var(--mono);
+            font-size: 0.52rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--amber);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dyk-read-link:hover {
+            color: var(--ink);
+        }
+
+        .count-bar {
+            font-family: var(--mono);
+            font-size: 0.55rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 28px 16px 20px;
+            margin-top: 32px;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 12px;
+            font-family: var(--mono);
+            font-size: 0.52rem;
+            color: rgba(255, 255, 255, .2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+
+        @media(min-width:640px) {
+            .dyk-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(min-width:900px) {
+            .dyk-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .page {
+                padding: 36px 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div
+                style="font-family:var(--mono);font-size:.52rem;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;">
+                Home › Did You Know</div>
+            <a class="btn-sub" href="index.html">← Home</a>
+        </div>
+    </header>
+
+    <div class="ad-wrap">
+        <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+        <div class="ad-slot" id="ad-leaderboard">728 × 90 Leaderboard</div>
+    </div>
+
+    <div class="page-hero">
+        <div class="page-hero-icon">💡</div>
+        <div class="page-hero-title">DID YOU KNOW?</div>
+        <div class="page-hero-sub">Tech history's most surprising facts — every one connected to the full story</div>
+    </div>
+
+    <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-cat="all">All Topics</button>
+        <button class="filter-btn" data-cat="ai">🤖 AI &amp; ML</button>
+        <button class="filter-btn" data-cat="devices">📱 Devices</button>
+        <button class="filter-btn" data-cat="internet">🌐 Internet</button>
+        <button class="filter-btn" data-cat="crypto">₿ Crypto</button>
+        <button class="filter-btn" data-cat="gaming">🎮 Gaming</button>
+        <button class="filter-btn" data-cat="space">🚀 Space</button>
+    </div>
+
+    <div class="page">
+        <div class="count-bar" id="count-bar">Showing all 20 facts</div>
+        <div class="dyk-grid" id="dyk-grid"></div>
+        <div style="text-align:center;margin:16px 0;">
+            <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+            <div class="ad-slot" id="ad-infeed" style="max-width:100%;margin-top:6px;">In-Feed · 728×90</div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <p
+                style="font-size:.78rem;color:rgba(245,240,232,.45);font-style:italic;max-width:440px;margin-bottom:16px;line-height:1.65;">
+                Every piece of technology has a root — a forgotten inventor, a failed first attempt. We dig those roots
+                up daily.</p>
+            <div class="footer-bottom">
+                <div>© 2026 RootByte Media · Built in the Philippines 🇵🇭</div>
+                <div style="color:rgba(42,110,74,.7);margin-top:5px;"><a href="privacy.html"
+                        style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="terms.html"
+                        style="color:inherit;text-decoration:underline;">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const CAT_ICONS = { ai: '🤖', devices: '📱', internet: '🌐', crypto: '₿', gaming: '🎮', space: '🚀' };
+        const CAT_LABELS = { ai: 'AI & ML', devices: 'Devices', internet: 'Internet', crypto: 'Crypto', gaming: 'Gaming', space: 'Space Tech' };
+
+        const FACTS = [
+            { id: 'dyk-001', fact: 'The term "Artificial Intelligence" was coined at a 1956 Dartmouth workshop with a total budget of $7,500. That question is now a multi-trillion dollar global industry.', category: 'ai', root_year: 1956, source_article: 'chatgpt-neural-network-history' },
+            { id: 'dyk-002', fact: "E.A. Johnson's 1965 paper described finger-driven capacitive touch — the exact same physics as every modern smartphone screen. He got no patent. No royalties. No fame.", category: 'devices', root_year: 1965, source_article: 'first-touchscreen-1965' },
+            { id: 'dyk-003', fact: "Australia's CSIRO collected over $430 million USD in WiFi patent royalties — the technology inside 5 billion devices was invented while scientists were hunting for evaporating black holes.", category: 'internet', root_year: 1992, source_article: 'wifi-hidden-inventor' },
+            { id: 'dyk-004', fact: "IBM's RAMAC 350 (1956) stored 5 megabytes and weighed over 900kg. A modern microSD card the size of your thumbnail stores 1 terabyte — 200,000× more data in 0.002% of the physical space.", category: 'devices', root_year: 1956, source_article: 'first-hard-drive-ibm' },
+            { id: 'dyk-005', fact: "The first computer bug was a real bug. In 1947, a moth got trapped in a relay of the Harvard Mark II computer. Grace Hopper's team taped it into the logbook: 'First actual case of bug being found.'", category: 'internet', root_year: 1947, source_article: null },
+            { id: 'dyk-006', fact: "The first video game ever was not Pong. It was 'Tennis for Two' built on an oscilloscope in 1958 by physicist William Higinbotham — at a national laboratory open day. He never patented it.", category: 'gaming', root_year: 1958, source_article: null },
+            { id: 'dyk-007', fact: "The Apollo 11 Guidance Computer had 4KB of RAM and ran at 0.043 MHz. Your basic scientific calculator has roughly 100× more processing power. Neil Armstrong landed on the Moon with it.", category: 'space', root_year: 1969, source_article: null },
+            { id: 'dyk-008', fact: "Laszlo Hanyecz spent 10,000 Bitcoin on two Papa John's pizzas on May 22, 2010 — the first real-world Bitcoin transaction. At Bitcoin's all-time high, those pizzas were worth over $700 million.", category: 'crypto', root_year: 2010, source_article: null },
+            { id: 'dyk-009', fact: "The emoji was invented by Shigetaka Kurita in 1999 for NTT DoCoMo Japan. Each of the original 176 emoji was a 12×12 pixel grid. They are now in the Museum of Modern Art collection in New York.", category: 'internet', root_year: 1999, source_article: null },
+            { id: 'dyk-010', fact: "Nokia's internal engineers had a working touchscreen smartphone prototype in 2004 — three years before the iPhone — but management killed the project. Nokia held 40% of the global mobile market at the time.", category: 'devices', root_year: 2004, source_article: null },
+            { id: 'dyk-011', fact: "Google was almost named 'Googol' — a mathematical term for 10 to the power of 100. The domain was misspelled when registered. They kept it.", category: 'internet', root_year: 1997, source_article: null },
+            { id: 'dyk-012', fact: "The first computer programmer in history was Ada Lovelace, who wrote an algorithm for Charles Babbage's Analytical Engine in 1843 — a machine that was never actually built. She was 27.", category: 'ai', root_year: 1843, source_article: null },
+            { id: 'dyk-013', fact: "Atari buried 14 truckloads of unsold cartridges in a New Mexico desert in 1983. It was considered an urban legend until archaeologists dug them up in 2014. The site is now a tourist attraction.", category: 'gaming', root_year: 1983, source_article: null },
+            { id: 'dyk-014', fact: "Sputnik 1 had just four radio antennas and beeped. Its entire scientific payload was two radio transmitters. It started the space race that led to GPS, satellite internet, and weather forecasting.", category: 'space', root_year: 1957, source_article: null },
+            { id: 'dyk-015', fact: "The QWERTY keyboard was designed in 1873 specifically to slow typists down — to prevent typewriter jams. We still use it 150 years later despite having no mechanical need.", category: 'devices', root_year: 1873, source_article: null },
+            { id: 'dyk-016', fact: "Tim Berners-Lee deliberately chose not to patent the World Wide Web. He gave it to the world for free in 1991. Had he patented it, he might have become the world's first trillionaire.", category: 'internet', root_year: 1991, source_article: null },
+            { id: 'dyk-017', fact: "The first iPhone had no App Store. Steve Jobs originally said third-party apps were a security risk and that web apps were sufficient. The App Store launched a year later in July 2008.", category: 'devices', root_year: 2007, source_article: null },
+            { id: 'dyk-018', fact: "Warren McCulloch and Walter Pitts published the mathematical model of the artificial neuron in 1943. Walter Pitts was a 15-year-old runaway living under a bridge. He had memorized Bertrand Russell's Principia Mathematica.", category: 'ai', root_year: 1943, source_article: 'chatgpt-neural-network-history' },
+            { id: 'dyk-019', fact: "The first computer mouse was carved from wood. Douglas Engelbart built it in 1964 at Stanford Research Institute. It had two wheels at right angles. The patent expired before the PC era made it valuable.", category: 'devices', root_year: 1964, source_article: null },
+            { id: 'dyk-020', fact: "YouTube was originally a video dating site. The founders intended it as a way to share video personal ads. They pivoted to general video sharing when almost no one uploaded dating videos.", category: 'internet', root_year: 2005, source_article: null }
+        ];
+
+        let currentCat = 'all';
+
+        function renderFacts(cat) {
+            const filtered = cat === 'all' ? FACTS : FACTS.filter(f => f.category === cat);
+            document.getElementById('count-bar').textContent = `Showing ${filtered.length} fact${filtered.length !== 1 ? 's' : ''}${cat !== 'all' ? ' · ' + CAT_LABELS[cat] : ''}`;
+            document.getElementById('dyk-grid').innerHTML = filtered.map(f => `
+    <div class="dyk-card">
+      <div class="dyk-card-header">
+        <div class="dyk-icon">${CAT_ICONS[f.category] || '💡'}</div>
+        <div>
+          <div class="dyk-cat">${CAT_LABELS[f.category] || f.category}</div>
+          <div class="dyk-year">Root Year: ${f.root_year}</div>
+        </div>
+      </div>
+      <div class="dyk-fact">${f.fact}</div>
+      <div class="dyk-actions">
+        <button class="dyk-share-btn" onclick="copyFact(this, '${f.id}')">📋 Copy</button>
+        <button class="dyk-share-btn" onclick="shareX('${f.id}')">𝕏 Share</button>
+        ${f.source_article ? `<a class="dyk-read-link" href="article.html?slug=${f.source_article}">Full Story →</a>` : ''}
+      </div>
+    </div>`).join('');
+        }
+
+        const factMap = Object.fromEntries(FACTS.map(f => [f.id, f]));
+        function copyFact(btn, id) { navigator.clipboard.writeText(factMap[id].fact + ' — RootByte'); btn.textContent = '✓ Copied!'; setTimeout(() => btn.textContent = '📋 Copy', 2000); }
+        function shareX(id) { const f = factMap[id]; window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('💡 Did you know? ' + f.fact.substring(0, 200) + ' — rootbyte.com')}`, '_blank'); }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentCat = this.dataset.cat;
+                renderFacts(currentCat);
+            });
+        });
+
+        renderFacts('all');
+    </script>
+</body>
+
+</html>

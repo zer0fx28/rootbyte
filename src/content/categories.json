@@ -1,0 +1,77 @@
+{
+  "internet": {
+    "label": "internet",
+    "articles": [
+      {
+        "slug": "2026-02-18-tcp-ip-foundation",
+        "title": "5G Breaks Speed Records. Its Packet-Switching ROOT Goes Back to 1962",
+        "excerpt": "",
+        "root_year": 1962,
+        "root_who": "Paul Baran",
+        "future_year": "",
+        "category": "internet",
+        "date": "2026-02-18",
+        "reading_time": 2,
+        "status": "published"
+      },
+      {
+        "slug": "wifi-hidden-inventor",
+        "title": "The WiFi Inventor Australia Doesn't Know It Has",
+        "excerpt": "",
+        "root_year": 1992,
+        "root_who": "John O'Sullivan & CSIRO Team",
+        "future_year": "2030–2035",
+        "category": "internet",
+        "date": "2026-02-22",
+        "reading_time": 7,
+        "status": "published"
+      }
+    ]
+  },
+  "ai": {
+    "label": "ai",
+    "articles": [
+      {
+        "slug": "chatgpt-neural-network-history",
+        "title": "ChatGPT Is 3 Years Old. The Math Behind It Is 83.",
+        "excerpt": "",
+        "root_year": 1943,
+        "root_who": "Warren McCulloch & Walter Pitts",
+        "future_year": "2028–2035",
+        "category": "ai",
+        "date": "2026-02-22",
+        "reading_time": 8,
+        "status": "published"
+      }
+    ]
+  },
+  "devices": {
+    "label": "devices",
+    "articles": [
+      {
+        "slug": "first-hard-drive-ibm",
+        "title": "IBM's First Hard Drive Weighed a Ton and Stored 5 Megabytes. Its Inventor Was Almost Erased From History.",
+        "excerpt": "",
+        "root_year": 1956,
+        "root_who": "Reynold B. Johnson",
+        "future_year": "2030–2040",
+        "category": "devices",
+        "date": "2026-02-22",
+        "reading_time": 7,
+        "status": "published"
+      },
+      {
+        "slug": "first-touchscreen-1965",
+        "title": "The First Touchscreen Wasn't Apple — It Was Made in 1965",
+        "excerpt": "",
+        "root_year": 1965,
+        "root_who": "E.A. Johnson",
+        "future_year": "2030+",
+        "category": "devices",
+        "date": "2026-02-18",
+        "reading_time": 7,
+        "status": "published"
+      }
+    ]
+  }
+}

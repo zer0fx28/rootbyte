@@ -1,0 +1,55 @@
+name: Breaking News Monitor
+
+on:
+  schedule:
+    # Every 30 minutes, 24/7
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      headline:
+        description: 'Manually set breaking news headline (leave empty for auto)'
+        required: false
+        type: string
+      clear:
+        description: 'Force clear breaking news? (true/false)'
+        required: false
+        default: 'false'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  check-breaking:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run breaking news checker
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.clear }}" = "true" ]; then
+            node scripts/breaking-checker.js --clear
+          elif [ -n "${{ github.event.inputs.headline }}" ]; then
+            node scripts/breaking-checker.js --set "${{ github.event.inputs.headline }}"
+          else
+            node scripts/breaking-checker.js
+          fi
+
+      - name: Commit if breaking.json changed
+        run: |
+          git config --local user.email "bot@rootbyte.com"
+          git config --local user.name "RootByte Breaking Bot"
+          git add src/content/breaking.json
+          git diff --staged --quiet || git commit -m "🔴 Breaking news update $(date '+%Y-%m-%d %H:%M UTC')"
+          git push

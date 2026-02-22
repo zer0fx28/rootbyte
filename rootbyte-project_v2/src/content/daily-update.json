@@ -1,0 +1,53 @@
+{
+    "generated": "2026-02-22T08:34:19+08:00",
+    "top_stories": [
+        {
+            "slug": "chatgpt-neural-network-history",
+            "headline": "ChatGPT Is 3 Years Old. The Math Behind It Is 83.",
+            "category": "ai",
+            "root_year": 1943,
+            "is_hero": true
+        },
+        {
+            "slug": "first-touchscreen-1965",
+            "headline": "The First Touchscreen Wasn't Apple — It Was Made in 1965",
+            "category": "devices",
+            "root_year": 1965,
+            "is_hero": false
+        },
+        {
+            "slug": "wifi-hidden-inventor",
+            "headline": "The WiFi Inventor Australia Doesn't Know It Has",
+            "category": "internet",
+            "root_year": 1992,
+            "is_hero": false
+        },
+        {
+            "slug": "first-hard-drive-ibm",
+            "headline": "IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased.",
+            "category": "devices",
+            "root_year": 1956,
+            "is_hero": false
+        }
+    ],
+    "ticker": [
+        "ChatGPT turns 3 — what 80 years of AI history built it",
+        "Samsung foldable traces to 1994 IBM patent nobody used",
+        "The WiFi inventor Australia doesn't know it has — CSIRO 1992",
+        "XRP history: RipplePay 2004 Vancouver roots",
+        "First hard drive weighed a ton — IBM RAMAC 1956",
+        "QWERTY was designed to slow typists down — 1873",
+        "The first computer bug was a real moth — Harvard 1947",
+        "Apollo 11's computer had less power than your calculator"
+    ],
+    "tomorrow_teaser": {
+        "headline": "The Forgotten Inventor of the First Hard Drive — Erased From History",
+        "preview": "IBM's RAMAC 350 weighed a full ton and stored 5 megabytes. We dig up Reynold Johnson.",
+        "topics": [
+            "Storage History",
+            "IBM RAMAC 1956",
+            "Reynold Johnson",
+            "DNA Storage Future"
+        ]
+    }
+}

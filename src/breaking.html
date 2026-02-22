@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">BREAKING — RootByte</title>
+    <meta name="description" id="meta-desc" content="Breaking tech news — as it happens.">
+    <meta property="og:title" id="og-title" content="BREAKING — RootByte">
+    <meta name="robots" content="noarchive">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --amber: #d4730f;
+            --green: #2a6e4a;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --muted2: #a89e8a;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --muted2: #605a50;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--red);
+            border-bottom: 3px solid #8b1a14;
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+            color: #fff;
+        }
+
+        .logo .dot {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .breaking-badge {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, .2);
+            color: #fff;
+            padding: 3px 10px;
+            animation: badgepulse 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes badgepulse {
+            from {
+                background: rgba(255, 255, 255, .15);
+            }
+
+            to {
+                background: rgba(255, 255, 255, .3);
+            }
+        }
+
+        .btn-home {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, .2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, .3);
+            padding: 6px 14px;
+        }
+
+        .ad-wrap {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 8px 16px;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-family: var(--mono);
+            font-size: .48rem;
+            letter-spacing: 3px;
+            color: var(--muted2);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .ad-slot {
+            background: var(--bg3);
+            border: 1px dashed var(--border);
+            max-width: 728px;
+            margin: 0 auto;
+            padding: 14px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: .62rem;
+            color: var(--muted2);
+        }
+
+        /* Breaking hero */
+        .b-hero {
+            background: var(--red);
+            color: #fff;
+            padding: 40px 16px 36px;
+        }
+
+        .b-hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .b-live-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .b-live-dot {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: livepulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes livepulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .6;
+                transform: scale(1.4);
+            }
+        }
+
+        .b-live-label {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .b-timestamp {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .b-headline {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(2rem, 7vw, 3.8rem);
+            line-height: 1.02;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .b-cat {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: .7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, .2);
+            padding: 4px 12px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .b-share-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .b-share-btn {
+            font-family: var(--mono);
+            font-size: .52rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, .3);
+            color: rgba(255, 255, 255, .85);
+            padding: 6px 14px;
+            border-radius: 100px;
+            transition: all .2s;
+        }
+
+        .b-share-btn:hover {
+            background: rgba(255, 255, 255, .2);
+        }
+
+        /* Content area */
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .article-body {
+            border-top: 4px solid var(--red);
+            padding-top: 20px;
+        }
+
+        .article-eyebrow {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            margin-bottom: 12px;
+        }
+
+        .article-content h2 {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 24px 0 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+
+        .article-content p {
+            font-size: .92rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            color: var(--muted);
+        }
+
+        .article-content p:first-child {
+            color: var(--ink);
+            font-size: 1rem;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .root-connection {
+            background: var(--bg2);
+            border-left: 4px solid var(--green);
+            padding: 16px;
+            margin: 20px 0;
+        }
+
+        .rc-label {
+            font-family: var(--mono);
+            font-size: .5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+
+        .rc-text {
+            font-size: .88rem;
+            line-height: 1.65;
+        }
+
+        .breaking-disclaimer {
+            background: rgba(201, 52, 42, .08);
+            border: 1px solid rgba(201, 52, 42, .2);
+            padding: 12px 16px;
+            margin-top: 16px;
+        }
+
+        .disc-label {
+            font-family: var(--mono);
+            font-size: .48rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 4px;
+        }
+
+        .disc-text {
+            font-size: .78rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        .sidebar-box {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 16px;
+        }
+
+        .sb-head {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .72rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-top: 3px solid var(--red);
+            color: var(--red);
+            padding-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        .ad-sidebar-inner {
+            background: var(--bg3);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: .62rem;
+            color: var(--muted2);
+        }
+
+        /* Inactive state */
+        .b-inactive {
+            text-align: center;
+            padding: 60px 16px;
+        }
+
+        .b-inactive-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .b-inactive-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .b-inactive-sub {
+            font-size: .88rem;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 28px 16px 20px;
+            margin-top: 32px;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 12px;
+            font-family: var(--mono);
+            font-size: .52rem;
+            color: rgba(255, 255, 255, .2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+
+        @media(min-width:900px) {
+            .page {
+                grid-template-columns: 1fr 300px;
+                align-items: start;
+            }
+
+            .b-hero {
+                padding: 48px 32px;
+            }
+
+            .page {
+                padding: 36px 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div class="breaking-badge">🔴 BREAKING NEWS</div>
+            <a class="btn-home" href="index.html">← Home</a>
+        </div>
+    </header>
+    <div class="ad-wrap">
+        <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+        <div class="ad-slot">728 × 90</div>
+    </div>
+
+    <div id="active-view">
+        <div class="b-hero">
+            <div class="b-hero-inner">
+                <div class="b-live-row">
+                    <div class="b-live-dot"></div>
+                    <div class="b-live-label">Breaking · Live Update</div>
+                    <div class="b-timestamp" id="b-timestamp">Loading…</div>
+                </div>
+                <div class="b-cat" id="b-cat">Technology</div>
+                <div class="b-headline" id="b-headline">Loading breaking news…</div>
+                <div class="b-share-row">
+                    <button class="b-share-btn" id="b-share-x">𝕏 Share on X</button>
+                    <button class="b-share-btn" id="b-share-copy">📋 Copy Link</button>
+                    <button class="b-share-btn" id="b-share-fb">📘 Facebook</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <main class="article-body">
+                <div class="article-eyebrow">🔴 Breaking · First Report</div>
+                <div class="article-content" id="article-content">
+                    <p>Loading content…</p>
+                </div>
+                <div class="root-connection" id="root-connection"></div>
+                <div class="breaking-disclaimer">
+                    <div class="disc-label">⚠️ Breaking News Disclaimer</div>
+                    <div class="disc-text">This is a first-report story and details may change. RootByte updates
+                        breaking stories as new information becomes confirmed. Speculative elements are clearly labeled.
+                        Last updated: <span id="b-updated">now</span>.</div>
+                </div>
+            </main>
+            <aside>
+                <div class="sidebar-box" style="margin-bottom:16px;">
+                    <div class="sb-head">Follow This Story</div>
+                    <p style="font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:10px;">Subscribe to get
+                        root context for every breaking tech story.</p>
+                    <input
+                        style="width:100%;background:var(--bg3);border:1px solid var(--border);padding:8px 12px;font-family:var(--mono);font-size:.7rem;color:var(--ink);outline:none;margin-bottom:8px;display:block;"
+                        type="email" placeholder="your@email.com" id="nl-email">
+                    <button
+                        style="width:100%;background:var(--red);color:#fff;font-family:var(--cond);font-weight:800;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;padding:9px;"
+                        id="nl-btn">Get Alerts</button>
+                </div>
+                <div style="margin-bottom:16px;">
+                    <div class="ad-label">Advertisement · Vetted</div>
+                    <div class="ad-sidebar-inner" style="margin-top:5px;">300×250</div>
+                </div>
+                <div class="sidebar-box">
+                    <div class="sb-head">Related Stories</div>
+                    <div id="related-links"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div id="inactive-view" class="b-inactive" style="display:none;">
+        <div class="b-inactive-icon">📡</div>
+        <div class="b-inactive-title">No Breaking News Right Now</div>
+        <div class="b-inactive-sub">Our monitoring bot is watching 200+ tech sources. When a genuine story breaks, this
+            page activates within 30 minutes.</div>
+        <a href="index.html"
+            style="font-family:var(--cond);font-weight:800;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;background:var(--red);color:#fff;padding:10px 24px;display:inline-block;">←
+            Today's Stories</a>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <div class="footer-bottom">
+                <div>© 2026 RootByte Media · Built in the Philippines 🇵🇭</div>
+                <div style="color:rgba(42,110,74,.7);margin-top:5px;"><a href="privacy.html"
+                        style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="terms.html"
+                        style="color:inherit;text-decoration:underline;">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const RELATED = [
+            { slug: 'chatgpt-neural-network-history', title: 'ChatGPT Is 3 Years Old. The Math Behind It Is 83.' },
+            {
+                slug: 'wifi-hidden-inventor', title: 'The WiFi Inventor Australia Doesn't Know It Has'},
+  {
+                    slug: 'first-touchscreen-1965', title: 'The First Touchscreen Wasn't Apple'},
+  { slug: 'first-hard-drive-ibm', title: 'IBM's First Hard Drive Weighed a Ton'}
+];
+        document.getElementById('related-links').innerHTML = RELATED.map(r => `<a href="article.html?slug=${r.slug}" style="display:block;padding:8px 0;border-bottom:1px solid var(--border);font-size:.82rem;line-height:1.4;">${r.title}</a>`).join('');
+
+        async function loadBreaking() {
+            try {
+                const res = await fetch('content/breaking.json?t=' + Date.now());
+                const data = await res.json();
+                const now = new Date();
+                const expires = data.expires ? new Date(data.expires) : null;
+                const isActive = data.active && (!expires || now < expires);
+                if (!isActive) { document.getElementById('active-view').style.display = 'none'; document.getElementById('inactive-view').style.display = 'block'; return; }
+                document.title = 'BREAKING: ' + data.headline + ' — RootByte';
+                document.getElementById('og-title').content = 'BREAKING: ' + data.headline;
+                document.getElementById('b-headline').textContent = data.headline;
+                document.getElementById('b-cat').textContent = (data.category || 'Technology').toUpperCase();
+                const ts = data.timestamp ? new Date(data.timestamp) : new Date();
+                document.getElementById('b-timestamp').textContent = ts.toLocaleString('en-PH', { dateStyle: 'medium', timeStyle: 'short' });
+                document.getElementById('b-updated').textContent = ts.toLocaleTimeString('en-PH', { timeStyle: 'short' });
+                document.getElementById('article-content').innerHTML = data.body || `<p>${data.short || data.headline}</p><p>Full details are being confirmed. Check back for updates.</p>`;
+                if (data.root_connection) { document.getElementById('root-connection').innerHTML = `<div class="rc-label">🌱 The Root</div><div class="rc-text">${data.root_connection}</div>`; } else { document.getElementById('root-connection').style.display = 'none'; }
+                document.getElementById('b-share-x').onclick = () => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('🔴 BREAKING: ' + data.headline + ' — rootbyte.com/breaking.html')}`, '_blank');
+                document.getElementById('b-share-copy').onclick = function () { navigator.clipboard.writeText(window.location.href); this.textContent = '✓ Copied!'; setTimeout(() => this.textContent = '📋 Copy Link', 2000); };
+                document.getElementById('b-share-fb').onclick = () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+            } catch (e) { document.getElementById('active-view').style.display = 'none'; document.getElementById('inactive-view').style.display = 'block'; }
+        }
+        loadBreaking();
+        document.getElementById('nl-btn').addEventListener('click', function () { const v = document.getElementById('nl-email').value; if (v.includes('@') && v.includes('.')) { this.textContent = '✓ Alerts On!'; this.style.background = 'var(--green)'; document.getElementById('nl-email').value = ''; } else { this.textContent = 'Need valid email'; setTimeout(() => this.textContent = 'Get Alerts', 2000); } });
+        setInterval(loadBreaking, 60000); // auto-refresh every minute
+    </script>
+</body>
+
+</html>

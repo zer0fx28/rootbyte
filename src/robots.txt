@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rootbyte.com/sitemap.xml

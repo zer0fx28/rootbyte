@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms &amp; Conditions — RootByte</title>
+    <meta name="description"
+        content="RootByte Terms and Conditions. Governed by Philippine law. Effective February 22, 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+        }
+
+        a {
+            color: var(--red);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .logo .dot {
+            color: var(--red);
+        }
+
+        .btn-sub {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 6px 14px;
+            text-decoration: none;
+        }
+
+        .page-hero {
+            background: var(--ink);
+            padding: 36px 16px;
+            color: var(--bg);
+        }
+
+        .ph-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, .35);
+            margin-bottom: 10px;
+        }
+
+        .page-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .eff-date {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, .4);
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px 16px 60px;
+        }
+
+        .toc {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 18px;
+            margin-bottom: 28px;
+        }
+
+        .toc-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .toc ol {
+            padding-left: 18px;
+        }
+
+        .toc li {
+            font-size: .82rem;
+            line-height: 2;
+            color: var(--muted);
+        }
+
+        .toc a {
+            color: var(--red);
+        }
+
+        h2 {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 32px 0 12px;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 7px;
+        }
+
+        h3 {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 18px 0 7px;
+            color: var(--red);
+        }
+
+        p {
+            font-size: .9rem;
+            line-height: 1.85;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        p strong {
+            color: var(--ink);
+        }
+
+        ul,
+        ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            font-size: .88rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .ph-box {
+            background: rgba(42, 110, 74, .07);
+            border: 1px solid rgba(42, 110, 74, .2);
+            padding: 16px;
+            margin: 14px 0;
+        }
+
+        .ph-label {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #2a6e4a;
+            margin-bottom: 6px;
+        }
+
+        .caution-box {
+            background: rgba(201, 52, 42, .06);
+            border-left: 4px solid var(--red);
+            padding: 14px;
+            margin: 14px 0;
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 24px 16px 18px;
+            margin-top: 0;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 10px;
+            font-family: var(--mono);
+            font-size: .5rem;
+            color: rgba(255, 255, 255, .2);
+            margin-top: 10px;
+        }
+
+        @media(min-width:640px) {
+            .page {
+                padding: 40px 32px 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div
+                style="font-family:var(--mono);font-size:.52rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;">
+                Terms &amp; Conditions</div>
+            <a class="btn-sub" href="index.html">← Home</a>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="ph-inner">
+            <div class="eyebrow">RootByte · Legal</div>
+            <div class="page-title">TERMS &amp; CONDITIONS</div>
+            <div class="eff-date">Effective Date: February 22, 2026 · Version 1.0</div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="toc">
+            <div class="toc-title">Contents</div>
+            <ol>
+                <li><a href="#acceptance">Acceptance of Terms</a></li>
+                <li><a href="#service">Description of Service</a></li>
+                <li><a href="#content">Content &amp; Intellectual Property</a></li>
+                <li><a href="#speculative">Speculative &amp; Future Content</a></li>
+                <li><a href="#user-conduct">User Conduct</a></li>
+                <li><a href="#newsletter">Newsletter Subscription</a></li>
+                <li><a href="#ads-terms">Advertising</a></li>
+                <li><a href="#disclaimers">Disclaimers</a></li>
+                <li><a href="#limitation">Limitation of Liability</a></li>
+                <li><a href="#governing-law">Governing Law</a></li>
+                <li><a href="#dispute">Dispute Resolution</a></li>
+                <li><a href="#changes-terms">Changes to These Terms</a></li>
+                <li><a href="#contact-legal">Contact</a></li>
+            </ol>
+        </div>
+
+        <h2 id="acceptance">1. Acceptance of Terms</h2>
+        <p>By accessing or using <strong>rootbyte.com</strong> ("Website") in any way — including reading content,
+            subscribing to the newsletter, or sharing articles — you agree to be bound by these Terms and Conditions
+            ("Terms"). If you do not agree, do not use the Website.</p>
+        <p>These Terms form a legally binding agreement between you and <strong>RootByte Media</strong>, operating under
+            the laws of the Republic of the Philippines.</p>
+
+        <h2 id="service">2. Description of Service</h2>
+        <p>RootByte is a digital publication that publishes articles tracing the historical origins ("Roots") of modern
+            technology and speculating on future developments. The Website is provided free of charge to readers and is
+            supported by advertising revenue.</p>
+
+        <h2 id="content">3. Content &amp; Intellectual Property</h2>
+        <p>All original content on RootByte — including article text, headlines, graphics, layout, and code — is owned
+            by <strong>RootByte Media</strong> and protected under Philippine and international copyright law (Republic
+            Act 8293, Intellectual Property Code of the Philippines).</p>
+        <ul>
+            <li>You may share article links and short excerpts (under 100 words) with attribution to RootByte and a link
+                to the original article.</li>
+            <li>You may <strong>not</strong> reproduce full articles, sell, sublicense, or commercially exploit RootByte
+                content without written permission.</li>
+            <li>Historical facts, public domain information, and scientific data cited in articles are not claimed as
+                proprietary.</li>
+        </ul>
+
+        <h2 id="speculative">4. Speculative &amp; Future Content — Important Disclaimer</h2>
+        <div class="caution-box">
+            <p><strong>⚠️ All "FUTURE" and "What's Next" sections on RootByte are clearly labeled speculative
+                    content.</strong> They represent editorial opinion, research-based forecasting, or prediction — not
+                fact. Do not make financial, career, health, or other important decisions based on speculative content.
+                RootByte accepts no liability for future predictions that do not materialize.</p>
+        </div>
+        <p>Historical content is researched and verified to the best of our ability. We publish corrections openly when
+            errors are identified. Contact us to report inaccuracies.</p>
+
+        <h2 id="user-conduct">5. User Conduct</h2>
+        <p>By using the Website, you agree not to:</p>
+        <ul>
+            <li>Scrape, crawl, or systematically download content without written permission (automated readers for
+                personal use are permitted).</li>
+            <li>Use the Website in any way that violates Philippine law, including RA 10175 (Cybercrime Prevention Act).
+            </li>
+            <li>Attempt to gain unauthorized access to any part of the Website or its infrastructure.</li>
+            <li>Submit false, misleading, or abusive content via any contact or enquiry form.</li>
+        </ul>
+
+        <h2 id="newsletter">6. Newsletter Subscription</h2>
+        <p>By subscribing to the RootByte newsletter, you consent to receiving periodic email communications containing
+            new article summaries and editorial content. You may unsubscribe at any time by clicking the unsubscribe
+            link in any email. Continued delivery of emails is governed by our <a href="privacy.html">Privacy
+                Policy</a>.</p>
+
+        <h2 id="ads-terms">7. Advertising</h2>
+        <p>The Website displays third-party advertisements served by Google AdSense and potentially other ad networks.
+            RootByte does not endorse any advertised product or service. Advertising relationships do not influence
+            editorial content. We operate a <a href="ad-policy.html">Clean Ads Policy</a> to block harmful ad
+            categories.</p>
+
+        <h2 id="disclaimers">8. Disclaimers</h2>
+        <p>The Website is provided <strong>"as is"</strong> without any warranty, express or implied. RootByte does not
+            guarantee:</p>
+        <ul>
+            <li>Uninterrupted or error-free access to the Website.</li>
+            <li>That all historical information is 100% accurate (we cite sources and correct errors openly).</li>
+            <li>That future predictions or speculative content will prove accurate.</li>
+            <li>That third-party links or external content are accurate, safe, or up-to-date.</li>
+        </ul>
+
+        <h2 id="limitation">9. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by Philippine law, RootByte Media and its operators shall not be liable for
+            any direct, indirect, incidental, special, consequential, or punitive damages arising from your use of the
+            Website or its content — including but not limited to: decisions made based on editorial or speculative
+            content, and loss of data.</p>
+
+        <h2 id="governing-law">10. Governing Law</h2>
+        <div class="ph-box">
+            <div class="ph-label">🇵🇭 Philippine Law Applies</div>
+            <p>These Terms are governed by and construed in accordance with the laws of the <strong>Republic of the
+                    Philippines</strong>, without regard to its conflict of law provisions. Any claim or dispute arising
+                from these Terms shall be subject to the exclusive jurisdiction of the courts of <strong>Makati City,
+                    Metro Manila, Philippines</strong>.</p>
+        </div>
+
+        <h2 id="dispute">11. Dispute Resolution</h2>
+        <h3>11.1 Good Faith Negotiation</h3>
+        <p>Before initiating any formal legal proceedings, both parties agree to attempt good-faith resolution of any
+            dispute within 30 days of written notice.</p>
+        <h3>11.2 Barangay Conciliation (If Applicable)</h3>
+        <p>Where required by the <strong>Katarungang Pambarangay Law (RA 7160, Chapter VII)</strong>, disputes between
+            parties residing in the same barangay or municipality must undergo barangay conciliation before being filed
+            in court.</p>
+        <h3>11.3 Mediation</h3>
+        <p>If good-faith negotiation fails, the parties agree to attempt mediation before accredited mediators of the
+            <strong>Philippine Mediation Center</strong> or the Regional Trial Court.</p>
+
+        <h2 id="changes-terms">12. Changes to These Terms</h2>
+        <p>RootByte reserves the right to modify these Terms at any time. Changes take effect upon posting to this page.
+            Continued use of the Website after changes constitutes acceptance of the updated Terms. Material changes
+            will be announced via the newsletter.</p>
+
+        <h2 id="contact-legal">13. Contact</h2>
+        <p>For legal questions, concerns about these Terms, or takedown requests:</p>
+        <ul>
+            <li><strong>Email:</strong> legal@rootbyte.com</li>
+            <li><strong>Form:</strong> <a href="contact.html">Contact page</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <div class="footer-bottom">© 2026 RootByte Media · Governed by Philippine Law · <a href="privacy.html"
+                    style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="contact.html"
+                    style="color:inherit;text-decoration:underline;">Contact</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>

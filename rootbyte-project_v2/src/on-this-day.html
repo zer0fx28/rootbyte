@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RootByte — On This Day in Tech</title>
+    <meta name="description"
+        content="What happened in tech history on this exact date? From transistors to iPhones — the moments that built the world you live in.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --amber: #d4730f;
+            --green: #2a6e4a;
+            --blue: #1a4e8c;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --muted2: #a89e8a;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --muted2: #605a50;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+        }
+
+        .logo .dot {
+            color: var(--red);
+        }
+
+        .btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+        }
+
+        .btn-icon:hover {
+            background: var(--bg2);
+        }
+
+        .btn-sub {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 6px 14px;
+        }
+
+        .ad-wrap {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 8px 16px;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-family: var(--mono);
+            font-size: .48rem;
+            letter-spacing: 3px;
+            color: var(--muted2);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .ad-slot {
+            background: var(--bg3);
+            border: 1px dashed var(--border);
+            max-width: 728px;
+            margin: 0 auto;
+            padding: 14px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: .62rem;
+            color: var(--muted2);
+        }
+
+        /* Calendar hero */
+        .cal-hero {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 36px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+        }
+
+        .cal-pill {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            border: 1px solid rgba(255, 255, 255, .1);
+            padding: 4px 14px;
+            display: inline-block;
+        }
+
+        .cal-date-big {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(3rem, 12vw, 7rem);
+            color: #fff;
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .cal-date-sub {
+            font-family: var(--mono);
+            font-size: .62rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, .35);
+        }
+
+        .cal-nav {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .cal-nav-btn {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: .72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, .2);
+            color: rgba(255, 255, 255, .7);
+            padding: 6px 16px;
+            transition: all .2s;
+        }
+
+        .cal-nav-btn:hover {
+            background: rgba(255, 255, 255, .1);
+            color: #fff;
+        }
+
+        .today-btn {
+            background: var(--amber);
+            border-color: var(--amber);
+            color: #fff !important;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 28px 16px;
+        }
+
+        .events-container {}
+
+        .event-year-empty {
+            text-align: center;
+            padding: 48px 16px;
+        }
+
+        .event-year-empty-icon {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+        }
+
+        .event-year-empty-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .event-year-empty-sub {
+            font-size: .85rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .event-item {
+            display: flex;
+            gap: 0;
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .event-year-stamp {
+            width: 80px;
+            flex-shrink: 0;
+            padding: 24px 14px 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .event-year-num {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--red);
+            line-height: 1;
+        }
+
+        .event-ago {
+            font-family: var(--mono);
+            font-size: .44rem;
+            letter-spacing: 1px;
+            color: var(--muted2);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .event-body {
+            flex: 1;
+            padding: 20px 0 20px 20px;
+            border-left: 3px solid var(--border);
+        }
+
+        .event-item:first-child .event-body,
+        .event-item:first-child .event-year-stamp {
+            padding-top: 12px;
+        }
+
+        .event-text {
+            font-size: .92rem;
+            line-height: 1.75;
+        }
+
+        .event-share {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .ev-btn {
+            font-family: var(--mono);
+            font-size: .5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            transition: all .2s;
+        }
+
+        .ev-btn:hover {
+            background: var(--ink);
+            color: var(--bg);
+            border-color: var(--ink);
+        }
+
+        .calendar-picker {
+            background: var(--bg2);
+            border: 2px solid var(--ink);
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .cal-pick-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .72rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .cal-pick-input {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cal-pick-select {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: .82rem;
+            letter-spacing: 1px;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            padding: 7px 12px;
+            color: var(--ink);
+        }
+
+        .cal-pick-btn {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: .72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 7px 16px;
+            transition: opacity .2s;
+        }
+
+        .cal-pick-btn:hover {
+            opacity: .85;
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 28px 16px 20px;
+            margin-top: 32px;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 12px;
+            font-family: var(--mono);
+            font-size: .52rem;
+            color: rgba(255, 255, 255, .2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+
+        @media(min-width:640px) {
+            .event-year-stamp {
+                width: 100px;
+            }
+
+            .cal-hero {
+                flex-direction: row;
+                text-align: left;
+                justify-content: center;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div
+                style="font-family:var(--mono);font-size:.52rem;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;">
+                Home › On This Day</div>
+            <div style="display:flex;gap:8px;align-items:center;">
+                <button class="btn-icon" id="theme-btn">🌓</button>
+                <a class="btn-sub" href="index.html">← Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="ad-wrap">
+        <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+        <div class="ad-slot">728 × 90</div>
+    </div>
+
+    <div class="cal-hero">
+        <div>
+            <div class="cal-pill">On This Day in Tech History</div>
+            <div class="cal-date-big" id="hero-date">FEB 22</div>
+            <div class="cal-date-sub" id="hero-year-full">Sunday, February 22, 2026</div>
+        </div>
+        <div class="cal-nav">
+            <button class="cal-nav-btn" id="prev-btn">← Prev</button>
+            <button class="cal-nav-btn today-btn" id="today-btn">Today</button>
+            <button class="cal-nav-btn" id="next-btn">Next →</button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="events-container" id="events-container"></div>
+        <div class="calendar-picker">
+            <div class="cal-pick-title">Jump to Any Date</div>
+            <div class="cal-pick-input">
+                <select class="cal-pick-select" id="pick-month">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select class="cal-pick-select" id="pick-day"></select>
+                <button class="cal-pick-btn" id="pick-go-btn">Go →</button>
+            </div>
+        </div>
+        <div style="text-align:center;margin:16px 0;">
+            <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+            <div class="ad-slot" style="max-width:100%;margin-top:6px;">728 × 90</div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <p
+                style="font-size:.78rem;color:rgba(245,240,232,.45);font-style:italic;max-width:440px;margin-bottom:16px;line-height:1.65;">
+                Every piece of technology has a root. We dig those roots up daily.</p>
+            <div class="footer-bottom">
+                <div>© 2026 RootByte Media · Built in the Philippines 🇵🇭</div>
+                <div style="color:rgba(42,110,74,.7);margin-top:5px;"><a href="privacy.html"
+                        style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="terms.html"
+                        style="color:inherit;text-decoration:underline;">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        const EVENTS = { "01-01": [{ year: 1983, event: "The ARPANET officially adopted TCP/IP — the protocol that became the foundation of the modern internet." }], "01-07": [{ year: 1979, event: "Apple Computer goes public on the stock market, creating more millionaires in a single day than any company in history up to that point." }], "01-09": [{ year: 2007, event: "Steve Jobs unveils the first iPhone at Macworld — calling it 'an iPod, a phone, and an internet communicator' all in one device." }], "01-24": [{ year: 1984, event: "Apple introduces the Macintosh with the iconic '1984' Super Bowl ad. It features a graphical interface and mouse — radical for its time." }], "02-07": [{ year: 1984, event: "The first Macintosh goes on sale to the public for $2,495 — the equivalent of about $7,500 today." }], "02-14": [{ year: 2005, event: "YouTube.com is registered as a domain name by three former PayPal employees." }], "02-18": [{ year: 1930, event: "Vannevar Bush begins work at MIT on the Differential Analyzer — one of the first practical analog computers." }], "02-22": [{ year: 1997, event: "Dolly the sheep — the first mammal cloned from an adult somatic cell — is revealed to the public, igniting global debates about biotechnology ethics." }, { year: 2006, event: "Twitter is founded internally at Odeo. Jack Dorsey sends the first tweet: 'just setting up my twttr'." }], "03-01": [{ year: 1954, event: "Texas Instruments announces the first commercial silicon transistor, enabling miniaturization that leads to every modern chip." }], "03-12": [{ year: 1989, event: "Tim Berners-Lee submits his proposal for the World Wide Web to CERN. His supervisor writes 'Vague but exciting' on the cover page." }], "04-01": [{ year: 1976, event: "Apple Computer Company is founded by Steve Jobs, Steve Wozniak, and Ronald Wayne. Wayne sells his 10% share for $800." }], "04-04": [{ year: 1975, event: "Bill Gates and Paul Allen found Microsoft in Albuquerque, New Mexico." }], "04-23": [{ year: 2005, event: "The very first YouTube video is uploaded: 'Me at the zoo' by co-founder Jawed Karim. It is still live today." }], "05-22": [{ year: 2010, event: "Laszlo Hanyecz pays 10,000 Bitcoin for two Papa John's pizzas — the first real-world commercial Bitcoin transaction. May 22 is now 'Bitcoin Pizza Day'." }], "06-04": [{ year: 1996, event: "The first Ariane 5 rocket explodes 37 seconds after liftoff due to a software integer overflow bug. The bug cost $370 million USD." }], "06-29": [{ year: 2007, event: "The original iPhone goes on sale. Within 74 hours, over 270,000 units are sold." }], "07-01": [{ year: 1979, event: "Sony releases the Walkman in Japan — the first truly personal music device." }], "07-09": [{ year: 1956, event: "William Shockley founds Shockley Semiconductor Laboratory in Mountain View, CA — the first semiconductor company in what will become Silicon Valley." }], "07-16": [{ year: 1969, event: "Apollo 11 launches from Kennedy Space Center toward the Moon." }], "07-20": [{ year: 1969, event: "Neil Armstrong becomes the first human to walk on the Moon. The Apollo Guidance Computer had 4KB of RAM." }], "08-06": [{ year: 1991, event: "Tim Berners-Lee publishes the first website at CERN. The page is still live at info.cern.ch." }], "08-12": [{ year: 1981, event: "IBM releases the IBM Personal Computer — running MS-DOS licensed from Microsoft." }], "08-24": [{ year: 1995, event: "Windows 95 launches with a $300 million marketing campaign. Over a million copies sell in the first 4 days." }], "09-04": [{ year: 1998, event: "Google is officially incorporated by Larry Page and Sergey Brin in a Menlo Park garage." }], "09-13": [{ year: 1956, event: "IBM ships the RAMAC 305 with the world's first hard disk drive. It weighs 971kg and stores 5 megabytes." }], "10-04": [{ year: 1957, event: "The Soviet Union launches Sputnik 1 — the first artificial satellite. The Space Age begins." }], "10-22": [{ year: 1968, event: "Douglas Engelbart demonstrates the mouse, hypertext, video conferencing, and collaborative editing in 'The Mother of All Demos'." }], "10-29": [{ year: 1969, event: "The first message is sent over ARPANET. The message was 'login' — the system crashed after 'lo'. The internet's first two letters were 'lo'." }], "11-30": [{ year: 2022, event: "OpenAI launches ChatGPT publicly. In 5 days: 1 million users. In 2 months: 100 million — the fastest consumer product adoption in history." }], "12-09": [{ year: 1968, event: "Douglas Engelbart demonstrates the first computer mouse and hyperlinks in 'The Mother of All Demos' in San Francisco." }], "12-23": [{ year: 1947, event: "Bell Labs scientists demonstrate the first working transistor. It replaces vacuum tubes and enables all modern electronics." }] };
+
+        const now = new Date('2026-02-22T08:34:19+08:00');
+        let viewDate = new Date(now);
+
+        function pad(n) { return String(n).padStart(2, '0'); }
+        function mmdd(d) { return `${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; }
+
+        function renderDate(d) {
+            const key = mmdd(d);
+            const evts = EVENTS[key] || [];
+            document.getElementById('hero-date').textContent = `${MONTHS[d.getMonth()].substring(0, 3).toUpperCase()} ${d.getDate()}`;
+            document.getElementById('hero-year-full').textContent = `${DAYS[d.getDay()]}, ${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+            const currentYear = now.getFullYear();
+            if (evts.length === 0) {
+                document.getElementById('events-container').innerHTML = `<div class="event-year-empty"><div class="event-year-empty-icon">📡</div><div class="event-year-empty-title">No Events Logged Yet</div><div class="event-year-empty-sub">Our archive doesn't have recorded tech history for ${MONTHS[d.getMonth()]} ${d.getDate()} yet.<br>New events are added weekly. <a href="index.html" style="color:var(--red);">Return to today's stories →</a></div></div>`;
+                return;
+            }
+            document.getElementById('events-container').innerHTML = evts.sort((a, b) => b.year - a.year).map(e => {
+                const ago = currentYear - e.year;
+                return `<div class="event-item">
+      <div class="event-year-stamp"><div class="event-year-num">${e.year}</div><div class="event-ago">${ago} yrs ago</div></div>
+      <div class="event-body">
+        <div class="event-text">${e.event}</div>
+        <div class="event-share">
+          <button class="ev-btn" onclick="shareThis('${e.year}','${e.event.replace(/'/g, '').substring(0, 80)}')">𝕏 Share</button>
+          <button class="ev-btn" onclick="copyThis(this,'${e.year}','${e.event.replace(/'/g, '').substring(0, 120)}')">📋 Copy</button>
+        </div>
+      </div>
+    </div>`;
+            }).join('');
+        }
+
+        function shareThis(yr, txt) { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent('🕰️ On this day in ' + yr + ': ' + txt + ' — rootbyte.com')}`, '_blank'); }
+        function copyThis(btn, yr, txt) { navigator.clipboard.writeText('On this day in ' + yr + ': ' + txt + ' — rootbyte.com'); btn.textContent = '✓ Copied!'; setTimeout(() => btn.textContent = '📋 Copy', 2000); }
+
+        document.getElementById('prev-btn').addEventListener('click', () => { viewDate.setDate(viewDate.getDate() - 1); renderDate(viewDate); });
+        document.getElementById('next-btn').addEventListener('click', () => { viewDate.setDate(viewDate.getDate() + 1); renderDate(viewDate); });
+        document.getElementById('today-btn').addEventListener('click', () => { viewDate = new Date(now); renderDate(viewDate); });
+        document.getElementById('theme-btn').addEventListener('click', () => { const c = document.documentElement.getAttribute('data-theme'); document.documentElement.setAttribute('data-theme', c === 'dark' ? '' : 'dark'); });
+
+        // Date picker
+        const daySelect = document.getElementById('pick-day');
+        for (let i = 1; i <= 31; i++) { const o = document.createElement('option'); o.value = pad(i); o.textContent = i; daySelect.appendChild(o); }
+        const mSel = document.getElementById('pick-month');
+        mSel.value = pad(viewDate.getMonth() + 1);
+        daySelect.value = pad(viewDate.getDate());
+        document.getElementById('pick-go-btn').addEventListener('click', () => { const m = mSel.value, d = daySelect.value; viewDate = new Date(now); viewDate.setMonth(parseInt(m) - 1); viewDate.setDate(parseInt(d)); renderDate(viewDate); });
+
+        renderDate(viewDate);
+    </script>
+</body>
+
+</html>

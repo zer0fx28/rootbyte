@@ -1,0 +1,91 @@
+{
+    "ai": {
+        "label": "AI & ML",
+        "icon": "🤖",
+        "tagline": "The machines didn't think themselves up. Humans did — 80 years before anyone noticed.",
+        "color": "#1a4e8c",
+        "articles": [
+            {
+                "slug": "chatgpt-neural-network-history",
+                "title": "ChatGPT Is 3 Years Old. The Math Behind It Is 83.",
+                "excerpt": "Everyone knows about ChatGPT. Almost nobody knows the 83-year chain of math that had to happen first.",
+                "root_year": 1943,
+                "root_who": "McCulloch & Pitts",
+                "future_year": "2028–2035",
+                "category": "ai",
+                "date": "2026-02-22",
+                "reading_time": 8
+            }
+        ]
+    },
+    "devices": {
+        "label": "Devices",
+        "icon": "📱",
+        "tagline": "Every touchscreen, hard drive, and camera traces back to an inventor nobody named a building after.",
+        "color": "#d4730f",
+        "articles": [
+            {
+                "slug": "first-touchscreen-1965",
+                "title": "The First Touchscreen Wasn't Apple — It Was Made in 1965",
+                "excerpt": "E.A. Johnson built a capacitive touch display 42 years before the iPhone. Same technology. Zero credit.",
+                "root_year": 1965,
+                "root_who": "E.A. Johnson",
+                "future_year": "2030+",
+                "category": "devices",
+                "date": "2026-02-18",
+                "reading_time": 7
+            },
+            {
+                "slug": "first-hard-drive-ibm",
+                "title": "IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased From History.",
+                "excerpt": "Reynold Johnson gave every computer its memory in 1956. IBM named a lab annex after him. Almost nobody knows who he was.",
+                "root_year": 1956,
+                "root_who": "Reynold B. Johnson",
+                "future_year": "2030–2040",
+                "category": "devices",
+                "date": "2026-02-22",
+                "reading_time": 7
+            }
+        ]
+    },
+    "internet": {
+        "label": "Internet",
+        "icon": "🌐",
+        "tagline": "The Web was invented once, for free. Everything built on top of it was built on that gift.",
+        "color": "#2a6e4a",
+        "articles": [
+            {
+                "slug": "wifi-hidden-inventor",
+                "title": "The WiFi Inventor Australia Doesn't Know It Has",
+                "excerpt": "CSIRO scientists hunting for black holes accidentally invented the math that powers all WiFi.",
+                "root_year": 1992,
+                "root_who": "John O'Sullivan & CSIRO",
+                "future_year": "2030–2035",
+                "category": "internet",
+                "date": "2026-02-22",
+                "reading_time": 7
+            }
+        ]
+    },
+    "crypto": {
+        "label": "Crypto",
+        "icon": "₿",
+        "tagline": "Digital money was theorized in the 1980s. It took 30 more years and a pseudonym to launch it.",
+        "color": "#c9342a",
+        "articles": []
+    },
+    "gaming": {
+        "label": "Gaming",
+        "icon": "🎮",
+        "tagline": "Gaming survived a total industry collapse in 1983. The company that saved it was a playing card manufacturer.",
+        "color": "#5b21b6",
+        "articles": []
+    },
+    "space": {
+        "label": "Space",
+        "icon": "🚀",
+        "tagline": "We landed on the Moon with 4KB of RAM. The next landing will use AI trained on the first.",
+        "color": "#1e40af",
+        "articles": []
+    }
+}

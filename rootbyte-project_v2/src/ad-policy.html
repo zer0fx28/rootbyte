@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Ads Policy — RootByte</title>
+    <meta name="description"
+        content="RootByte's Clean Ads Policy. We permanently block gambling, adult content, crypto scams, and other harmful ad categories. Here's exactly how.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --green: #2a6e4a;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+        }
+
+        a {
+            color: var(--red);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .logo .dot {
+            color: var(--red);
+        }
+
+        .btn-sub {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: .65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 6px 14px;
+            text-decoration: none;
+        }
+
+        .page-hero {
+            background: var(--green);
+            padding: 40px 16px;
+            color: #fff;
+        }
+
+        .ph-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .4);
+            margin-bottom: 10px;
+        }
+
+        .page-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-family: var(--mono);
+            font-size: .5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, .3);
+            padding: 4px 12px;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 36px 16px 60px;
+        }
+
+        h2 {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 32px 0 12px;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 7px;
+        }
+
+        p {
+            font-size: .9rem;
+            line-height: 1.85;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        p strong {
+            color: var(--ink);
+        }
+
+        .blocked-section {
+            margin: 14px 0;
+        }
+
+        .blocked-category {
+            margin-bottom: 12px;
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            padding: 14px 16px;
+            border-left: 4px solid var(--red);
+        }
+
+        .bc-name {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bc-name::before {
+            content: '✗';
+            background: var(--red);
+            color: #fff;
+            padding: 1px 5px;
+            font-size: .75rem;
+        }
+
+        .bc-why {
+            font-size: .82rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .allowed-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 14px 0;
+        }
+
+        .al-item {
+            background: rgba(42, 110, 74, .07);
+            border: 1px solid rgba(42, 110, 74, .2);
+            padding: 12px 14px;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .al-icon {
+            color: var(--green);
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .al-label {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: .75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .al-desc {
+            font-size: .75rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .report-box {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 20px;
+            margin-top: 24px;
+        }
+
+        .report-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 8px;
+        }
+
+        .report-sub {
+            font-size: .85rem;
+            color: rgba(245, 240, 232, .6);
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+
+        .report-btn {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: .7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 9px 20px;
+            display: inline-block;
+            text-decoration: none !important;
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 24px 16px 18px;
+            margin-top: 0;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 10px;
+            font-family: var(--mono);
+            font-size: .5rem;
+            color: rgba(255, 255, 255, .2);
+            margin-top: 10px;
+        }
+
+        @media(min-width:640px) {
+            .page {
+                padding: 40px 32px 60px;
+            }
+
+            .allowed-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div
+                style="font-family:var(--mono);font-size:.52rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;">
+                Ad Policy</div>
+            <a class="btn-sub" href="index.html">← Home</a>
+        </div>
+    </header>
+    <div class="page-hero">
+        <div class="ph-inner">
+            <div class="eyebrow">RootByte · Standards</div>
+            <div class="page-title">🛡️ CLEAN ADS POLICY</div>
+            <div class="badge-row">
+                <div class="badge">No Gambling</div>
+                <div class="badge">No Adult Content</div>
+                <div class="badge">No Crypto Scams</div>
+                <div class="badge">No Predatory Lending</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <p>RootByte exists to inform, not to exploit. We accept advertising to keep the website free — but we enforce
+            strict rules about what ads can appear here. <strong>Our readers should never feel exposed to misleading,
+                harmful, or predatory content because they visited RootByte.</strong></p>
+        <p>These rules apply to all ad networks and direct sponsors operating on this site.</p>
+
+        <h2>Permanently Blocked Categories</h2>
+        <div class="blocked-section">
+            <div class="blocked-category">
+                <div class="bc-name">Gambling &amp; Betting</div>
+                <div class="bc-why">Online casinos, sports betting apps, poker sites, slot machine apps, and any game of
+                    chance for money. This includes locally-legal PAGCOR-licensed platforms.</div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Adult Content</div>
+                <div class="bc-why">Sexually explicit material, adult dating sites, and sexual services of any kind.
+                </div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Cryptocurrency Scams &amp; High-Risk Crypto Promotions</div>
+                <div class="bc-why">ICOs, NFT projects promising returns, unregistered exchanges, "guaranteed crypto
+                    profits", and any crypto project not registered with the SEC Philippines.</div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Predatory Lending &amp; Payday Loans</div>
+                <div class="bc-why">High-interest short-term loans, unlicensed lending apps, and lending with APR over
+                    48% (Philippine SEC maximum for consumer lending).</div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Political Propaganda &amp; Disinformation</div>
+                <div class="bc-why">Political campaign ads, partisan political messaging, election interference content,
+                    and government propaganda of any kind.</div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Malware, Scareware &amp; Misleading Software</div>
+                <div class="bc-why">Fake virus alerts, fake software updates, bundled adware, and any ad designed to
+                    trick users into downloading software.</div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Weight Loss Scams &amp; Miracle Health Claims</div>
+                <div class="bc-why">Ads making unsubstantiated health claims, diet pills, detox teas, and any product
+                    not approved by the Philippine FDA for the advertised claim.</div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Racial, Religious, or Discriminatory Targeting</div>
+                <div class="bc-why">Any ad that targets or excludes audiences based on race, religion, gender, sexual
+                    orientation, disability, or national origin.</div>
+            </div>
+            <div class="blocked-category">
+                <div class="bc-name">Clickbait &amp; Fake News Disguised as Articles</div>
+                <div class="bc-why">Ads designed to look like editorial content without clear "Advertisement" labeling,
+                    and ads linking to disinformation websites.</div>
+            </div>
+        </div>
+
+        <h2>What We Do Accept</h2>
+        <div class="allowed-grid">
+            <div class="al-item">
+                <div class="al-icon">✓</div>
+                <div>
+                    <div class="al-label">Tech Products &amp; Software</div>
+                    <div class="al-desc">Legitimate software, apps, devices, and services.</div>
+                </div>
+            </div>
+            <div class="al-item">
+                <div class="al-icon">✓</div>
+                <div>
+                    <div class="al-label">Education &amp; Online Courses</div>
+                    <div class="al-desc">Accredited institutions and legitimate e-learning.</div>
+                </div>
+            </div>
+            <div class="al-item">
+                <div class="al-icon">✓</div>
+                <div>
+                    <div class="al-label">Books &amp; Publications</div>
+                    <div class="al-desc">Publishers, authors, and reading apps.</div>
+                </div>
+            </div>
+            <div class="al-item">
+                <div class="al-icon">✓</div>
+                <div>
+                    <div class="al-label">Professional Services</div>
+                    <div class="al-desc">Licensed legal, accounting, and consulting services.</div>
+                </div>
+            </div>
+            <div class="al-item">
+                <div class="al-icon">✓</div>
+                <div>
+                    <div class="al-label">Travel &amp; Hospitality</div>
+                    <div class="al-desc">Legitimate airlines, hotels, and travel booking platforms.</div>
+                </div>
+            </div>
+            <div class="al-item">
+                <div class="al-icon">✓</div>
+                <div>
+                    <div class="al-label">Licensed Financial Products</div>
+                    <div class="al-desc">SEC/BSP-registered banks, brokerages, and insurance.</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>How We Enforce This</h2>
+        <p><strong>Google AdSense blocking:</strong> We use Google AdSense's Ad Review Center to block all sensitive
+            categories and flag specific advertisers. Blocked categories are re-reviewed quarterly.</p>
+        <p><strong>Direct advertiser vetting:</strong> All direct advertisers must disclose their product category and
+            provide a landing page URL before any campaign runs. We reserve the right to refuse any advertiser without
+            explanation.</p>
+        <p><strong>Reader reporting:</strong> If you see an ad that violates this policy, report it below. We
+            investigate all reports within 48 hours and remove violating ads immediately when confirmed.</p>
+
+        <div class="report-box">
+            <div class="report-title">Seen a Violating Ad?</div>
+            <div class="report-sub">Take a screenshot and describe what you saw. We take every report seriously and will
+                act within 48 hours.</div>
+            <a class="report-btn" href="contact.html">Report an Ad →</a>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <div class="footer-bottom">© 2026 RootByte Media · <a href="privacy.html"
+                    style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="terms.html"
+                    style="color:inherit;text-decoration:underline;">Terms</a> · <a href="advertise.html"
+                    style="color:inherit;text-decoration:underline;">Advertise</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>

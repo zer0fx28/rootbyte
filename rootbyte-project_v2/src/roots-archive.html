@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RootByte — Roots Archive</title>
+    <meta name="description"
+        content="Browse every technology root we've uncovered — from the 1800s to the near future. Search by era, category, or root year.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #c9342a;
+            --amber: #d4730f;
+            --green: #2a6e4a;
+            --blue: #1a4e8c;
+            --bg: #f5f0e8;
+            --bg2: #ede8dc;
+            --bg3: #e4ddd0;
+            --ink: #0f0e0c;
+            --muted: #7a7060;
+            --muted2: #a89e8a;
+            --border: rgba(15, 14, 12, 0.12);
+            --serif: 'Libre Baskerville', Georgia, serif;
+            --cond: 'Barlow Condensed', sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg: #12110e;
+            --bg2: #1a1916;
+            --bg3: #222018;
+            --ink: #f0ebe0;
+            --muted: #8a8070;
+            --muted2: #605a50;
+            --border: rgba(240, 235, 224, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+
+        .masthead {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink);
+        }
+
+        .mh-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+        }
+
+        .logo .dot {
+            color: var(--red);
+        }
+
+        .btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+        }
+
+        .btn-icon:hover {
+            background: var(--bg2);
+        }
+
+        .btn-sub {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--red);
+            color: #fff;
+            padding: 6px 14px;
+        }
+
+        .ad-wrap {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 8px 16px;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-family: var(--mono);
+            font-size: .48rem;
+            letter-spacing: 3px;
+            color: var(--muted2);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .ad-slot {
+            background: var(--bg3);
+            border: 1px dashed var(--border);
+            max-width: 728px;
+            margin: 0 auto;
+            padding: 14px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--mono);
+            font-size: .62rem;
+            color: var(--muted2);
+        }
+
+        /* Archive hero */
+        .arch-hero {
+            background: var(--ink);
+            padding: 36px 16px;
+            color: var(--bg);
+        }
+
+        .arch-hero-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .arch-eyebrow {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            margin-bottom: 10px;
+        }
+
+        .arch-title {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: 2px;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .arch-sub {
+            font-size: .88rem;
+            color: rgba(245, 240, 232, .5);
+            font-style: italic;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        /* Horizontal timeline */
+        .timeline-scroll {
+            background: var(--bg2);
+            border-bottom: 2px solid var(--ink);
+            border-top: 1px solid var(--border);
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 0 16px;
+        }
+
+        .timeline-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .timeline-inner {
+            display: flex;
+            gap: 0;
+            min-width: max-content;
+            position: relative;
+            padding: 0;
+        }
+
+        .timeline-inner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--ink);
+        }
+
+        .tl-era {
+            padding: 14px 24px;
+            cursor: pointer;
+            position: relative;
+            transition: background .2s;
+        }
+
+        .tl-era:hover {
+            background: var(--bg3);
+        }
+
+        .tl-era.active {
+            background: var(--bg3);
+        }
+
+        .tl-era-label {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: .8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .tl-era.active .tl-era-label {
+            color: var(--ink);
+        }
+
+        .tl-era-count {
+            font-family: var(--mono);
+            font-size: .48rem;
+            color: var(--muted2);
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+
+        .tl-era::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--red);
+            transition: width .25s;
+        }
+
+        .tl-era.active::after {
+            width: 100%;
+        }
+
+        /* Filters toolbar */
+        .filters-bar {
+            background: var(--bg2);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-chip {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: .65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            padding: 5px 12px;
+            transition: all .2s;
+            cursor: pointer;
+        }
+
+        .filter-chip.active,
+        .filter-chip:hover {
+            background: var(--ink);
+            color: var(--bg);
+            border-color: var(--ink);
+        }
+
+        .search-input {
+            font-family: var(--mono);
+            font-size: .7rem;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            color: var(--ink);
+            outline: none;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-input::placeholder {
+            color: var(--muted2);
+        }
+
+        .page {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        .results-count {
+            font-family: var(--mono);
+            font-size: .55rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Root cards */
+        .roots-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .root-card {
+            display: flex;
+            gap: 0;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all .2s;
+        }
+
+        .root-card:hover {
+            border-color: var(--ink);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .07);
+        }
+
+        .rc-year-col {
+            width: 90px;
+            flex-shrink: 0;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 16px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rc-year {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--red);
+            text-align: center;
+            line-height: 1;
+        }
+
+        .rc-cat-icon {
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        .rc-body {
+            flex: 1;
+            padding: 16px;
+            background: var(--bg);
+        }
+
+        .rc-who {
+            font-family: var(--mono);
+            font-size: .48rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            margin-bottom: 5px;
+        }
+
+        .rc-title {
+            font-family: var(--cond);
+            font-weight: 800;
+            font-size: 1.05rem;
+            line-height: 1.1;
+            margin-bottom: 7px;
+        }
+
+        .rc-excerpt {
+            font-size: .8rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .rc-triptych {
+            display: flex;
+            gap: 0;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+
+        .rct-node {
+            flex: 1;
+            text-align: center;
+        }
+
+        .rct-label {
+            font-family: var(--mono);
+            font-size: .44rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted2);
+            display: block;
+        }
+
+        .rct-val {
+            font-family: var(--cond);
+            font-weight: 700;
+            font-size: .65rem;
+            color: var(--ink);
+            display: block;
+            margin-top: 1px;
+        }
+
+        .rct-node.past .rct-val {
+            color: var(--green);
+        }
+
+        .rct-node.future .rct-val {
+            color: #7040c0;
+        }
+
+        .rc-read {
+            font-family: var(--mono);
+            font-size: .52rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .rc-read:hover {
+            color: var(--ink);
+        }
+
+        footer {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 28px 16px 20px;
+            margin-top: 32px;
+        }
+
+        .footer-logo {
+            font-family: var(--cond);
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+        }
+
+        .footer-logo .dot {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            padding-top: 12px;
+            font-family: var(--mono);
+            font-size: .52rem;
+            color: rgba(255, 255, 255, .2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+
+        @media(min-width:640px) {
+            .roots-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .rc-year-col {
+                width: 100px;
+            }
+        }
+
+        @media(min-width:900px) {
+            .roots-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .page {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="mh-top">
+            <a class="logo" href="index.html">ROOT<span class="dot">•</span>BYTE</a>
+            <div
+                style="font-family:var(--mono);font-size:.52rem;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;">
+                Home › Roots Archive</div>
+            <div style="display:flex;gap:8px;align-items:center;">
+                <button class="btn-icon" id="theme-btn">🌓</button>
+                <a class="btn-sub" href="index.html">← Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="ad-wrap">
+        <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+        <div class="ad-slot">728 × 90</div>
+    </div>
+
+    <div class="arch-hero">
+        <div class="arch-hero-inner">
+            <div class="arch-eyebrow">RootByte · Every Root We've Uncovered</div>
+            <div class="arch-title">THE ROOTS<br><span style="color:var(--red);">ARCHIVE</span></div>
+            <div class="arch-sub">Every story on RootByte traces today's tech back to its forgotten origin — and forward
+                to where it's going. Browse them all here.</div>
+        </div>
+    </div>
+
+    <div class="timeline-scroll">
+        <div class="timeline-inner" id="timeline"></div>
+    </div>
+
+    <div class="filters-bar">
+        <button class="filter-chip active" data-cat="all">All</button>
+        <button class="filter-chip" data-cat="ai">🤖 AI</button>
+        <button class="filter-chip" data-cat="devices">📱 Devices</button>
+        <button class="filter-chip" data-cat="internet">🌐 Internet</button>
+        <button class="filter-chip" data-cat="crypto">₿ Crypto</button>
+        <button class="filter-chip" data-cat="gaming">🎮 Gaming</button>
+        <button class="filter-chip" data-cat="space">🚀 Space</button>
+        <input class="search-input" id="search-input" type="text" placeholder="Search titles, inventors, years...">
+    </div>
+
+    <div class="page">
+        <div class="results-count" id="results-count">Showing 4 articles</div>
+        <div class="roots-grid" id="roots-grid"></div>
+        <div style="text-align:center;margin:16px 0;">
+            <div class="ad-label">Advertisement · Vetted &amp; Clean</div>
+            <div class="ad-slot" style="max-width:100%;margin-top:6px;">728 × 90</div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1180px;margin:0 auto;">
+            <div class="footer-logo">ROOT<span class="dot">•</span>BYTE</div>
+            <p
+                style="font-size:.78rem;color:rgba(245,240,232,.45);font-style:italic;max-width:440px;margin-bottom:16px;line-height:1.65;">
+                Every piece of technology has a root. We dig those roots up daily.</p>
+            <div class="footer-bottom">
+                <div>© 2026 RootByte Media · Built in the Philippines 🇵🇭</div>
+                <div style="color:rgba(42,110,74,.7);margin-top:5px;"><a href="privacy.html"
+                        style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="terms.html"
+                        style="color:inherit;text-decoration:underline;">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const CAT_ICONS = { ai: '🤖', devices: '📱', internet: '🌐', crypto: '₿', gaming: '🎮', space: '🚀' };
+        const ALL = [
+            { slug: 'chatgpt-neural-network-history', title: "ChatGPT Is 3 Years Old. The Math Behind It Is 83.", excerpt: "Everyone knows ChatGPT. Almost nobody knows the 83-year chain of math that had to happen first.", root_year: 1943, root_who: 'McCulloch & Pitts, MIT', future_year: '2028–2035', category: 'ai', date: 'Feb 22, 2026' },
+            { slug: 'first-touchscreen-1965', title: "The First Touchscreen Wasn't Apple — It Was Made in 1965", excerpt: "E.A. Johnson built a capacitive touch display 42 years before the iPhone. Same technology. Zero credit.", root_year: 1965, root_who: 'E.A. Johnson, Royal Radar Est.', future_year: '2030+', category: 'devices', date: 'Feb 18, 2026' },
+            { slug: 'first-hard-drive-ibm', title: "IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased.", excerpt: "Reynold Johnson gave every computer its memory in 1956. IBM named a lab annex after him. Almost nobody knows who he was.", root_year: 1956, root_who: 'Reynold B. Johnson, IBM', future_year: '2030–2040', category: 'devices', date: 'Feb 22, 2026' },
+            { slug: 'wifi-hidden-inventor', title: "The WiFi Inventor Australia Doesn't Know It Has", excerpt: "CSIRO scientists hunting for black holes accidentally invented the math that powers all WiFi.", root_year: 1992, root_who: "John O'Sullivan & CSIRO", future_year: '2030–2035', category: 'internet', date: 'Feb 22, 2026' }
+        ];
+
+        const ERAS = [
+            { label: '1800s', min: 1800, max: 1899 }, { label: '1900–1939', min: 1900, max: 1939 }, { label: '1940s–60s', min: 1940, max: 1969 },
+            { label: '1970s–80s', min: 1970, max: 1989 }, { label: '1990s', min: 1990, max: 1999 }, { label: '2000s', min: 2000, max: 2009 },
+            { label: '2010s', min: 2010, max: 2019 }, { label: 'Now', min: 2020, max: 2099 }
+        ];
+
+        let activeCat = 'all', activeEra = null, searchQ = '';
+
+        const tl = document.getElementById('timeline');
+        const allBtn = document.createElement('button');
+        allBtn.className = 'tl-era active'; allBtn.innerHTML = '<div class="tl-era-label">All Time</div><div class="tl-era-count">' + ALL.length + ' articles</div>'; allBtn.dataset.era = 'all';
+        tl.appendChild(allBtn);
+        ERAS.forEach(e => {
+            const count = ALL.filter(a => a.root_year >= e.min && a.root_year <= e.max).length;
+            const btn = document.createElement('button'); btn.className = 'tl-era'; btn.dataset.eraMin = e.min; btn.dataset.eraMax = e.max;
+            btn.innerHTML = `<div class="tl-era-label">${e.label}</div><div class="tl-era-count">${count} article${count !== 1 ? 's' : ''}</div>`;
+            tl.appendChild(btn);
+        });
+
+        function render() {
+            let data = ALL;
+            if (activeCat !== 'all') data = data.filter(a => a.category === activeCat);
+            if (activeEra) data = data.filter(a => a.root_year >= activeEra.min && a.root_year <= activeEra.max);
+            if (searchQ) data = data.filter(a => a.title.toLowerCase().includes(searchQ) || a.root_who.toLowerCase().includes(searchQ) || String(a.root_year).includes(searchQ));
+            data = data.sort((a, b) => a.root_year - b.root_year);
+            document.getElementById('results-count').textContent = `Showing ${data.length} article${data.length !== 1 ? 's' : ''}`;
+            document.getElementById('roots-grid').innerHTML = data.length ? data.map(a => `
+    <div class="root-card">
+      <div class="rc-year-col"><div class="rc-year">${a.root_year}</div><div class="rc-cat-icon">${CAT_ICONS[a.category] || '💡'}</div></div>
+      <div class="rc-body">
+        <div class="rc-who">${a.root_who}</div>
+        <div class="rc-title">${a.title}</div>
+        <div class="rc-excerpt">${a.excerpt}</div>
+        <div class="rc-triptych">
+          <div class="rct-node past"><span class="rct-label">Root</span><span class="rct-val">${a.root_year}</span></div>
+          <div class="rct-node"><span class="rct-label">Now</span><span class="rct-val">Present</span></div>
+          <div class="rct-node future"><span class="rct-label">Future</span><span class="rct-val">${a.future_year}</span></div>
+        </div>
+        <a class="rc-read" href="article.html?slug=${a.slug}">Read Full Story →</a>
+      </div>
+    </div>`).join('') : '<div style="text-align:center;padding:36px;color:var(--muted);font-style:italic;">No articles match your filters.</div>';
+        }
+
+        document.querySelectorAll('.filter-chip').forEach(btn => { btn.addEventListener('click', function () { document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active')); this.classList.add('active'); activeCat = this.dataset.cat; render(); }); });
+        document.querySelectorAll('.tl-era').forEach(btn => { btn.addEventListener('click', function () { document.querySelectorAll('.tl-era').forEach(b => b.classList.remove('active')); this.classList.add('active'); activeEra = this.dataset.era === 'all' ? null : { min: +this.dataset.eraMin, max: +this.dataset.eraMax }; render(); }); });
+        document.getElementById('search-input').addEventListener('input', function () { searchQ = this.value.toLowerCase().trim(); render(); });
+        document.getElementById('theme-btn').addEventListener('click', () => { const c = document.documentElement.getAttribute('data-theme'); document.documentElement.setAttribute('data-theme', c === 'dark' ? '' : 'dark'); });
+        render();
+    </script>
+</body>
+
+</html>

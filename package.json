@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "python3 -m http.server 3000 --directory src",
     "serve": "python3 -m http.server 8000 --directory src",
-    "build": "echo 'Static site - no build step required'",
+    "build": "node scripts/build.js",
     "new-article": "node scripts/new-article.js",
     "fetch-trending": "node scripts/fetch-trending.js",
     "optimize-images": "node scripts/optimize-images.js",
@@ -15,11 +15,12 @@
     "clean": "rm -rf .cache && rm -rf dist && echo 'Cleaned build artifacts'",
     "validate": "node scripts/validate-content.js",
     "sitemap": "node scripts/generate-sitemap.js",
-    "backup": "node scripts/backup-content.js"
+    "backup": "node scripts/backup-content.js",
+    "content": "node scripts/content-manager.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/rootbyte.git"
+    "url": "https://github.com/Ipswich38/rootbyte.git"
   },
   "keywords": [
     "technology",

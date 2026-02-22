@@ -1,0 +1,15 @@
+{
+  "name": "rootbyte",
+  "version": "1.0.0",
+  "description": "RootByte — Tech Has Roots. Know Them. Ad-revenue tech history site.",
+  "scripts": {
+    "dev": "npx serve src -p 3000 --open",
+    "build": "node scripts/build.js",
+    "new-article": "node scripts/new-article.js",
+    "fetch-trending": "node scripts/fetch-trending.js",
+    "deploy": "node scripts/deploy.js"
+  },
+  "keywords": ["tech", "history", "blog", "rootbyte"],
+  "author": "KreativLoops",
+  "license": "UNLICENSED"
+}

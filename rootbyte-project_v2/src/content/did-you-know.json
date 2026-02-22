@@ -1,0 +1,142 @@
+[
+    {
+        "id": "dyk-001",
+        "fact": "The term \"Artificial Intelligence\" was coined at a 1956 Dartmouth workshop with a total budget of $7,500. That question is now a multi-trillion dollar global industry.",
+        "category": "ai",
+        "root_year": 1956,
+        "source_article": "chatgpt-neural-network-history"
+    },
+    {
+        "id": "dyk-002",
+        "fact": "E.A. Johnson's 1965 paper described finger-driven capacitive touch — the exact same physics as every modern smartphone screen. He got no patent. No royalties. No fame.",
+        "category": "devices",
+        "root_year": 1965,
+        "source_article": "first-touchscreen-1965"
+    },
+    {
+        "id": "dyk-003",
+        "fact": "Australia's CSIRO collected over $430 million USD in WiFi patent royalties — the technology inside 5 billion devices was invented while scientists were hunting for evaporating black holes.",
+        "category": "internet",
+        "root_year": 1992,
+        "source_article": "wifi-hidden-inventor"
+    },
+    {
+        "id": "dyk-004",
+        "fact": "IBM's RAMAC 350 (1956) stored 5 megabytes and weighed over 900kg. A modern microSD card the size of your thumbnail stores 1 terabyte — 200,000× more data in 0.002% of the physical space.",
+        "category": "devices",
+        "root_year": 1956,
+        "source_article": "first-hard-drive-ibm"
+    },
+    {
+        "id": "dyk-005",
+        "fact": "The first computer bug was a real bug. In 1947, a moth got trapped in a relay of the Harvard Mark II computer. Grace Hopper's team taped it into the logbook with the note: 'First actual case of bug being found.'",
+        "category": "internet",
+        "root_year": 1947,
+        "source_article": null
+    },
+    {
+        "id": "dyk-006",
+        "fact": "The first video game ever created was not Pong. It was 'Tennis for Two' built on an oscilloscope in 1958 by physicist William Higinbotham — at a national laboratory open day. He never patented it.",
+        "category": "gaming",
+        "root_year": 1958,
+        "source_article": null
+    },
+    {
+        "id": "dyk-007",
+        "fact": "The Apollo 11 Guidance Computer had 4KB of RAM and ran at 0.043 MHz. Your basic scientific calculator has roughly 100× more processing power. Neil Armstrong landed on the moon with it.",
+        "category": "space",
+        "root_year": 1969,
+        "source_article": null
+    },
+    {
+        "id": "dyk-008",
+        "fact": "Laszlo Hanyecz spent 10,000 Bitcoin on two Papa John's pizzas on May 22, 2010 — the first real-world Bitcoin transaction. At Bitcoin's all-time high, those pizzas were worth over $700 million.",
+        "category": "crypto",
+        "root_year": 2010,
+        "source_article": null
+    },
+    {
+        "id": "dyk-009",
+        "fact": "The emoji was not invented by Apple or any American company. Shigetaka Kurita created the first 176 emoji in 1999 for NTT DoCoMo in Japan. Each was a 12×12 pixel grid. They are now in the MoMA collection.",
+        "category": "internet",
+        "root_year": 1999,
+        "source_article": null
+    },
+    {
+        "id": "dyk-010",
+        "fact": "Nokia once owned 40% of the global mobile phone market. Their internal engineers had a working touchscreen smartphone prototype in 2004 — three years before the iPhone — but management killed it.",
+        "category": "devices",
+        "root_year": 2004,
+        "source_article": null
+    },
+    {
+        "id": "dyk-011",
+        "fact": "Google was almost named 'Googol' — a mathematical term for 10 to the power of 100. The domain was misspelled when registered. They kept it.",
+        "category": "internet",
+        "root_year": 1997,
+        "source_article": null
+    },
+    {
+        "id": "dyk-012",
+        "fact": "The first computer programmer in history was Ada Lovelace, who wrote an algorithm for Charles Babbage's Analytical Engine in 1843 — a machine that was never actually built. She was 27 years old.",
+        "category": "ai",
+        "root_year": 1843,
+        "source_article": null
+    },
+    {
+        "id": "dyk-013",
+        "fact": "Atari buried 14 truckloads of unsold cartridges in a New Mexico desert in 1983. It was considered an urban legend until archaeologists dug them up in 2014. The site is now a tourist attraction.",
+        "category": "gaming",
+        "root_year": 1983,
+        "source_article": null
+    },
+    {
+        "id": "dyk-014",
+        "fact": "The first satellite — Sputnik 1 — had just four radio antennas and beeped. Its entire scientific payload was two radio transmitters. It started the space race that led to GPS, satellite internet, and weather forecasting.",
+        "category": "space",
+        "root_year": 1957,
+        "source_article": null
+    },
+    {
+        "id": "dyk-015",
+        "fact": "The QWERTY keyboard layout was designed in 1873 specifically to slow typists down — to prevent typewriter jams on early mechanical machines. We still use it 150 years later despite no mechanical need.",
+        "category": "devices",
+        "root_year": 1873,
+        "source_article": null
+    },
+    {
+        "id": "dyk-016",
+        "fact": "The inventor of the World Wide Web — Tim Berners-Lee — deliberately chose not to patent it. He gave it to the world for free in 1991. Had he patented it, he might have become the world's first trillionaire.",
+        "category": "internet",
+        "root_year": 1991,
+        "source_article": null
+    },
+    {
+        "id": "dyk-017",
+        "fact": "The first iPhone had no App Store. Apple's Steve Jobs originally said third-party apps were a security risk and that web apps were sufficient. The App Store launched a year later in 2008.",
+        "category": "devices",
+        "root_year": 2007,
+        "source_article": null
+    },
+    {
+        "id": "dyk-018",
+        "fact": "Warren McCulloch and Walter Pitts published the mathematical model of the artificial neuron in 1943. Walter Pitts was a 15-year-old runaway living under a bridge. He had memorized Bertrand Russell's Principia Mathematica.",
+        "category": "ai",
+        "root_year": 1943,
+        "source_article": "chatgpt-neural-network-history"
+    },
+    {
+        "id": "dyk-019",
+        "fact": "The first computer mouse was carved from wood. Douglas Engelbart built it in 1964 at Stanford Research Institute. It had two wheels at right angles. The patent expired before the personal computer era made it valuable.",
+        "category": "devices",
+        "root_year": 1964,
+        "source_article": null
+    },
+    {
+        "id": "dyk-020",
+        "fact": "YouTube was originally a video dating site. The founders — three former PayPal employees — intended it as a way to share video personal ads. They pivoted to general video sharing when almost no one uploaded date videos.",
+        "category": "internet",
+        "root_year": 2005,
+        "source_article": null
+    }
+]

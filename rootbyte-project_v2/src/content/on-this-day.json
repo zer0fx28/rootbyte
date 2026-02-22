@@ -1,0 +1,240 @@
+{
+    "01-01": [
+        {
+            "year": 1983,
+            "event": "The ARPANET officially adopted TCP/IP — the protocol that became the foundation of the modern internet."
+        }
+    ],
+    "01-07": [
+        {
+            "year": 1979,
+            "event": "Apple Computer go public on the stock market, creating more millionaires in a single day than any company in history up to that point."
+        }
+    ],
+    "01-09": [
+        {
+            "year": 2007,
+            "event": "Steve Jobs unveils the first iPhone at Macworld — calling it 'an iPod, a phone, and an internet communicator' all in one device."
+        }
+    ],
+    "01-24": [
+        {
+            "year": 1984,
+            "event": "Apple introduces the Macintosh personal computer with the iconic '1984' Super Bowl ad. It features a graphical interface and mouse — radical for its time."
+        }
+    ],
+    "02-07": [
+        {
+            "year": 1984,
+            "event": "The first Macintosh goes on sale to the public for $2,495 — the equivalent of about $7,500 today."
+        }
+    ],
+    "02-14": [
+        {
+            "year": 2005,
+            "event": "YouTube.com is registered as a domain name by three former PayPal employees. The first video uploaded is 'Me at the zoo' — 18 seconds long."
+        }
+    ],
+    "02-18": [
+        {
+            "year": 1930,
+            "event": "Vannevar Bush begins work at MIT on the Differential Analyzer — one of the first practical analog computers."
+        }
+    ],
+    "02-22": [
+        {
+            "year": 1997,
+            "event": "Dolly the sheep — the first mammal cloned from an adult somatic cell — is revealed to the public, igniting global debates about biotechnology ethics."
+        },
+        {
+            "year": 2006,
+            "event": "Twitter is founded internally at Odeo, a struggling podcasting company. Jack Dorsey sends the first tweet: 'just setting up my twttr'."
+        }
+    ],
+    "03-01": [
+        {
+            "year": 1954,
+            "event": "Texas Instruments announces the first commercial silicon transistor, enabling miniaturization that would lead to every modern chip."
+        }
+    ],
+    "03-12": [
+        {
+            "year": 1989,
+            "event": "Tim Berners-Lee submits his proposal for the World Wide Web to CERN. His supervisor writes 'Vague but exciting' on the cover page."
+        }
+    ],
+    "03-22": [
+        {
+            "year": 1993,
+            "event": "Intel releases the Pentium processor — the first chip to use the brand name instead of a number, because numbers couldn't be trademarked."
+        }
+    ],
+    "04-01": [
+        {
+            "year": 1976,
+            "event": "Apple Computer Company is founded by Steve Jobs, Steve Wozniak, and Ronald Wayne. Wayne sells his 10% share for $800 — worth roughly $95 billion today."
+        }
+    ],
+    "04-04": [
+        {
+            "year": 1975,
+            "event": "Bill Gates and Paul Allen found Microsoft in Albuquerque, New Mexico — named from 'microcomputer software'."
+        }
+    ],
+    "04-07": [
+        {
+            "year": 1964,
+            "event": "IBM announces the System/360 mainframe — the first computer family designed with compatibility across models, revolutionizing business computing."
+        }
+    ],
+    "04-23": [
+        {
+            "year": 2005,
+            "event": "The very first YouTube video is uploaded: 'Me at the zoo' by co-founder Jawed Karim. It is still live today."
+        }
+    ],
+    "05-01": [
+        {
+            "year": 1964,
+            "event": "Douglas Engelbart's team at SRI begins work on the oN-Line System (NLS), which will later demonstrate the mouse, hyperlinks, and collaborative editing — decades ahead of their time."
+        }
+    ],
+    "05-22": [
+        {
+            "year": 2010,
+            "event": "Laszlo Hanyecz pays 10,000 Bitcoin for two Papa John's pizzas — the first real-world commercial Bitcoin transaction. May 22 is now 'Bitcoin Pizza Day'."
+        }
+    ],
+    "06-04": [
+        {
+            "year": 1996,
+            "event": "The first Ariane 5 rocket launches — and explodes 37 seconds after liftoff due to a software integer overflow bug. The bug cost $370 million USD."
+        }
+    ],
+    "06-29": [
+        {
+            "year": 2007,
+            "event": "The original iPhone goes on sale. Within 74 hours, over 270,000 units are sold."
+        }
+    ],
+    "07-01": [
+        {
+            "year": 1979,
+            "event": "Sony releases the Walkman in Japan — the first truly personal music device. Engineers who saw the prototype said it would never sell because it had no recording function."
+        }
+    ],
+    "07-04": [
+        {
+            "year": 1997,
+            "event": "NASA's Mars Pathfinder roverlander touches down on Mars. The onboard software — written partially in C — had to be patched in space to fix a priority inversion bug discovered after launch."
+        }
+    ],
+    "07-09": [
+        {
+            "year": 1956,
+            "event": "William Shockley founds Shockley Semiconductor Laboratory in Mountain View, CA — the first semiconductor company in what will become Silicon Valley."
+        }
+    ],
+    "07-16": [
+        {
+            "year": 1969,
+            "event": "Apollo 11 launches from Kennedy Space Center carrying Neil Armstrong, Buzz Aldrin, and Michael Collins toward the Moon."
+        }
+    ],
+    "07-20": [
+        {
+            "year": 1969,
+            "event": "Neil Armstrong becomes the first human to walk on the Moon. The Apollo Guidance Computer had 4KB of RAM — less than a modern digital watch."
+        }
+    ],
+    "08-06": [
+        {
+            "year": 1991,
+            "event": "Tim Berners-Lee publishes the first website at CERN. It describes the World Wide Web project. The page is still live at info.cern.ch."
+        }
+    ],
+    "08-12": [
+        {
+            "year": 1981,
+            "event": "IBM releases the IBM Personal Computer (IBM PC) — running MS-DOS licensed from Microsoft. It legitimizes the personal computer for business use."
+        }
+    ],
+    "08-24": [
+        {
+            "year": 1995,
+            "event": "Windows 95 launches with a $300 million marketing campaign featuring the Rolling Stones' 'Start Me Up'. Over a million copies sell in the first 4 days."
+        }
+    ],
+    "09-04": [
+        {
+            "year": 1998,
+            "event": "Google is officially incorporated by Larry Page and Sergey Brin in a Menlo Park garage. Its mission: 'to organize the world's information and make it universally accessible'."
+        }
+    ],
+    "09-13": [
+        {
+            "year": 1956,
+            "event": "IBM ships the RAMAC 305 with its 350 Disk Storage Unit — the world's first hard disk drive. It weighs 971kg and stores 5 megabytes."
+        }
+    ],
+    "09-30": [
+        {
+            "year": 1955,
+            "event": "The first numerical weather prediction is run on ENIAC — the calculation takes 24 hours to simulate 24 hours of weather. Today, global weather models run in minutes."
+        }
+    ],
+    "10-04": [
+        {
+            "year": 1957,
+            "event": "The Soviet Union launches Sputnik 1 — the first artificial satellite. Its radio beep can be heard by anyone with a shortwave receiver. The Space Age begins."
+        }
+    ],
+    "10-22": [
+        {
+            "year": 1968,
+            "event": "Douglas Engelbart demonstrates the mouse to the public for the first time, alongside hypertext, video conferencing, and collaborative editing — all in one 90-minute session called 'The Mother of All Demos'."
+        }
+    ],
+    "10-29": [
+        {
+            "year": 1969,
+            "event": "The first message is sent over ARPANET — the precursor to the internet. The message was supposed to be 'login'. The system crashed after 'lo'. The internet's first two letters were 'lo'."
+        }
+    ],
+    "11-01": [
+        {
+            "year": 1952,
+            "event": "UNIVAC correctly predicts Eisenhower's landslide election victory using early returns — the first time a computer is used to analyze and predict election results on live TV."
+        }
+    ],
+    "11-09": [
+        {
+            "year": 1971,
+            "event": "Gary Kildall writes PL/M — the first high-level programming language designed for microprocessors. Kildall later writes CP/M, the operating system IBM almost chose instead of DOS."
+        }
+    ],
+    "11-12": [
+        {
+            "year": 1990,
+            "event": "Tim Berners-Lee formally proposes a hypertext system to manage CERN documentation. The document that changes the world is titled 'WorldWideWeb: Proposal for a HyperText Project'."
+        }
+    ],
+    "11-30": [
+        {
+            "year": 2022,
+            "event": "OpenAI launches ChatGPT publicly. In 5 days: 1 million users. In 2 months: 100 million — the fastest consumer product adoption in history."
+        }
+    ],
+    "12-09": [
+        {
+            "year": 1968,
+            "event": "Douglas Engelbart demonstrates the first computer mouse, hyperlinks, and real-time collaborative editing in 'The Mother of All Demos' at the Fall Joint Computer Conference in San Francisco."
+        }
+    ],
+    "12-23": [
+        {
+            "year": 1947,
+            "event": "Bell Labs scientists John Bardeen, Walter Brattain, and William Shockley demonstrate the first working transistor. It replaces vacuum tubes and enables all modern electronics."
+        }
+    ]
+}
