@@ -88,6 +88,7 @@ function buildSitemap(articles) {
         { url: '/roots-archive.html', priority: '0.7', freq: 'weekly' },
         { url: '/did-you-know.html', priority: '0.7', freq: 'weekly' },
         { url: '/on-this-day.html', priority: '0.8', freq: 'daily' },
+        { url: '/rabbit-holes.html', priority: '0.8', freq: 'weekly' },
         { url: '/breaking.html', priority: '0.9', freq: 'hourly' },
         { url: '/about.html', priority: '0.5', freq: 'monthly' },
         { url: '/advertise.html', priority: '0.5', freq: 'monthly' },
