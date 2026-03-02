@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <g stroke="#00ff00" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="60" x2="800" y2="60"/><line x1="0" y1="120" x2="800" y2="120"/>
+    <line x1="0" y1="180" x2="800" y2="180"/><line x1="0" y1="240" x2="800" y2="240"/>
+    <line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="0" y1="420" x2="800" y2="420"/>
+  </g>
+  <!-- Terminal window -->
+  <rect x="60" y="70" width="680" height="320" rx="6" fill="#0a0f0a" stroke="#2a6e4a" stroke-width="2"/>
+  <!-- Terminal title bar -->
+  <rect x="60" y="70" width="680" height="28" rx="6" fill="#1a2e1a"/>
+  <circle cx="84" cy="84" r="5" fill="#c9342a" fill-opacity="0.8"/>
+  <circle cx="102" cy="84" r="5" fill="#d4730f" fill-opacity="0.8"/>
+  <circle cx="120" cy="84" r="5" fill="#2a6e4a" fill-opacity="0.8"/>
+  <text x="400" y="88" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#2a6e4a" text-anchor="middle" opacity="0.8">bash — 80×24</text>
+  <!-- Terminal content -->
+  <text x="84" y="122" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#2a6e4a">$ cat README</text>
+  <text x="84" y="144" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#a89e8a">Hello everybody out there using minix -</text>
+  <text x="84" y="162" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#a89e8a">I'm doing a (free) operating system (just</text>
+  <text x="84" y="180" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#a89e8a">a hobby, won't be big and professional like</text>
+  <text x="84" y="198" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#a89e8a">gnu) for 386(486) AT clones.</text>
+  <text x="84" y="216" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#7a7060">— Linus Torvalds, Aug 25, 1991</text>
+  <!-- Strikethrough FREAX -->
+  <text x="84" y="258" font-family="'IBM Plex Mono', monospace" font-size="14" fill="#c9342a" opacity="0.7">$ mv freax/ linux/</text>
+  <text x="84" y="280" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#2a6e4a"># name changed by FTP admin Ari Lemmke</text>
+  <text x="84" y="298" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#2a6e4a"># without asking Linus first.</text>
+  <text x="84" y="328" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#a89e8a">$ uname -r</text>
+  <text x="84" y="348" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#2a6e4a">6.8.0-linux</text>
+  <!-- Cursor blink -->
+  <rect x="184" y="352" width="9" height="14" fill="#2a6e4a" opacity="0.9"/>
+  <!-- Root stamp -->
+  <text x="44" y="46" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 1969</text>
+  <text x="44" y="64" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">UNIX · BELL LABS, MURRAY HILL NJ</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>

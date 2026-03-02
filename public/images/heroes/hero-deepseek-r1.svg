@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+  </g>
+  <!-- Left bar: DeepSeek cost -->
+  <rect x="120" y="360" width="120" height="0" fill="#1a4e8c"/>
+  <!-- Cost comparison bars -->
+  <text x="180" y="90" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle" letter-spacing="1">TRAINING COST</text>
+  <!-- DeepSeek R1 bar -->
+  <rect x="120" y="160" width="120" height="200" rx="3" fill="#1a4e8c" fill-opacity="0.9"/>
+  <text x="180" y="152" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="22" fill="#1a4e8c" text-anchor="middle">$6M</text>
+  <text x="180" y="374" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">DeepSeek R1</text>
+  <text x="180" y="388" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#1a4e8c" text-anchor="middle">China · 2025</text>
+  <!-- OpenAI o3 bar (much taller) -->
+  <rect x="290" y="80" width="120" height="280" rx="3" fill="#c9342a" fill-opacity="0.9"/>
+  <text x="350" y="72" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="22" fill="#c9342a" text-anchor="middle">$100M+</text>
+  <text x="350" y="374" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">OpenAI o3</text>
+  <text x="350" y="388" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#c9342a" text-anchor="middle">USA · 2024</text>
+  <!-- Ratio callout -->
+  <rect x="480" y="90" width="280" height="130" rx="4" fill="#1a1916" stroke="#1a4e8c" stroke-width="1.5"/>
+  <text x="620" y="116" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="38" fill="#1a4e8c" text-anchor="middle">16×</text>
+  <text x="620" y="138" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">cheaper to build</text>
+  <text x="620" y="158" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Benchmark: matched o1 performance</text>
+  <text x="620" y="176" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">NVIDIA stock -$600B in one day</text>
+  <text x="620" y="192" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">largest single-day wipeout in history</text>
+  <!-- Root callout -->
+  <rect x="480" y="250" width="280" height="110" rx="4" fill="#1a1916" stroke="#c9342a" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="620" y="272" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#c9342a" text-anchor="middle" letter-spacing="2">THE ROOT: 1986</text>
+  <text x="620" y="292" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Backpropagation revived by</text>
+  <text x="620" y="308" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Rumelhart, Hinton, Williams</text>
+  <text x="620" y="328" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">Efficient training = cheaper AI</text>
+  <text x="620" y="344" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">DeepSeek weaponized this insight</text>
+  <!-- Root stamp -->
+  <text x="44" y="400" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 1986</text>
+  <text x="44" y="418" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">BACKPROPAGATION · RUMELHART &amp; HINTON</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>

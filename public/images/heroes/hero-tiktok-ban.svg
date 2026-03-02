@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+  </g>
+  <!-- TikTok logo (simplified) with ban circle -->
+  <g transform="translate(200, 100)">
+    <!-- TT note icon approximation -->
+    <rect x="0" y="0" width="160" height="250" rx="30" fill="#1a1916" stroke="#7a7060" stroke-width="2"/>
+    <text x="80" y="100" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="60" fill="#ffffff" text-anchor="middle">TT</text>
+    <text x="80" y="150" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#a89e8a" text-anchor="middle">ByteDance</text>
+    <text x="80" y="168" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#7a7060" text-anchor="middle">Beijing, China</text>
+    <text x="80" y="220" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#a89e8a" text-anchor="middle">170M US users</text>
+    <!-- Ban circle -->
+    <circle cx="80" cy="125" r="100" fill="none" stroke="#c9342a" stroke-width="5" opacity="0.85"/>
+    <line x1="9" y1="54" x2="151" y2="196" stroke="#c9342a" stroke-width="5" opacity="0.85"/>
+  </g>
+  <!-- Data war info -->
+  <rect x="460" y="80" width="300" height="290" rx="4" fill="#1a1916" stroke="#c9342a" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="610" y="106" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#c9342a" text-anchor="middle" letter-spacing="2">THE DATA WAR</text>
+  <line x1="472" y1="116" x2="748" y2="116" stroke="#c9342a" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="610" y="136" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Jan 19, 2025 — US ban effective</text>
+  <text x="610" y="154" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Jan 20, 2025 — Trump pauses it</text>
+  <text x="610" y="172" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">2026 — still unresolved</text>
+  <line x1="472" y1="184" x2="748" y2="184" stroke="#c9342a" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="610" y="205" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">User data collected:</text>
+  <text x="610" y="221" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#c9342a" text-anchor="middle">location, biometrics, contacts</text>
+  <text x="610" y="237" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#c9342a" text-anchor="middle">browsing, keystrokes, device</text>
+  <line x1="472" y1="250" x2="748" y2="250" stroke="#c9342a" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="610" y="270" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Valuation: $268B</text>
+  <text x="610" y="286" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Demanded sale price: $50B</text>
+  <text x="610" y="306" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">China won't allow algorithm sale</text>
+  <text x="610" y="322" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">The recommendation engine IS</text>
+  <text x="610" y="338" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">the product. Nobody gets the code.</text>
+  <!-- Root stamp -->
+  <text x="44" y="400" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 2003</text>
+  <text x="44" y="418" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">MYSPACE · THE FIRST DATA GOLD RUSH</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>

@@ -64,13 +64,47 @@ reading_time: 6
 [Connect past to present]
 ```
 
+## Editorial Standards (AI Editor-in-Chief — ALWAYS APPLY)
+
+Every article must pass FIVE FILTERS before writing a single word:
+1. **Accuracy** — Every fact verifiable from primary or credible secondary source
+2. **Clarity** — A 14-year-old AND a PhD must both grasp the core message
+3. **Fairness** — All parties with stake have voice or acknowledged absence
+4. **Significance** — Answers: Why does this matter? Why now? Why to this reader?
+5. **Originality** — Every piece adds something new — fact, angle, or insight
+
+### Headline Law
+Formula: `[Modern Subject] + [Surprising Historical Root] + [Tension]`
+Always draft 3 headline options. Choose the most specific and accurate.
+Headlines CANNOT outrun the story. Deck copy must ADD information, never repeat headline.
+
+### Voice Rules
+- Lede: Hook in ≤35 words. No throat-clearing.
+- ROOT sections: Authoritative historian. Specific names, dates, places ALWAYS.
+- Chain format: `**YEAR** — event — significance`
+- DYK: Punchy, surprising, self-contained in 1–2 sentences.
+- FUTURE: Labeled speculative. Courageous but intellectually honest.
+
+### Forbidden
+- Clichés, undefined jargon, filler phrases ("In today's fast-paced world...")
+- Vague superlatives without source ("first," "largest," "only" — verify or cut)
+- Performative neutrality — treating evidence and denial as equal
+- False urgency — headlines that scream for clicks but whisper in substance
+
+### Newsworthiness Score (1–5 each, need ≥15 to publish)
+Timeliness · Proximity · Impact · Prominence · Conflict/Tension · Unusualness
+
 ## Claude Code Workflow (Daily Content)
 When I say "new article about [topic]", do this:
-1. Research the modern story AND find the historical root
-2. Create the .md file in src/content/articles/ using the format above
-3. Update src/content/did-you-know/ with the DYK fact as a JSON entry
-4. Update the tomorrow_teaser in index.html if it's a strong story
-5. Run the build script
+1. Score the topic on Newsworthiness (must hit ≥15/30)
+2. Research the modern story AND find the historical root — verify with 3 sources
+3. Draft 3 headline options, choose the sharpest
+4. Create the .md file in src/content/articles/ using the article format
+5. Create matching SVG hero in public/images/heroes/ (branded, RootByte colors)
+6. Update src/content/did-you-know.json with the DYK fact
+7. Add article card to index.html articles grid with card-img
+8. Update articles-feed.json
+9. Update the tomorrow_teaser in index.html if it's a strong story
 
 ## Ad Placement Rules (NEVER change these)
 - Leaderboard (728×90): above the fold, after masthead

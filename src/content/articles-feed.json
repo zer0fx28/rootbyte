@@ -1,24 +1,171 @@
 {
-  "generated": "2026-02-21T16:27:59.227Z",
-  "totalArticles": 2,
+  "generated": "2026-03-02T00:00:00.000Z",
+  "totalArticles": 15,
   "articles": [
+    {
+      "slug": "grok-ai-eliza-1966",
+      "title": "Grok Has Access to 600 Million Twitter Users. The Chatbot It Descends From Had No Users at All.",
+      "date": "2026-03-02",
+      "category": "hot-topics",
+      "tags": ["ai", "grok", "eliza", "twitter", "x", "chatbot", "history"],
+      "reading_time": "6 min read",
+      "root_year": 1966,
+      "root_who": "Joseph Weizenbaum",
+      "hero_image": "/images/heroes/hero-grok-eliza.svg"
+    },
+    {
+      "slug": "tiktok-ban-data-war",
+      "title": "The TikTok Ban Nobody Actually Banned — and the Data War Nobody Wins",
+      "date": "2026-03-02",
+      "category": "hot-topics",
+      "tags": ["tiktok", "bytedance", "china", "social-media", "data-privacy"],
+      "reading_time": "7 min read",
+      "root_year": 2003,
+      "root_who": "Tom Anderson / MySpace",
+      "hero_image": "/images/heroes/hero-tiktok-ban.svg"
+    },
+    {
+      "slug": "deepseek-r1-china-ai-race",
+      "title": "DeepSeek Built an AI That Matched OpenAI for $6 Million. OpenAI Spent 16 Times More.",
+      "date": "2026-03-02",
+      "category": "ai",
+      "tags": ["ai", "deepseek", "openai", "china", "machine-learning"],
+      "reading_time": "8 min read",
+      "root_year": 1986,
+      "root_who": "Rumelhart, Hinton, Williams",
+      "hero_image": "/images/heroes/hero-deepseek-r1.svg"
+    },
+    {
+      "slug": "siri-darpa-calo-project",
+      "title": "Siri Was a DARPA Military Project Before Apple Bought It for $200 Million",
+      "date": "2026-03-02",
+      "category": "ai",
+      "tags": ["ai", "siri", "apple", "darpa", "voice-assistant"],
+      "reading_time": "6 min read",
+      "root_year": 2003,
+      "root_who": "SRI International / DARPA",
+      "hero_image": "/images/heroes/hero-siri-darpa.svg"
+    },
+    {
+      "slug": "first-ransomware-floppy-disk-1989",
+      "title": "The First Ransomware Was Mailed on a Floppy Disk in 1989. To AIDS Researchers.",
+      "date": "2026-03-02",
+      "category": "cybersecurity",
+      "tags": ["cybersecurity", "ransomware", "history", "aids-trojan"],
+      "reading_time": "6 min read",
+      "root_year": 1989,
+      "root_who": "Joseph L. Popp",
+      "hero_image": "/images/heroes/hero-aids-trojan-1989.svg"
+    },
+    {
+      "slug": "morris-worm-1988-internet",
+      "title": "The Morris Worm Crashed 10% of the Internet in 1988. Its Creator Got Community Service.",
+      "date": "2026-03-02",
+      "category": "cybersecurity",
+      "tags": ["cybersecurity", "morris-worm", "internet", "hacking", "history"],
+      "reading_time": "7 min read",
+      "root_year": 1988,
+      "root_who": "Robert Tappan Morris",
+      "hero_image": "/images/heroes/hero-morris-worm-1988.svg"
+    },
+    {
+      "slug": "samsung-galaxy-fold-butterfly",
+      "title": "Samsung Galaxy Fold Failed 3 Times Before It Sold. The Folding Mechanism Is 30 Years Old.",
+      "date": "2026-03-02",
+      "category": "gadgets",
+      "tags": ["samsung", "galaxy-fold", "foldable", "gadgets", "ibm"],
+      "reading_time": "6 min read",
+      "root_year": 1994,
+      "root_who": "Richard Sapper / IBM",
+      "hero_image": "/images/heroes/hero-samsung-fold.svg"
+    },
+    {
+      "slug": "airpods-wireless-patent-1996",
+      "title": "AirPods Didn't Invent Wireless Earbuds. A Sony Engineer Did — in 1996.",
+      "date": "2026-03-02",
+      "category": "gadgets",
+      "tags": ["airpods", "apple", "sony", "wireless", "earbuds"],
+      "reading_time": "6 min read",
+      "root_year": 1996,
+      "root_who": "Sony Research / Bell Labs",
+      "hero_image": "/images/heroes/hero-airpods-1996.svg"
+    },
+    {
+      "slug": "git-built-in-10-days",
+      "title": "Git Was Built in 10 Days. Linus Torvalds Was Furious When He Started.",
+      "date": "2026-03-02",
+      "category": "software",
+      "tags": ["git", "linux", "linus-torvalds", "open-source", "software"],
+      "reading_time": "6 min read",
+      "root_year": 1972,
+      "root_who": "Douglas McIlroy",
+      "hero_image": "/images/heroes/hero-git-10days.svg"
+    },
+    {
+      "slug": "linux-almost-named-freax",
+      "title": "Linux Was Almost Named 'Freax.' An FTP Admin Changed It Without Asking.",
+      "date": "2026-03-02",
+      "category": "software",
+      "tags": ["linux", "open-source", "unix", "linus-torvalds", "software"],
+      "reading_time": "7 min read",
+      "root_year": 1969,
+      "root_who": "Ken Thompson & Dennis Ritchie",
+      "hero_image": "/images/heroes/hero-linux-freax.svg"
+    },
     {
       "slug": "2026-02-18-tcp-ip-foundation",
       "title": "The ROOT of the Internet: How TCP/IP Changed Everything",
       "date": "2026-02-18",
-      "category": "Foundations",
-      "tags": "[\"networking\", \"protocols\", \"internet\", \"tcp-ip\", \"foundations\"]",
-      "reading_time": "8 min read"
+      "category": "internet",
+      "tags": ["networking", "protocols", "internet", "tcp-ip", "foundations"],
+      "reading_time": "8 min read",
+      "root_year": 1962,
+      "root_who": "Cerf & Kahn",
+      "hero_image": "/images/heroes/hero-tcp-ip.svg"
+    },
+    {
+      "slug": "chatgpt-neural-network-history",
+      "title": "ChatGPT Is 3 Years Old. The Math Behind It Is 83.",
+      "date": "2026-02-22",
+      "category": "ai",
+      "tags": ["ai", "chatgpt", "openai", "neural-networks", "history"],
+      "reading_time": "8 min read",
+      "root_year": 1943,
+      "root_who": "Warren McCulloch & Walter Pitts",
+      "hero_image": "/images/heroes/hero-neural-networks-1943.svg"
+    },
+    {
+      "slug": "wifi-hidden-inventor",
+      "title": "The WiFi Inventor Australia Doesn't Know It Has",
+      "date": "2026-02-18",
+      "category": "internet",
+      "tags": ["wifi", "csiro", "australia", "patent", "wireless"],
+      "reading_time": "6 min read",
+      "root_year": 1992,
+      "root_who": "CSIRO Sydney",
+      "hero_image": "/images/heroes/hero-wifi-csiro.svg"
     },
     {
       "slug": "first-touchscreen-1965",
       "title": "The First Touchscreen Wasn't Apple — It Was Made in 1965",
       "date": "2026-02-18",
       "category": "devices",
-      "tags": "[touchscreen, apple, iphone, hardware, history]",
-      "reading_time": "6",
-      "root_year": "1965",
-      "root_who": "E.A. Johnson"
+      "tags": ["touchscreen", "apple", "history", "hardware"],
+      "reading_time": "6 min read",
+      "root_year": 1965,
+      "root_who": "E.A. Johnson",
+      "hero_image": "/images/heroes/hero-touchscreen-1965.svg"
+    },
+    {
+      "slug": "first-hard-drive-ibm",
+      "title": "IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased From History.",
+      "date": "2026-02-18",
+      "category": "devices",
+      "tags": ["ibm", "hard-drive", "storage", "history"],
+      "reading_time": "6 min read",
+      "root_year": 1956,
+      "root_who": "Reynold Johnson",
+      "hero_image": "/images/heroes/hero-ibm-ramac-1956.svg"
     }
   ]
 }

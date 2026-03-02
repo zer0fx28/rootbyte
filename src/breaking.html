@@ -584,6 +584,7 @@
         document.getElementById('nl-btn').addEventListener('click', function () { const v = document.getElementById('nl-email').value; if (v.includes('@') && v.includes('.')) { this.textContent = '✓ Alerts On!'; this.style.background = 'var(--green)'; document.getElementById('nl-email').value = ''; } else { this.textContent = 'Need valid email'; setTimeout(() => this.textContent = 'Get Alerts', 2000); } });
         setInterval(loadBreaking, 60000); // auto-refresh every minute
     </script>
+<script src="/js/bryte.js" defer></script>
 </body>
 
 </html>

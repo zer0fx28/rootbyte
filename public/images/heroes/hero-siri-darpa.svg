@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+  </g>
+  <!-- Siri waveform circle -->
+  <circle cx="240" cy="225" r="120" fill="none" stroke="#1a4e8c" stroke-width="1.5" stroke-opacity="0.3"/>
+  <circle cx="240" cy="225" r="90" fill="none" stroke="#1a4e8c" stroke-width="1.5" stroke-opacity="0.5"/>
+  <circle cx="240" cy="225" r="60" fill="none" stroke="#1a4e8c" stroke-width="2" stroke-opacity="0.7"/>
+  <!-- Siri sound wave bars -->
+  <g fill="#1a4e8c">
+    <rect x="185" y="205" width="8" height="40" rx="4"/>
+    <rect x="200" y="195" width="8" height="60" rx="4"/>
+    <rect x="215" y="210" width="8" height="30" rx="4"/>
+    <rect x="230" y="185" width="8" height="80" rx="4"/>
+    <rect x="245" y="200" width="8" height="50" rx="4"/>
+    <rect x="260" y="195" width="8" height="60" rx="4"/>
+    <rect x="275" y="208" width="8" height="34" rx="4"/>
+    <rect x="290" y="215" width="8" height="20" rx="4"/>
+  </g>
+  <text x="240" y="302" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#1a4e8c" text-anchor="middle" letter-spacing="2">SIRI · 2011</text>
+  <!-- DARPA CALO diagram right -->
+  <rect x="460" y="80" width="300" height="290" rx="4" fill="#1a1916" stroke="#c9342a" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="610" y="108" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#c9342a" text-anchor="middle" letter-spacing="2">DARPA PROJECT CALO</text>
+  <text x="610" y="124" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">Stanford Research Institute · 2003</text>
+  <line x1="472" y1="134" x2="748" y2="134" stroke="#c9342a" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="610" y="155" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Cognitive Assistant that</text>
+  <text x="610" y="171" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Learns and Organizes</text>
+  <text x="610" y="193" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">Budget: $150M (2003–2008)</text>
+  <text x="610" y="209" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">200+ researchers, 25 institutions</text>
+  <line x1="472" y1="222" x2="748" y2="222" stroke="#c9342a" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="610" y="243" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">Siri Inc. spun out in 2007</text>
+  <text x="610" y="259" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" text-anchor="middle">from the CALO researchers</text>
+  <text x="610" y="279" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">Originally: restaurant bookings app</text>
+  <text x="610" y="295" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">Acquired by Apple: April 28, 2010</text>
+  <text x="610" y="315" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#c9342a" text-anchor="middle">Price: $200M</text>
+  <text x="610" y="335" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle">6 months before Steve Jobs died</text>
+  <!-- Root stamp -->
+  <text x="44" y="400" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 2003</text>
+  <text x="44" y="418" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">DARPA CALO · STANFORD RESEARCH INSTITUTE</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>

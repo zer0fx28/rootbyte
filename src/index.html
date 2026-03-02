@@ -1240,18 +1240,12 @@
     }
 
     .hero-img {
-      background: var(--bg3);
+      width: 100%;
+      height: auto;
+      display: block;
       border: 1px solid var(--border);
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      color: var(--muted2);
-      text-align: center;
-      padding: 16px;
+      margin-bottom: 0;
+      background: var(--bg3);
     }
 
     .root-snip {
@@ -1414,6 +1408,31 @@
 
     .card-cat.gaming {
       color: var(--blue)
+    }
+
+    .card-cat.software {
+      color: var(--green)
+    }
+
+    .card-cat.security {
+      color: var(--red)
+    }
+
+    .card-cat.hot {
+      color: var(--red)
+    }
+
+    .card-cat.gadgets {
+      color: var(--amber)
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      margin-bottom: 10px;
+      display: block;
+      background: var(--bg3);
     }
 
     .card-title {
@@ -1938,7 +1957,8 @@
       }
 
       .hero-img {
-        aspect-ratio: 4/3;
+        width: 100%;
+        height: auto;
       }
 
       .footer-cols {
@@ -2367,8 +2387,15 @@
               <a class="read-more" href="#">Continue Reading →</a>
             </div>
             <div>
-              <div class="hero-img">[HERO IMAGE]<br>McCulloch-Pitts 1943 neuron diagram<br><small>MIT Archives</small>
-              </div>
+              <figure style="margin:0">
+                <img class="hero-img" src="/images/heroes/hero-neural-networks-1943.svg"
+                  alt="McCulloch-Pitts 1943 neuron model — the mathematical ancestor of every AI running today"
+                  width="800" height="450" loading="eager" decoding="async"
+                  style="width:100%;height:auto;display:block;border:1px solid var(--border);">
+                <figcaption style="font-family:var(--mono);font-size:0.52rem;color:var(--muted2);margin-top:5px;letter-spacing:1px;">
+                  McCulloch-Pitts 1943 neuron model · Root of all modern AI
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
@@ -2378,6 +2405,7 @@
         </div>
         <div class="articles-grid reveal">
           <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-touchscreen-1965.svg" alt="Touchscreen 1965 vs iPhone 2007" loading="lazy" width="800" height="450">
             <div class="card-cat devices">📱 Devices</div>
             <h3 class="card-title">The First Touchscreen Wasn't Apple — It Was Made in 1965</h3>
             <p class="card-excerpt">E.A. Johnson built a capacitive touch display 42 years before the iPhone. Same
@@ -2386,6 +2414,7 @@
               href="article.html?slug=first-touchscreen-1965">Read More →</a>
           </div>
           <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-neural-networks-1943.svg" alt="Neural network diagram — McCulloch Pitts 1943" loading="lazy" width="800" height="450">
             <div class="card-cat ai">🤖 AI &amp; ML</div>
             <h3 class="card-title">ChatGPT Is 3 Years Old. The Math Behind It Is 83.</h3>
             <p class="card-excerpt">Everyone knows about ChatGPT. Almost nobody knows the 83-year chain of math that had
@@ -2394,6 +2423,7 @@
               href="article.html?slug=chatgpt-neural-network-history">Read More →</a>
           </div>
           <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-wifi-csiro.svg" alt="WiFi radio waves — CSIRO patent 1992" loading="lazy" width="800" height="450">
             <div class="card-cat web">🌐 Internet</div>
             <h3 class="card-title">The WiFi Inventor Australia Doesn't Know It Has</h3>
             <p class="card-excerpt">CSIRO scientists hunting for black holes accidentally invented the math that powers
@@ -2402,13 +2432,93 @@
               href="article.html?slug=wifi-hidden-inventor">Read More →</a>
           </div>
           <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-ibm-ramac-1956.svg" alt="IBM RAMAC 350 disk drive 1956" loading="lazy" width="800" height="450">
             <div class="card-cat devices">💾 Devices</div>
-            <h3 class="card-title">IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased From History.
-            </h3>
+            <h3 class="card-title">IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased From History.</h3>
             <p class="card-excerpt">Reynold Johnson gave every computer its memory in 1956. IBM named a lab annex after
               him. Almost nobody knows who he was.</p>
             <div class="root-pill">1956 · IBM RAMAC, San Jose</div><a class="read-more"
               href="article.html?slug=first-hard-drive-ibm">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-airpods-1996.svg" alt="AirPods vs Sony wireless earphone 1996" loading="lazy" width="800" height="450">
+            <div class="card-cat gadgets">🎧 Gadgets</div>
+            <h3 class="card-title">AirPods Didn't Invent Wireless Earbuds. A Sony Engineer Did — in 1996.</h3>
+            <p class="card-excerpt">The wireless earbud concept was patented and documented 20 years before Apple held up two white stems and called it courage.</p>
+            <div class="root-pill">1996 · Sony Research · Tokyo</div><a class="read-more"
+              href="article.html?slug=airpods-wireless-patent-1996">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-linux-freax.svg" alt="Linux terminal — Linus Torvalds 1991" loading="lazy" width="800" height="450">
+            <div class="card-cat software">🐧 Software</div>
+            <h3 class="card-title">Linux Was Almost Named 'Freax.' An FTP Admin Changed It Without Asking.</h3>
+            <p class="card-excerpt">In 1991, a 21-year-old in Helsinki uploaded a hobby OS to an FTP server. A server admin renamed the folder. The rest is infrastructure history.</p>
+            <div class="root-pill">1969 · Unix · Bell Labs, New Jersey</div><a class="read-more"
+              href="article.html?slug=linux-almost-named-freax">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-git-10days.svg" alt="Git branch graph — built in 10 days 2005" loading="lazy" width="800" height="450">
+            <div class="card-cat software">⚙️ Software</div>
+            <h3 class="card-title">Git Was Built in 10 Days. Linus Torvalds Was Furious When He Started.</h3>
+            <p class="card-excerpt">BitKeeper revoked its license. Torvalds had 10 days. The result: 420 million repositories and the backbone of all modern software development.</p>
+            <div class="root-pill">1972 · Diff Algorithm · Bell Labs</div><a class="read-more"
+              href="article.html?slug=git-built-in-10-days">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-morris-worm-1988.svg" alt="Network map of Morris Worm spreading in 1988" loading="lazy" width="800" height="450">
+            <div class="card-cat security">🔐 Cybersecurity</div>
+            <h3 class="card-title">The Morris Worm Crashed 10% of the Internet in 1988. Its Creator Got Community Service.</h3>
+            <p class="card-excerpt">One 99-line program from a Cornell grad student shut down 6,000 computers. The response created CERT — and the entire field of incident response.</p>
+            <div class="root-pill">1988 · ARPANet · Cornell University</div><a class="read-more"
+              href="article.html?slug=morris-worm-1988-internet">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-aids-trojan-1989.svg" alt="AIDS Trojan floppy disk — first ransomware 1989" loading="lazy" width="800" height="450">
+            <div class="card-cat security">☠️ Cybersecurity</div>
+            <h3 class="card-title">The First Ransomware Was Mailed on a Floppy Disk in 1989. To AIDS Researchers.</h3>
+            <p class="card-excerpt">Joseph Popp mailed 20,000 infected disks worldwide and demanded $189. He invented the $1 trillion ransomware industry. He was never convicted.</p>
+            <div class="root-pill">1989 · AIDS Trojan · Joseph Popp</div><a class="read-more"
+              href="article.html?slug=first-ransomware-floppy-disk-1989">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-deepseek-r1.svg" alt="DeepSeek R1 vs OpenAI cost comparison chart" loading="lazy" width="800" height="450">
+            <div class="card-cat ai">🇨🇳 AI &amp; Hot Topics</div>
+            <h3 class="card-title">DeepSeek Built an AI That Matched OpenAI for $6 Million. OpenAI Spent 16 Times More.</h3>
+            <p class="card-excerpt">NVIDIA lost $593 billion in one day when China released a model that matched o1 at a fraction of the cost. The AI race just changed shape.</p>
+            <div class="root-pill">1986 · Backpropagation · Hinton &amp; Rumelhart</div><a class="read-more"
+              href="article.html?slug=deepseek-r1-china-ai-race">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-siri-darpa.svg" alt="DARPA CALO project diagram — Siri origins 2003" loading="lazy" width="800" height="450">
+            <div class="card-cat ai">🎙️ AI</div>
+            <h3 class="card-title">Siri Was a DARPA Military Project Before Apple Bought It for $200 Million</h3>
+            <p class="card-excerpt">The voice assistant you use to set timers was built by military researchers to manage battlefield information overload. Then it became a restaurant booking app.</p>
+            <div class="root-pill">2003 · DARPA CALO · SRI International</div><a class="read-more"
+              href="article.html?slug=siri-darpa-calo-project">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-tiktok-ban.svg" alt="TikTok ban graphic — data war 2025" loading="lazy" width="800" height="450">
+            <div class="card-cat hot">🔥 Hot Topic</div>
+            <h3 class="card-title">The TikTok Ban Nobody Actually Banned — and the Data War Nobody Wins</h3>
+            <p class="card-excerpt">It was banned for 14 hours. Then un-banned. The real story: China won't sell the algorithm, the US can't force it, and 170 million Americans are watching.</p>
+            <div class="root-pill">2003 · MySpace · Data as Product</div><a class="read-more"
+              href="article.html?slug=tiktok-ban-data-war">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-samsung-fold.svg" alt="Samsung Galaxy Fold vs IBM ThinkPad Butterfly keyboard" loading="lazy" width="800" height="450">
+            <div class="card-cat gadgets">📱 Gadgets</div>
+            <h3 class="card-title">Samsung Galaxy Fold Failed 3 Times Before It Sold. The Folding Mechanism Is 30 Years Old.</h3>
+            <p class="card-excerpt">The hinge that makes your phone unfold into a tablet was first perfected by IBM in 1994 — for a keyboard. MoMA has the original.</p>
+            <div class="root-pill">1994 · IBM ThinkPad 701C · Butterfly Keyboard</div><a class="read-more"
+              href="article.html?slug=samsung-galaxy-fold-butterfly">Read More →</a>
+          </div>
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-grok-eliza.svg" alt="ELIZA 1966 vs Grok 2025 chat comparison" loading="lazy" width="800" height="450">
+            <div class="card-cat hot">🔥 Hot Topic</div>
+            <h3 class="card-title">Grok Has Access to 600 Million Twitter Users. The Chatbot It Descends From Had No Users at All.</h3>
+            <p class="card-excerpt">MIT's ELIZA (1966) proved humans assign feelings to hollow programs. Grok is that insight, running at social-media scale, owned by the platform's billionaire owner.</p>
+            <div class="root-pill">1966 · ELIZA · Joseph Weizenbaum · MIT</div><a class="read-more"
+              href="article.html?slug=grok-ai-eliza-1966">Read More →</a>
           </div>
         </div>
 
@@ -2740,6 +2850,9 @@
     // ══════════════════════════════════════════════
     initMode();
   </script>
+
+  <!-- Bryte AI Chat — RootByte Research Companion -->
+  <script src="/js/bryte.js" defer></script>
 </body>
 
 </html>

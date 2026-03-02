@@ -145,5 +145,75 @@
     "category": "internet",
     "root_year": 1962,
     "source_article": "2026-02-18-tcp-ip-foundation"
+  },
+  {
+    "id": "dyk-022",
+    "fact": "Linus Torvalds named his OS 'Freax.' An FTP admin at Helsinki University renamed the directory to 'linux' without asking. Torvalds found out later and shrugged. The name that runs the world's infrastructure was chosen by a stranger.",
+    "category": "software",
+    "root_year": 1991,
+    "source_article": "linux-almost-named-freax"
+  },
+  {
+    "id": "dyk-023",
+    "fact": "Git was written in 10 days — April 3 to 7, 2005 — after BitKeeper revoked Linux's free license. Torvalds called it 'the stupid content tracker' in his first commit message. It now hosts 420 million repositories.",
+    "category": "software",
+    "root_year": 2005,
+    "source_article": "git-built-in-10-days"
+  },
+  {
+    "id": "dyk-024",
+    "fact": "The first ransomware ransom was $189, payable to a PO Box in Panama. In 2023, ransomware extracted over $1.1 trillion globally. The business model hasn't changed in 35 years — only the payment method and scale.",
+    "category": "cybersecurity",
+    "root_year": 1989,
+    "source_article": "first-ransomware-floppy-disk-1989"
+  },
+  {
+    "id": "dyk-025",
+    "fact": "Robert Morris was the first person convicted under the Computer Fraud and Abuse Act (1986). His worm infected 6,000 computers and crashed 10% of the internet. His punishment: 400 hours community service. He's now an MIT professor.",
+    "category": "cybersecurity",
+    "root_year": 1988,
+    "source_article": "morris-worm-1988-internet"
+  },
+  {
+    "id": "dyk-026",
+    "fact": "When DeepSeek R1 launched in January 2025, NVIDIA lost $593 billion in market cap in a single trading day — the largest single-day market cap loss by any company in stock market history.",
+    "category": "ai",
+    "root_year": 2025,
+    "source_article": "deepseek-r1-china-ai-race"
+  },
+  {
+    "id": "dyk-027",
+    "fact": "Siri was funded by DARPA with $150 million, built by 300 researchers at 25 universities, designed for battlefield cognitive assistance — then spun out as a restaurant booking app and bought by Apple for $200 million.",
+    "category": "ai",
+    "root_year": 2003,
+    "source_article": "siri-darpa-calo-project"
+  },
+  {
+    "id": "dyk-028",
+    "fact": "TikTok's recommendation algorithm is classified as a controlled export by the Chinese government. ByteDance can sell the app, the brand, and the user data. It cannot sell the algorithm without Beijing's approval.",
+    "category": "hot-topics",
+    "root_year": 2025,
+    "source_article": "tiktok-ban-data-war"
+  },
+  {
+    "id": "dyk-029",
+    "fact": "The Samsung Galaxy Fold's display crease cannot be eliminated with current technology. Foldable glass must bend at a minimum 1.4mm radius — any tighter and the glass fractures. Samsung's hinge achieves 1.6mm.",
+    "category": "gadgets",
+    "root_year": 2019,
+    "source_article": "samsung-galaxy-fold-butterfly"
+  },
+  {
+    "id": "dyk-030",
+    "fact": "Joseph Weizenbaum created ELIZA in 1966 to demonstrate how hollow computer 'understanding' is. He was horrified when his own secretary became emotionally attached to it. He spent the rest of his life warning about AI dangers.",
+    "category": "ai",
+    "root_year": 1966,
+    "source_article": "grok-ai-eliza-1966"
+  },
+  {
+    "id": "dyk-031",
+    "fact": "Apple's W1 chip — the heart of the original AirPods — was designed for one purpose: cutting Bluetooth pairing time from 6 seconds to under 1 second. It's the reason AirPods felt instant when every competitor felt clunky.",
+    "category": "gadgets",
+    "root_year": 2016,
+    "source_article": "airpods-wireless-patent-1996"
   }
 ]

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/><line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/><line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+  <!-- Radio wave arcs emanating from center -->
+  <g fill="none" stroke="#1a4e8c" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round">
+    <path d="M400,360 A60,60 0 0,1 340,300 A60,60 0 0,1 460,300 A60,60 0 0,1 400,360"/>
+    <path d="M400,360 A120,120 0 0,1 280,240 A120,120 0 0,1 520,240 A120,120 0 0,1 400,360"/>
+    <path d="M400,360 A180,180 0 0,1 220,180 A180,180 0 0,1 580,180 A180,180 0 0,1 400,360"/>
+    <path d="M400,360 A240,240 0 0,1 160,120 A240,240 0 0,1 640,120 A240,240 0 0,1 400,360"/>
+  </g>
+  <!-- WiFi dot -->
+  <circle cx="400" cy="370" r="10" fill="#1a4e8c"/>
+  <!-- CSIRO Radio telescope hint -->
+  <g transform="translate(120, 200)">
+    <path d="M40,0 L80,0 L60,-80 Z" fill="none" stroke="#7a7060" stroke-width="2"/>
+    <line x1="60" y1="-80" x2="60" y2="20" stroke="#7a7060" stroke-width="2"/>
+    <line x1="30" y1="20" x2="90" y2="20" stroke="#7a7060" stroke-width="2"/>
+    <text x="60" y="38" font-family="'IBM Plex Mono', monospace" font-size="7" fill="#7a7060" text-anchor="middle" letter-spacing="1">CSIRO</text>
+    <text x="60" y="50" font-family="'IBM Plex Mono', monospace" font-size="7" fill="#7a7060" text-anchor="middle" letter-spacing="1">SYDNEY</text>
+  </g>
+  <!-- Signal path annotation -->
+  <text x="590" y="160" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#1a4e8c" opacity="0.8" text-anchor="middle">IEEE 802.11</text>
+  <text x="590" y="175" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#1a4e8c" opacity="0.6" text-anchor="middle">WiFi Standard</text>
+  <!-- Patent info box -->
+  <rect x="460" y="270" width="280" height="100" rx="4" fill="#1a1916" stroke="#1a4e8c" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="600" y="292" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#1a4e8c" text-anchor="middle" letter-spacing="2">PATENT FILED 1996</text>
+  <text x="600" y="312" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="13" fill="#ffffff" text-anchor="middle">OFDM Multipath Correction</text>
+  <text x="600" y="330" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#a89e8a" text-anchor="middle">Originally: hunting black holes</text>
+  <text x="600" y="350" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#c9342a" text-anchor="middle">Lawsuit won: $430M USD</text>
+  <!-- Root stamp -->
+  <text x="44" y="46" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 1992</text>
+  <text x="44" y="64" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">CSIRO · SYDNEY, AUSTRALIA</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>

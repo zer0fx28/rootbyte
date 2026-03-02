@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="200" y1="0" x2="200" y2="450"/><line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+  </g>
+  <!-- Left AirPod -->
+  <ellipse cx="240" cy="195" rx="32" ry="40" fill="#f0ebe0" fill-opacity="0.95" stroke="#a89e8a" stroke-width="1.5"/>
+  <ellipse cx="240" cy="205" rx="22" ry="24" fill="#e4ddd0"/>
+  <rect x="228" y="235" width="24" height="70" rx="12" fill="#f0ebe0" fill-opacity="0.95" stroke="#a89e8a" stroke-width="1.5"/>
+  <!-- Right AirPod -->
+  <ellipse cx="340" cy="195" rx="32" ry="40" fill="#f0ebe0" fill-opacity="0.95" stroke="#a89e8a" stroke-width="1.5"/>
+  <ellipse cx="340" cy="205" rx="22" ry="24" fill="#e4ddd0"/>
+  <rect x="328" y="235" width="24" height="70" rx="12" fill="#f0ebe0" fill-opacity="0.95" stroke="#a89e8a" stroke-width="1.5"/>
+  <!-- Bluetooth signal left -->
+  <g fill="none" stroke="#1a4e8c" stroke-opacity="0.6" stroke-width="1.5">
+    <path d="M190,195 Q170,195 165,185"/><path d="M190,210 Q165,210 158,230"/>
+    <path d="M390,195 Q410,195 415,185"/><path d="M390,210 Q415,210 422,230"/>
+  </g>
+  <!-- Old Sony 1996 earphone shape (bulky) -->
+  <g transform="translate(480, 140)">
+    <ellipse cx="80" cy="90" rx="55" ry="55" fill="none" stroke="#7a7060" stroke-width="2"/>
+    <ellipse cx="80" cy="90" rx="40" ry="40" fill="#222018" stroke="#7a7060" stroke-width="1"/>
+    <circle cx="80" cy="90" r="16" fill="none" stroke="#7a7060" stroke-width="2"/>
+    <circle cx="80" cy="90" r="6" fill="#7a7060"/>
+    <!-- Wired cord -->
+    <path d="M80,145 Q80,170 50,185 Q20,200 30,240" fill="none" stroke="#7a7060" stroke-width="2"/>
+    <text x="80" y="175" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle" letter-spacing="1">SONY · 1996</text>
+    <text x="80" y="188" font-family="'IBM Plex Mono', monospace" font-size="7" fill="#7a7060" text-anchor="middle" opacity="0.6">with cord</text>
+  </g>
+  <!-- Timeline arrow -->
+  <line x1="400" y1="390" x2="700" y2="390" stroke="#c9342a" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="430" y="408" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" letter-spacing="1">1996</text>
+  <text x="660" y="408" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a" letter-spacing="1">2016</text>
+  <text x="545" y="408" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#c9342a" text-anchor="middle" letter-spacing="1">20 YEARS</text>
+  <!-- Root stamp -->
+  <text x="44" y="46" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 1996</text>
+  <text x="44" y="64" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">WIRELESS AUDIO PATENT · SONY</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>

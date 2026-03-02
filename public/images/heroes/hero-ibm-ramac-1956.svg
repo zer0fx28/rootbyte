@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/><line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/><line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+  <!-- IBM RAMAC cabinet (refrigerator-sized unit) -->
+  <rect x="100" y="80" width="220" height="310" rx="6" fill="#1a1916" stroke="#7a7060" stroke-width="2"/>
+  <!-- Panel details -->
+  <rect x="115" y="100" width="190" height="120" rx="3" fill="#222018" stroke="#7a7060" stroke-width="1"/>
+  <!-- Disk stack indicator -->
+  <g fill="none" stroke="#d4730f" stroke-width="1.5">
+    <ellipse cx="210" cy="145" rx="70" ry="12"/>
+    <ellipse cx="210" cy="155" rx="70" ry="12"/>
+    <ellipse cx="210" cy="165" rx="70" ry="12"/>
+    <ellipse cx="210" cy="175" rx="70" ry="12"/>
+    <ellipse cx="210" cy="185" rx="70" ry="12"/>
+  </g>
+  <ellipse cx="210" cy="145" rx="70" ry="12" fill="#d4730f" fill-opacity="0.08"/>
+  <circle cx="210" cy="165" r="8" fill="#d4730f" fill-opacity="0.3" stroke="#d4730f" stroke-width="1.5"/>
+  <!-- Control panel -->
+  <rect x="115" y="235" width="190" height="70" rx="3" fill="#222018" stroke="#7a7060" stroke-width="1"/>
+  <circle cx="148" cy="260" r="8" fill="#c9342a" fill-opacity="0.6"/>
+  <circle cx="175" cy="260" r="8" fill="#2a6e4a" fill-opacity="0.6"/>
+  <circle cx="202" cy="260" r="8" fill="#d4730f" fill-opacity="0.6"/>
+  <rect x="130" y="278" width="155" height="15" rx="2" fill="#1a4e8c" fill-opacity="0.4" stroke="#1a4e8c" stroke-width="1"/>
+  <!-- Cabinet bottom -->
+  <rect x="120" y="355" width="200" height="25" rx="3" fill="#2a2820"/>
+  <!-- Stats callout -->
+  <rect x="380" y="90" width="360" height="270" rx="4" fill="#1a1916" stroke="#7a7060" stroke-width="1"/>
+  <text x="560" y="120" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="18" fill="#d4730f" text-anchor="middle" letter-spacing="2">IBM 350 DISK FILE</text>
+  <text x="560" y="140" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#7a7060" text-anchor="middle" letter-spacing="2">SAN JOSE, CALIFORNIA · 1956</text>
+  <!-- Spec lines -->
+  <line x1="400" y1="155" x2="720" y2="155" stroke="#7a7060" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="410" y="175" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a">STORAGE CAPACITY</text>
+  <text x="710" y="175" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="16" fill="#c9342a" text-anchor="end">5 MB</text>
+  <line x1="400" y1="190" x2="720" y2="190" stroke="#7a7060" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="410" y="210" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a">WEIGHT</text>
+  <text x="710" y="210" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="16" fill="#c9342a" text-anchor="end">1 TON</text>
+  <line x1="400" y1="225" x2="720" y2="225" stroke="#7a7060" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="410" y="245" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a">PLATTERS</text>
+  <text x="710" y="245" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="16" fill="#c9342a" text-anchor="end">50</text>
+  <line x1="400" y1="260" x2="720" y2="260" stroke="#7a7060" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="410" y="280" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a">YOUR PHONE TODAY</text>
+  <text x="710" y="280" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="16" fill="#2a6e4a" text-anchor="end">256 GB</text>
+  <line x1="400" y1="295" x2="720" y2="295" stroke="#7a7060" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="410" y="315" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#a89e8a">THAT'S</text>
+  <text x="710" y="315" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="16" fill="#2a6e4a" text-anchor="end">51,200× MORE</text>
+  <!-- Root stamp -->
+  <text x="44" y="46" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 1956</text>
+  <text x="44" y="64" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">REYNOLD JOHNSON · IBM SAN JOSE</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>

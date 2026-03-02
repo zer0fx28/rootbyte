@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0f0e0c"/>
+  <g stroke="#c9342a" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/><line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/><line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/><line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/><line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+  <!-- Network nodes (infected computers) -->
+  <!-- Node layout: network map -->
+  <g fill="none">
+    <!-- Infected (red) nodes -->
+    <circle cx="200" cy="180" r="18" fill="#c9342a" fill-opacity="0.8" stroke="#c9342a" stroke-width="2"/>
+    <circle cx="320" cy="120" r="18" fill="#c9342a" fill-opacity="0.8" stroke="#c9342a" stroke-width="2"/>
+    <circle cx="280" cy="280" r="18" fill="#c9342a" fill-opacity="0.8" stroke="#c9342a" stroke-width="2"/>
+    <circle cx="420" cy="200" r="18" fill="#c9342a" fill-opacity="0.8" stroke="#c9342a" stroke-width="2"/>
+    <circle cx="500" cy="130" r="18" fill="#c9342a" fill-opacity="0.8" stroke="#c9342a" stroke-width="2"/>
+    <circle cx="380" cy="320" r="18" fill="#c9342a" fill-opacity="0.8" stroke="#c9342a" stroke-width="2"/>
+    <!-- Propagating (orange) nodes -->
+    <circle cx="580" cy="240" r="18" fill="#d4730f" fill-opacity="0.6" stroke="#d4730f" stroke-width="2" stroke-dasharray="4,2"/>
+    <circle cx="620" cy="140" r="18" fill="#d4730f" fill-opacity="0.6" stroke="#d4730f" stroke-width="2" stroke-dasharray="4,2"/>
+    <circle cx="500" cy="340" r="18" fill="#d4730f" fill-opacity="0.6" stroke="#d4730f" stroke-width="2" stroke-dasharray="4,2"/>
+    <!-- Clean (dark) nodes -->
+    <circle cx="680" cy="200" r="18" fill="#1a1916" stroke="#7a7060" stroke-width="1.5"/>
+    <circle cx="700" cy="320" r="18" fill="#1a1916" stroke="#7a7060" stroke-width="1.5"/>
+    <circle cx="140" cy="340" r="18" fill="#1a1916" stroke="#7a7060" stroke-width="1.5"/>
+    <circle cx="100" cy="200" r="18" fill="#1a1916" stroke="#7a7060" stroke-width="1.5"/>
+  </g>
+  <!-- Connection lines -->
+  <g stroke="#c9342a" stroke-opacity="0.3" stroke-width="1.5">
+    <line x1="200" y1="180" x2="320" y2="120"/>
+    <line x1="200" y1="180" x2="280" y2="280"/>
+    <line x1="320" y1="120" x2="420" y2="200"/>
+    <line x1="420" y1="200" x2="500" y2="130"/>
+    <line x1="420" y1="200" x2="580" y2="240"/>
+    <line x1="500" y1="130" x2="620" y2="140"/>
+    <line x1="580" y1="240" x2="680" y2="200"/>
+    <line x1="380" y1="320" x2="500" y2="340"/>
+    <line x1="280" y1="280" x2="380" y2="320"/>
+  </g>
+  <!-- Spread arrows -->
+  <g stroke="#d4730f" stroke-opacity="0.6" stroke-width="1.5" fill="#d4730f" fill-opacity="0.6">
+    <path d="M435,205 L570,240" marker-end="url(#arr)"/>
+    <path d="M515,135 L610,143" marker-end="url(#arr)"/>
+    <path d="M395,328 L490,342" marker-end="url(#arr)"/>
+  </g>
+  <!-- Stat box -->
+  <rect x="50" y="70" width="140" height="130" rx="4" fill="#1a0a0a" stroke="#c9342a" stroke-width="1.5"/>
+  <text x="120" y="94" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="36" fill="#c9342a" text-anchor="middle">6,000</text>
+  <text x="120" y="112" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#a89e8a" text-anchor="middle">computers crashed</text>
+  <line x1="62" y1="122" x2="178" y2="122" stroke="#c9342a" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="120" y="140" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#a89e8a" text-anchor="middle">10% of the internet</text>
+  <text x="120" y="156" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#a89e8a" text-anchor="middle">Nov 2, 1988</text>
+  <text x="120" y="174" font-family="'IBM Plex Mono', monospace" font-size="7" fill="#7a7060" text-anchor="middle">Robert T. Morris</text>
+  <text x="120" y="188" font-family="'IBM Plex Mono', monospace" font-size="7" fill="#7a7060" text-anchor="middle">Cornell University</text>
+  <!-- Root stamp -->
+  <text x="44" y="400" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#c9342a" letter-spacing="3">ROOT · 1988</text>
+  <text x="44" y="418" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#ffffff" letter-spacing="2" opacity="0.5">FIRST INTERNET WORM · ARPANET</text>
+  <text x="756" y="430" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#c9342a" opacity="0.6" text-anchor="end" letter-spacing="3">ROOTBYTE</text>
+</svg>
