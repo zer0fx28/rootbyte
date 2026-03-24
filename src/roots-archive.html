@@ -7,6 +7,13 @@
     <title>RootByte — Roots Archive</title>
     <meta name="description"
         content="Browse every technology root we've uncovered — from the 1800s to the near future. Search by era, category, or root year.">
+    <meta property="og:title" content="RootByte — Roots Archive">
+    <meta property="og:description" content="Browse every technology root we've uncovered — from the 1800s to the near future.">
+    <meta property="og:image" content="/images/og-default.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RootByte">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="/images/og-default.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@300;500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
@@ -137,8 +144,11 @@
         .ad-slot {
             background: var(--bg3);
             border: 1px dashed var(--border);
+            width: 100%;
             max-width: 728px;
+            box-sizing: border-box;
             margin: 0 auto;
+            overflow: hidden;
             padding: 14px;
             min-height: 60px;
             display: flex;

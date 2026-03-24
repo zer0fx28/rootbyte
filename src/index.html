@@ -1045,7 +1045,9 @@
     .ad-slot {
       background: var(--bg3);
       border: 1px dashed var(--border);
+      width: 100%;
       max-width: 728px;
+      box-sizing: border-box;
       margin: 0 auto;
       padding: 14px 20px;
       min-height: 60px;
@@ -1055,6 +1057,7 @@
       font-family: var(--mono);
       font-size: 0.62rem;
       color: var(--muted2);
+      overflow: hidden;
     }
 
     .date-band {
@@ -2404,6 +2407,14 @@
           <h2>Today's Stories</h2>
         </div>
         <div class="articles-grid reveal">
+          <div class="article-card">
+            <img class="card-img" src="/images/heroes/hero-ai-agents-vannevar.svg" alt="AI agent network vs Vannevar Bush Memex 1945" loading="eager" width="800" height="450">
+            <div class="card-cat ai">🤖 AI &amp; ML</div>
+            <h3 class="card-title">AI Agents Are Taking Over Your Computer in 2026. The Man Who Imagined This Died in 1974.</h3>
+            <p class="card-excerpt">Vannevar Bush described autonomous information machines in 1945. It took 81 years and a compute revolution to build what he imagined on paper.</p>
+            <div class="root-pill">1945 · Vannevar Bush, Washington D.C.</div><a class="read-more"
+              href="article.html?slug=ai-agents-2026-vannevar-bush">Read More →</a>
+          </div>
           <div class="article-card">
             <img class="card-img" src="/images/heroes/hero-touchscreen-1965.svg" alt="Touchscreen 1965 vs iPhone 2007" loading="lazy" width="800" height="450">
             <div class="card-cat devices">📱 Devices</div>

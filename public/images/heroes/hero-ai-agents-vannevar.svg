@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111418"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c9342a"/>
+      <stop offset="100%" style="stop-color:#e84d3d"/>
+    </linearGradient>
+    <linearGradient id="node-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9342a;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#c9342a;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Agent network nodes — left side (1945 Memex) -->
+  <!-- Central old node -->
+  <circle cx="200" cy="315" r="48" fill="#1a1a1a" stroke="#c9342a" stroke-width="2"/>
+  <circle cx="200" cy="315" r="38" fill="#0f0f0f" stroke="#c9342a" stroke-width="1" opacity="0.5"/>
+  <text x="200" y="309" text-anchor="middle" fill="#c9342a" font-family="monospace" font-size="10" font-weight="bold">MEMEX</text>
+  <text x="200" y="323" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">1945</text>
+
+  <!-- Satellite nodes left -->
+  <circle cx="100" cy="200" r="22" fill="#1a1a1a" stroke="#444" stroke-width="1"/>
+  <text x="100" y="197" text-anchor="middle" fill="#666" font-family="monospace" font-size="7">RETRIEVE</text>
+  <text x="100" y="208" text-anchor="middle" fill="#666" font-family="monospace" font-size="7">CONNECT</text>
+  <line x1="122" y1="216" x2="163" y2="279" stroke="#333" stroke-width="1"/>
+
+  <circle cx="90" cy="400" r="22" fill="#1a1a1a" stroke="#444" stroke-width="1"/>
+  <text x="90" y="397" text-anchor="middle" fill="#666" font-family="monospace" font-size="7">ASSOC.</text>
+  <text x="90" y="408" text-anchor="middle" fill="#666" font-family="monospace" font-size="7">INDEX</text>
+  <line x1="112" y1="390" x2="163" y2="348" stroke="#333" stroke-width="1"/>
+
+  <circle cx="155" cy="165" r="18" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <text x="155" y="169" text-anchor="middle" fill="#555" font-family="monospace" font-size="7">BUSH</text>
+  <line x1="163" y1="179" x2="183" y2="271" stroke="#222" stroke-width="1"/>
+
+  <!-- Arrow connecting left to right -->
+  <line x1="260" y1="315" x2="490" y2="315" stroke="#c9342a" stroke-width="2" stroke-dasharray="8,4"/>
+  <polygon points="490,309 502,315 490,321" fill="#c9342a"/>
+
+  <!-- Year label on arrow -->
+  <rect x="345" y="296" width="72" height="18" rx="3" fill="#1a1a1a"/>
+  <text x="381" y="309" text-anchor="middle" fill="#c9342a" font-family="monospace" font-size="9" font-weight="bold">81 YEARS</text>
+
+  <!-- Agent network nodes — right side (2026 AI Agents) -->
+  <!-- Central new node -->
+  <circle cx="720" cy="315" r="58" fill="url(#node-glow)" stroke="#c9342a" stroke-width="2.5" filter="url(#glow)"/>
+  <circle cx="720" cy="315" r="46" fill="#150c0c" stroke="#c9342a" stroke-width="1.5"/>
+  <text x="720" y="308" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="11" font-weight="bold">AI AGENT</text>
+  <text x="720" y="323" text-anchor="middle" fill="#c9342a" font-family="monospace" font-size="9">2026</text>
+
+  <!-- Satellite agents -->
+  <circle cx="820" cy="195" r="30" fill="#120808" stroke="#c9342a" stroke-width="1.5"/>
+  <text x="820" y="191" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="8">RESEARCH</text>
+  <text x="820" y="203" text-anchor="middle" fill="#888" font-family="monospace" font-size="7">browse · read</text>
+  <line x1="791" y1="229" x2="752" y2="272" stroke="#c9342a" stroke-width="1.5" opacity="0.6"/>
+
+  <circle cx="880" cy="315" r="30" fill="#120808" stroke="#c9342a" stroke-width="1.5"/>
+  <text x="880" y="311" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="8">EXECUTE</text>
+  <text x="880" y="323" text-anchor="middle" fill="#888" font-family="monospace" font-size="7">code · click</text>
+  <line x1="850" y1="315" x2="778" y2="315" stroke="#c9342a" stroke-width="1.5" opacity="0.6"/>
+
+  <circle cx="820" cy="435" r="30" fill="#120808" stroke="#c9342a" stroke-width="1.5"/>
+  <text x="820" y="431" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="8">VERIFY</text>
+  <text x="820" y="443" text-anchor="middle" fill="#888" font-family="monospace" font-size="7">check · retry</text>
+  <line x1="791" y1="401" x2="752" y2="358" stroke="#c9342a" stroke-width="1.5" opacity="0.6"/>
+
+  <circle cx="600" cy="195" r="30" fill="#120808" stroke="#c9342a" stroke-width="1.5"/>
+  <text x="600" y="191" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="8">PLAN</text>
+  <text x="600" y="203" text-anchor="middle" fill="#888" font-family="monospace" font-size="7">goal → steps</text>
+  <line x1="629" y1="229" x2="688" y2="272" stroke="#c9342a" stroke-width="1.5" opacity="0.6"/>
+
+  <circle cx="600" cy="435" r="30" fill="#120808" stroke="#c9342a" stroke-width="1.5"/>
+  <text x="600" y="431" text-anchor="middle" fill="#ddd" font-family="monospace" font-size="8">REPORT</text>
+  <text x="600" y="443" text-anchor="middle" fill="#888" font-family="monospace" font-size="7">done · escalate</text>
+  <line x1="629" y1="401" x2="688" y2="358" stroke="#c9342a" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Outer ring connectors -->
+  <circle cx="960" cy="195" r="20" fill="#0f0f0f" stroke="#333" stroke-width="1"/>
+  <text x="960" y="199" text-anchor="middle" fill="#555" font-family="monospace" font-size="7">CLAUDE</text>
+  <line x1="940" y1="205" x2="850" y2="213" stroke="#222" stroke-width="1"/>
+
+  <circle cx="980" cy="430" r="20" fill="#0f0f0f" stroke="#333" stroke-width="1"/>
+  <text x="980" y="427" text-anchor="middle" fill="#555" font-family="monospace" font-size="7">OPERATOR</text>
+  <text x="980" y="438" text-anchor="middle" fill="#555" font-family="monospace" font-size="7">MARINER</text>
+  <line x1="960" y1="422" x2="850" y2="420" stroke="#222" stroke-width="1"/>
+
+  <!-- Red accent bar left -->
+  <rect x="0" y="0" width="4" height="630" fill="url(#red)"/>
+
+  <!-- RootByte branding -->
+  <text x="40" y="36" fill="#c9342a" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="3">ROOT•BYTE</text>
+
+  <!-- Category pill -->
+  <rect x="38" y="50" width="28" height="14" rx="7" fill="#c9342a"/>
+  <text x="52" y="61" text-anchor="middle" fill="#fff" font-family="monospace" font-size="7" font-weight="bold">AI</text>
+
+  <!-- Main headline -->
+  <text x="40" y="530" fill="#ffffff" font-family="Georgia, serif" font-size="26" font-weight="bold" font-style="italic">AI Agents Are Taking Over Your Computer in 2026.</text>
+  <text x="40" y="562" fill="#c9342a" font-family="Georgia, serif" font-size="22" font-style="italic">The Man Who Imagined This Died in 1974.</text>
+
+  <!-- Year stamps -->
+  <text x="156" y="490" text-anchor="middle" fill="#333" font-family="monospace" font-size="10">▼ 1945</text>
+  <text x="720" y="490" text-anchor="middle" fill="#c9342a" font-family="monospace" font-size="10">▼ 2026</text>
+
+  <!-- Bottom line -->
+  <rect x="0" y="610" width="1200" height="1" fill="#222"/>
+  <text x="40" y="624" fill="#444" font-family="monospace" font-size="9">rootbyte.tech · tech history connecting past, present, and future</text>
+</svg>

@@ -55,7 +55,7 @@ img{max-width:100%;display:block;}
 /* ── Ad wrap ── */
 .ad-wrap{background:var(--bg2);border-bottom:1px solid var(--border);padding:8px 16px;text-align:center;}
 .ad-label{font-family:var(--mono);font-size:0.48rem;letter-spacing:3px;color:var(--muted2);text-transform:uppercase;margin-bottom:5px;}
-.ad-slot{background:var(--bg3);border:1px dashed var(--border);max-width:728px;margin:0 auto;padding:14px 20px;min-height:60px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.62rem;color:var(--muted2);}
+.ad-slot{background:var(--bg3);border:1px dashed var(--border);width:100%;max-width:728px;box-sizing:border-box;margin:0 auto;padding:14px 20px;min-height:60px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.62rem;color:var(--muted2);overflow:hidden;}
 
 /* ── Layout ── */
 .article-wrap{max-width:1180px;margin:0 auto;padding:28px 16px;display:grid;grid-template-columns:1fr;gap:40px;}
@@ -265,6 +265,9 @@ footer{background:var(--ink);color:var(--bg);padding:28px 16px 20px;margin-top:3
       <button class="share-btn" id="share-copy">📋 Copy Link</button>
       <button class="share-btn" id="share-x">𝕏 Post</button>
       <button class="share-btn" id="share-fb">📘 Facebook</button>
+      <button class="share-btn" id="share-li">💼 LinkedIn</button>
+      <button class="share-btn" id="share-reddit">🟠 Reddit</button>
+      <button class="share-btn" id="share-native" style="display:none">⬆️ Share</button>
     </div>
 
     <!-- ════ PANEL 1: PAST / ROOT ════ -->
@@ -525,6 +528,29 @@ document.getElementById('share-x').addEventListener('click', () => {
 document.getElementById('share-fb').addEventListener('click', () => {
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
 });
+document.getElementById('share-li').addEventListener('click', () => {
+  const url = encodeURIComponent(window.location.href);
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+});
+document.getElementById('share-reddit').addEventListener('click', () => {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(article.title.replace(/<[^>]+>/g,'') + ' — RootByte');
+  window.open(`https://www.reddit.com/submit?url=${url}&title=${title}`, '_blank');
+});
+// Web Share API for mobile
+(function() {
+  const nativeBtn = document.getElementById('share-native');
+  if (navigator.share) {
+    nativeBtn.style.display = '';
+    nativeBtn.addEventListener('click', () => {
+      navigator.share({
+        title: article.title.replace(/<[^>]+>/g,'') + ' — RootByte',
+        text: article.deck || 'Tech history connecting past, present, and future.',
+        url: window.location.href,
+      }).catch(() => {});
+    });
+  }
+})();
 
 // ── Theme toggle ──
 const themeBtn = document.getElementById('theme-btn');

@@ -1,7 +1,18 @@
 {
-  "generated": "2026-03-02T00:00:00.000Z",
-  "totalArticles": 15,
+  "generated": "2026-03-24T00:00:00.000Z",
+  "totalArticles": 16,
   "articles": [
+    {
+      "slug": "ai-agents-2026-vannevar-bush",
+      "title": "AI Agents Are Taking Over Your Computer in 2026. The Man Who Imagined This Died in 1974.",
+      "date": "2026-03-24",
+      "category": "ai",
+      "tags": ["ai", "agents", "claude", "openai", "vannevar-bush", "history", "automation", "llm"],
+      "reading_time": "7 min read",
+      "root_year": 1945,
+      "root_who": "Vannevar Bush",
+      "hero_image": "/images/heroes/hero-ai-agents-vannevar.svg"
+    },
     {
       "slug": "grok-ai-eliza-1966",
       "title": "Grok Has Access to 600 Million Twitter Users. The Chatbot It Descends From Had No Users at All.",

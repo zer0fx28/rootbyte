@@ -113,6 +113,32 @@
     { text: '💰 Missed billions', q: 'Who passed on the biggest opportunities in tech history — companies that said no to acquisitions?' },
     { text: '🎯 Almost named what', q: 'What other tech products were almost given completely different names?' },
     { text: '👾 Easter eggs in code', q: 'What are the most famous Easter eggs hidden in software or hardware?' },
+
+    // AI Agents & Automation (2026)
+    { text: '🤖 AI agents explained', q: 'What exactly is an AI agent and how is it different from a regular chatbot?' },
+    { text: '📜 Vannevar Bush 1945', q: 'Who was Vannevar Bush and how did his 1945 essay predict AI agents?' },
+    { text: '🖥️ Claude computer use', q: 'How does Claude\'s computer use feature work — what can it actually do?' },
+    { text: '⚡ AutoGPT history', q: 'What was AutoGPT and why did it go viral on GitHub in 2023?' },
+    { text: '🏛️ DARPA & AI origins', q: 'How much of modern AI technology was originally funded by DARPA?' },
+
+    // Hot 2026 topics
+    { text: '🌍 AI regulation 2026', q: 'What is the current state of AI regulation globally in 2026?' },
+    { text: '🔋 Solid-state batteries', q: 'What are solid-state batteries and why does everyone think they\'ll change everything?' },
+    { text: '🕶️ Spatial computing', q: 'What is spatial computing and what\'s the historical root of AR/VR technology?' },
+    { text: '🛰️ Starlink dominance', q: 'How did SpaceX come to dominate satellite internet and who tried first?' },
+    { text: '🧬 AlphaFold impact', q: 'What did AlphaFold actually solve and why do biologists call it a revolution?' },
+
+    // Deeper history
+    { text: '📡 Bell Labs legacy', q: 'What inventions came out of Bell Labs and why was it so uniquely productive?' },
+    { text: '🖥️ Xerox PARC story', q: 'What did Xerox PARC invent that it never got credit for — the full story.' },
+    { text: '🔑 RSA encryption origin', q: 'How was RSA encryption invented and what was the original paper about?' },
+    { text: '📱 Palm Pilot forgotten', q: 'Why did the Palm Pilot succeed and why do we forget how ahead of its time it was?' },
+    { text: '🧑‍💻 Women in computing', q: 'Who were the women who built the foundations of modern computing?' },
+    { text: '🌐 Browser wars history', q: 'What was the browser war of the 1990s and why did Netscape lose?' },
+    { text: '💾 Y2K bug explained', q: 'What was the Y2K bug really — and was the fear justified or overblown?' },
+    { text: '📻 Radio vs internet', q: 'How did early radio adoption compare to early internet adoption? What can we learn?' },
+    { text: '🤯 Tech that changed war', q: 'What technologies invented for war ended up completely changing civilian life?' },
+    { text: '🏆 Underrated inventors', q: 'Who are the most underrated inventors in tech history — people who should be household names?' },
   ];
 
   // ─── STATE ─────────────────────────────────────────────────────────────────

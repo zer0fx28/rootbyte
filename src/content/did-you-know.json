@@ -215,5 +215,19 @@
     "category": "gadgets",
     "root_year": 2016,
     "source_article": "airpods-wireless-patent-1996"
+  },
+  {
+    "id": "dyk-032",
+    "fact": "Vannevar Bush wrote 'As We May Think' in 1945 while directing 6,000 scientists in the US war effort — including teams working on the atomic bomb. He described autonomous information-retrieval machines 81 years before AI agents became a commercial product.",
+    "category": "ai",
+    "root_year": 1945,
+    "source_article": "ai-agents-2026-vannevar-bush"
+  },
+  {
+    "id": "dyk-033",
+    "fact": "When AutoGPT launched on GitHub in April 2023, it became the fastest repository to reach 100,000 stars in GitHub's history — surpassing it in 9 days. It was the first time the public could watch an AI autonomously browse the web and write its own code.",
+    "category": "ai",
+    "root_year": 2023,
+    "source_article": "ai-agents-2026-vannevar-bush"
   }
 ]
