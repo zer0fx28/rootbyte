@@ -161,6 +161,13 @@ h1.art-hed em{font-style:italic;color:var(--red);}
 .sidebar-ad{background:var(--bg2);border:1px dashed var(--border);padding:12px;text-align:center;margin-bottom:20px;}
 .sidebar-ad-inner{background:var(--bg3);min-height:250px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.62rem;color:var(--muted2);}
 
+/* Sources */
+.sources-wrap{border-top:1px solid var(--border);padding-top:20px;margin-top:32px;margin-bottom:32px;}
+.sources-title{font-family:var(--cond);font-weight:900;font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.sources-list{list-style:none;padding:0;}
+.sources-list li{font-family:var(--mono);font-size:0.7rem;color:var(--muted);line-height:1.8;padding-left:16px;position:relative;}
+.sources-list li::before{content:'—';position:absolute;left:0;color:var(--muted2);}
+
 /* Related articles */
 .related-wrap{border-top:2px solid var(--ink);padding-top:24px;margin-top:8px;}
 .related-title{font-family:var(--cond);font-weight:900;font-size:0.9rem;letter-spacing:4px;text-transform:uppercase;color:var(--red);border-top:3px solid var(--red);padding-top:8px;margin-bottom:16px;}
@@ -247,11 +254,11 @@ footer{background:var(--ink);color:var(--bg);padding:28px 16px 20px;margin-top:3
       <div class="eyebrow" id="art-eyebrow">Category</div>
       <h1 class="art-hed" id="art-title">Article Title</h1>
       <div class="art-meta">
-        <span id="art-date">February 22, 2026</span>
+        <span id="art-author">By RootByte Editorial</span>
+        <span>·</span>
+        <time id="art-date" datetime="">February 22, 2026</time>
         <span>·</span>
         <span id="art-reading">6 min read</span>
-        <span>·</span>
-        <span>RootByte Desk</span>
       </div>
       <p class="art-deck" id="art-deck">Loading article…</p>
       <div class="hero-img-wrap" id="hero-img-wrap">
@@ -314,6 +321,12 @@ footer{background:var(--ink);color:var(--bg);padding:28px 16px 20px;margin-top:3
       </div>
     </section>
 
+    <!-- Sources -->
+    <div class="sources-wrap reveal" id="sources-wrap" style="display:none;">
+      <div class="sources-title">Sources &amp; References</div>
+      <ul class="sources-list" id="sources-list"></ul>
+    </div>
+
     <!-- Related -->
     <div class="related-wrap reveal">
       <div class="related-title">Follow the Roots</div>
@@ -374,14 +387,16 @@ footer{background:var(--ink);color:var(--bg);padding:28px 16px 20px;margin-top:3
 </footer>
 
 <script>
-// ── Article data (will be replaced by build system reading .md files) ──
+// ── Article data — All 16 articles ──
 const ARTICLES = {
+
   'first-touchscreen-1965': {
     title: "The First Touchscreen Wasn't Apple — It Was <em>Made in 1965</em>",
     category: 'devices', catLabel: '📱 Devices',
     date: 'February 18, 2026', reading_time: 7,
     deck: 'E.A. Johnson built a capacitive touch display 42 years before the iPhone. Same technology. Zero credit.',
     root_year: '1965', root_who: 'E.A. Johnson · Royal Radar Establishment, Malvern UK',
+    sources: ['E.A. Johnson, "Touch Display — A Novel Input/Output Device for Computers", Electronics Letters, 1965', 'Royal Radar Establishment, Malvern UK, Capacitive Touch Research 1965-1969', 'Apple Inc., iPhone Keynote, Macworld 2007'],
     root_body: `<p>Every time you tap your phone screen, you're using technology that Apple didn't invent, didn't fund, and didn't discover.</p>
 <p>E.A. Johnson was an engineer at the Royal Radar Establishment in Malvern, England. In 1965, he published a paper describing a touch screen that worked by detecting the electrical properties of a human finger — the exact principle called <strong>capacitive sensing</strong>.</p>
 <p>He demonstrated it. He wrote about it. He had working prototypes used for air traffic control systems by the late 1960s. He never patented it commercially. He received no royalties. His name appears in almost zero mainstream tech history coverage.</p>`,
@@ -401,6 +416,7 @@ const ARTICLES = {
     date: 'February 22, 2026', reading_time: 8,
     deck: 'Everyone talks about what AI does today. Nobody talks about the 83-year chain of human thought that had to happen first.',
     root_year: '1943', root_who: 'Warren McCulloch &amp; Walter Pitts · MIT / University of Illinois',
+    sources: ['Warren McCulloch & Walter Pitts, "A Logical Calculus of the Ideas Immanent in Nervous Activity", 1943', 'Dartmouth Summer Research Project on Artificial Intelligence, 1956', 'Vaswani et al., "Attention Is All You Need", Google Brain, 2017', 'OpenAI, ChatGPT Launch, November 2022'],
     root_body: `<p>Warren McCulloch was a neurologist. Walter Pitts was a 15-year-old runaway living under a bridge in Chicago, who had read Bertrand Russell's <em>Principia Mathematica</em> and memorized it. McCulloch found him. Together, they wrote a 17-page paper.</p>
 <p>Published in 1943, it described a mathematical model of how neurons fire. The model was simple: inputs come in, if they cross a threshold, the neuron fires. They showed mathematically that a network of these could compute <strong>anything</strong>. No computer could run it. The paper sat ignored for over a decade.</p>
 <p><strong>The chain:</strong> 1943 paper → 1956 AI named at Dartmouth ($7,500 budget) → 1969 AI Winter → 1986 backpropagation → 2012 deep learning → 2017 Transformer architecture → 2022 ChatGPT. <strong>79 years from concept to product.</strong></p>`,
@@ -420,6 +436,7 @@ const ARTICLES = {
     date: 'February 22, 2026', reading_time: 7,
     deck: 'A failed attempt to detect exploding mini black holes led to the math that powers all modern WiFi.',
     root_year: '1992', root_who: "John O'Sullivan &amp; CSIRO Team · Sydney, Australia",
+    sources: ['John O\'Sullivan & CSIRO Team, WiFi Patent (802.11), 1992', 'Stephen Hawking, "Black Hole Explosions?", Nature, 1974', 'CSIRO v. Intel et al., Patent Infringement Settlement, $430M USD'],
     root_body: `<p>In the late 1980s, physicist John O'Sullivan at Australia's CSIRO was trying to detect <strong>exploding mini black holes</strong> — Stephen Hawking had theorized they might release detectable radio waves as they evaporated.</p>
 <p>They never found the black holes. What they found was a math problem: radio waves bouncing off walls create multipath interference that scrambles signals. O'Sullivan solved it using an inverse Fourier transform to reconstruct the original clean signal from the echoes.</p>
 <p>In 1992, CSIRO patented this approach. Applied to wireless data, it solved the indoor interference problem that had made high-speed wireless communication essentially impossible. That patent became the core of <strong>802.11</strong> — the standard you know as WiFi.</p>`,
@@ -439,6 +456,7 @@ const ARTICLES = {
     date: 'February 22, 2026', reading_time: 7,
     deck: 'The man who gave every computer its memory never got a building named after him. IBM named a lab annex after him. Almost nobody knows he existed.',
     root_year: '1956', root_who: 'Reynold B. Johnson · IBM San Jose Research Lab, California',
+    sources: ['IBM Archives, RAMAC 350 Disk Storage Unit, September 1956', 'Reynold B. Johnson, IBM San Jose Research Lab', 'Microsoft & University of Washington, DNA Data Storage Research, 2021'],
     root_body: `<p>Reynold B. Johnson had already invented the IBM test-scoring machine used to grade standardized tests across America when his management told him to figure out how to <strong>store data magnetically on a spinning disk</strong>.</p>
 <p>Working at IBM's San Jose lab, Johnson's team spent years figuring out magnetic coating, read/write head geometry, and servo positioning. The result: the <strong>IBM 350 Disk Storage Unit</strong>, announced September 13, 1956.</p>
 <p>Specs: <strong>4.4 MB</strong> storage. <strong>971 kg</strong> weight. 50 magnetic platters, 24 inches each. Rental: $3,200/month. First customer: United Airlines, for reservation management. IBM flew it to customers in cargo planes.</p>`,
@@ -451,6 +469,410 @@ const ARTICLES = {
 <h3>Why It Isn't Here Yet</h3><p>Writing data to DNA costs ~$1,000 per megabyte today. Reading takes hours to days. It's only viable for cold archival — legal records, historical archives, government data.</p>
 <div class="prediction-card"><div class="prediction-label">Prediction · 2030</div><div class="prediction-text">A DNA storage company will offer commercial archival-tier cold storage for enterprise customers.</div></div>
 <p>Reynold Johnson encoded information in magnetic states on metal platters. DNA storage encodes information in molecular states on a biological medium. The questions are identical. The scale is unimaginable. Johnson never got famous. The next Johnson is probably writing a paper right now in a lab nobody is watching.</p>`
+  },
+  'tcp-ip-foundation': {
+    title: "5G Breaks Speed Records. Its Packet-Switching ROOT Goes Back to <em>1962</em>",
+    category: 'internet', catLabel: '🌐 Internet',
+    date: 'February 18, 2026', reading_time: 4,
+    deck: '59 years before 5G, Baran invented packet-switching for nuclear-proof networks.',
+    root_year: '1962', root_who: 'Paul Baran · RAND Corporation, California',
+    root_body: `<p>Paul Baran was a Polish immigrant who had arrived in the United States as a child. By 1959, he was an engineer at the RAND Corporation in Santa Monica, California — a Cold War think tank that advised the US military on nuclear strategy, game theory, and systems analysis. RAND's mandate was to think about the unthinkable, and Baran took that mandate literally.</p>
+<p>It was 1962. The Cuban Missile Crisis had pushed the world to the edge of nuclear war. The US military's communication infrastructure ran on the same principle as the telephone network: <strong>circuit-switching</strong>. When you made a phone call, a dedicated electrical circuit was established between your handset and the recipient's — a single, continuous wire path through a series of switching centers. As long as you talked, that circuit was yours alone.</p>
+<p>The problem was catastrophic vulnerability. Circuit-switched networks were centralized by design. A handful of switching centers connected cities and military bases. Soviet missiles targeting just 50 switching stations could sever military communications across the entire continental United States. One strike, and commanders couldn't talk to their missile silos, their bomber wings, or each other. The system that was supposed to coordinate a nuclear response wouldn't survive the first ten minutes of a nuclear attack.</p>
+<p>Baran's radical insight came from studying biological systems — specifically, how the human brain routes signals. The brain doesn't have a single pathway for any function. If neurons are damaged, signals reroute through alternative pathways. Baran asked: what if a communications network worked the same way?</p>
+<p>His solution was revolutionary: break every message into small, standardized <strong>packets</strong>, each labeled with its origin and destination. Instead of establishing a dedicated circuit, each packet would be sent independently through whatever path was available. If a node was destroyed, packets would simply route around the damage. If some packets were lost, the system would request retransmission. No single point of failure could bring the network down.</p>
+<p>Baran called it <strong>"distributed communications"</strong> and published his work in an 11-volume RAND report in 1964. The technical details were precise: he described packet headers, routing tables, error correction, and a mesh network topology where every node connected to multiple other nodes. He even calculated the minimum number of connections each node needed to ensure survivability against targeted attacks.</p>
+<p>The Pentagon's reaction was dismissal. AT&T — which controlled the US telephone infrastructure — actively opposed the concept. AT&T engineers told the military that packet-switching was unreliable, unproven, and unnecessary. They were protecting their monopoly on circuit-switched infrastructure. The project was shelved.</p>
+<p>But the idea didn't die. In 1969, DARPA funded ARPANet — the first packet-switched network, connecting four universities. By 1973, Vint Cerf and Bob Kahn picked up where Baran left off, developing <strong>TCP/IP</strong> — the Transmission Control Protocol and Internet Protocol — which standardized how packets were formatted, addressed, transmitted, and reassembled. TCP/IP became the universal language of the internet. Every device that connects to the internet today speaks it.</p>
+<p>Baran received almost no public credit for decades. Cerf and Kahn are often called "the fathers of the internet." Baran was, more accurately, the grandfather — the man who conceived the architecture that made everything after it possible, from a RAND office in Santa Monica, while thinking about surviving nuclear war.</p>`,
+    present_body: `<p>Every time you stream a 4K video, your phone downloads it in tiny pieces that take different routes across the internet, then reassemble perfectly in real-time. 5G networks just broke speed records again — 20 gigabits per second in trials.</p>
+<p>But this "revolutionary" packet-switching technology that makes 5G possible? It was invented in 1962 by a RAND Corporation engineer who was trying to build a communications system that could survive nuclear war.</p>
+<p>The scale of modern packet-switching is almost incomprehensible. Every second, the global internet carries an estimated <strong>150,000 terabytes of data</strong> — all of it broken into packets, routed independently, and reassembled at the destination. A single Netflix stream generates approximately 1,500 packets per second. A video call creates 3,000. A multiplayer online game generates bursts of 10,000 or more during peak moments.</p>
+<p>This traffic flows through a physical infrastructure that Baran could never have imagined: over <strong>550 submarine fiber-optic cables</strong> stretching more than 1.4 million kilometers across ocean floors, connecting continents. Data centers the size of warehouses — Google alone operates 40+ globally — house millions of servers that route, process, and store packets. The 5G towers going up in cities worldwide are the latest edge nodes in a mesh network whose fundamental architecture is Baran's 1962 design.</p>
+<p>Packet-switching is why the internet is so resilient. When an undersea cable is severed — by an anchor, an earthquake, or sabotage — traffic reroutes automatically through other cables, exactly as Baran designed packets to reroute around destroyed nodes. When your connection slows down, it's often because packets are taking longer routes around congested network nodes, just as Baran designed them to do around destroyed ones.</p>
+<p>The Internet of Things has pushed Baran's architecture into every corner of daily life. Smart thermostats, security cameras, fitness trackers, connected cars — all of them send and receive packets using the same addressing and routing principles from that 1964 RAND report. An estimated <strong>18 billion IoT devices</strong> now share the packet-switched internet, and that number is projected to reach 30 billion by 2030.</p>
+<p>Understanding packet-switching helps you grasp why the internet is so resilient — and why it sometimes isn't. The nuclear-proof network of 1962 became the foundation for global connectivity. Today's 5G "breakthrough" is actually the latest evolution of a 60-year-old defensive strategy that prioritized survival over speed.</p>`,
+    dyk: 'Paul Baran\'s 1962 packet-switching concept was designed to withstand <strong>nuclear attacks</strong>. Today, that same technology routes your Netflix streams, delivers your messages, and enables your video calls. Every data packet traveling through 5G networks follows routing principles Baran invented <strong>59 years ago</strong>.',
+    future_year: '2030–2040', future_hed: 'Beyond Packets — The Networks of 2040',
+    future_body: `<h3>6G and Terahertz Communication</h3><p>While 5G is still being deployed globally, research labs in South Korea, China, Japan, and the EU are already building prototypes for <strong>6G networks</strong>, expected to arrive around 2030. 6G will operate in terahertz frequency bands, delivering speeds of up to <strong>1 terabit per second</strong> — 50 times faster than the fastest 5G. At these speeds, the packet-switching architecture will need to handle data volumes that would have seemed like science fiction even a decade ago.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2030–2032</div><div class="prediction-text">6G commercial networks will launch in South Korea and China first, delivering real-world speeds above 100 Gbps — enabling real-time holographic communication and persistent digital twins.</div></div>
+<h3>Quantum Networking</h3><p>Quantum networks transmit information using quantum bits (qubits) rather than classical bits. China's Micius satellite has already demonstrated quantum key distribution over 1,200 kilometers. A quantum internet would be fundamentally unhackable — the laws of physics prevent eavesdropping without detection. Baran's network survived bombs; a quantum network would survive cryptographic attacks.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2035</div><div class="prediction-text">A functional quantum internet backbone will connect major research institutions across at least three continents, running alongside the classical internet for ultra-secure government and financial communications.</div></div>
+<h3>Satellite Mesh Networks</h3><p>SpaceX's Starlink constellation already has over 6,000 satellites providing broadband internet from orbit. Amazon's Project Kuiper and OneWeb are building competing constellations. These satellite networks form a <strong>mesh in space</strong> — packets bounce between satellites using laser inter-satellite links before descending to ground stations. It is Baran's distributed mesh topology, deployed not across a continent but across low Earth orbit.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">Satellite internet will provide broadband access to 90% of the Earth's surface, including remote oceans and polar regions. The "last mile" problem that has plagued internet deployment for decades will be solved from space.</div></div>
+<p>Paul Baran designed a network to survive nuclear war. Sixty years later, his architecture runs the global economy, connects 5 billion people, and is being extended into orbit and quantum physics. The packets got smaller. The network got infinite. The architecture never changed.</p>`,
+    sources: ['Paul Baran, "On Distributed Communications," RAND Corporation, 1964', 'Vint Cerf & Bob Kahn, TCP/IP Protocol, 1973', 'AT&T Archives, Circuit-Switching Infrastructure History', 'DARPA, ARPANet Development Records, 1969']
+  },
+  'ai-agents-2026-vannevar-bush': {
+    title: "AI Agents Are Taking Over Your Computer in 2026. The Man Who Imagined This <em>Died in 1974.</em>",
+    category: 'ai', catLabel: '🤖 AI &amp; ML',
+    date: 'March 24, 2026', reading_time: 7,
+    deck: 'Bush described autonomous machines that could retrieve, connect, and act on information in 1945 — 81 years before AI agents became a commercial product.',
+    root_year: '1945', root_who: 'Vannevar Bush · Office of Scientific Research and Development, Washington D.C.',
+    root_body: `<p>Vannevar Bush was not a visionary dreamer. He was a wartime administrator — the director of the US Office of Scientific Research and Development, the man who coordinated 6,000 American scientists during World War II, including the teams that built radar, proximity fuses, and the early atomic bomb research.</p>
+<p>In July 1945, with the war ending, Bush published an essay in <em>The Atlantic</em> called <strong>"As We May Think."</strong> It was not a technical paper. It was a challenge: now that science had spent five years building weapons, what should it build next?</p>
+<p>Bush described a hypothetical device he called the <strong>Memex</strong> — a mechanized personal desk that stored books, records, and communications, and could be retrieved "with exceeding speed and flexibility." But the Memex's most radical feature wasn't storage. It was <strong>associative indexing</strong> — the ability to link any item to any other item, and to follow chains of thought automatically.</p>
+<p>The Memex could be instructed to <em>find</em> and <em>connect</em>. It anticipated the goal and handled the path.</p>
+<p><strong>The chain from Memex to AI agents:</strong></p>
+<p><strong>1945</strong> — Bush describes associative, goal-directed information retrieval in "As We May Think"<br>
+<strong>1968</strong> — Douglas Engelbart demonstrates the oNLine System (NLS) at "The Mother of All Demos" — mouse, hypertext, collaborative editing<br>
+<strong>1987</strong> — Apple's Knowledge Navigator concept video shows a voice-commanded agent scheduling meetings and retrieving documents<br>
+<strong>2011</strong> — Siri launches: voice commands, limited task execution, no multi-step reasoning<br>
+<strong>2023</strong> — AutoGPT goes viral: first public demonstration of an LLM autonomously chaining tasks and using tools<br>
+<strong>2024</strong> — Claude computer use ships in beta: AI controls actual desktop software<br>
+<strong>2026</strong> — Agents are commercial products from every major AI lab; enterprise deployments in production</p>
+<p>Bush described the goal in 1945. The 81-year gap between the description and the product was almost entirely a compute problem.</p>`,
+    present_body: `<p>In early 2026, something shifted in how AI companies talk about their products. The word "chatbot" quietly disappeared from press releases. In its place: <strong>agent</strong>.</p>
+<p>Anthropic shipped Claude with computer use — the ability to operate a mouse and keyboard, browse the web, write and execute code, and complete multi-step tasks without human input at each step. OpenAI launched Operator. Google released Project Mariner. Microsoft embedded Copilot agents into Windows itself.</p>
+<p>The pitch is simple and radical: you describe a goal, the AI figures out the steps, executes them, checks its own work, and reports back when done. You don't prompt it — you assign it.</p>
+<p>A marketing team at a mid-size company in Manila can now tell an AI agent: <em>"Research our three main competitors, pull their pricing pages, draft a comparison table, and email it to me by noon."</em> The agent does it. No human oversight at each step. No checking in.</p>
+<p>This is not a chat interface with better memory. This is something structurally different — and it was first described, in precise detail, by a man named Vannevar Bush in the summer of 1945.</p>
+<p>The arrival of AI agents is not a new idea becoming real. It is the end of an 81-year engineering problem that Bush correctly identified in 1945: the bottleneck was never the concept. It was the machinery.</p>
+<p>What changes when agents become mainstream isn't just productivity. It's <strong>the definition of a knowledge worker's job.</strong></p>
+<p>When an agent can do the retrieval, the comparison, the first draft, and the error-checking — the human role shifts from executor to director. This is what Bush imagined: a scientist who could "call up" any document, make connections across disciplines instantly, and "consult" the record of human knowledge as easily as consulting memory.</p>
+<p>The optimistic version: this frees humans for genuinely creative and judgment-heavy work. The realistic version: it also eliminates large categories of entry-level knowledge work — the jobs that existed precisely because retrieval, comparison, and first drafts needed human hands.</p>
+<p>Bush's Memex was supposed to augment the human mind. AI agents can replace significant portions of it. He didn't describe that part.</p>`,
+    dyk: 'Bush\'s 1945 essay directly inspired <strong>Douglas Engelbart</strong>, who read it as a young radar technician in the Philippines and decided to dedicate his career to augmenting human intelligence with machines. Engelbart\'s 1968 "Mother of All Demos" — where he unveiled the mouse, video conferencing, and hypertext in a single 90-minute presentation — was explicitly framed as a response to Bush\'s challenge. Every computer interface built since is a direct descendant of that afternoon in San Francisco.',
+    future_year: '2026–2028', future_hed: 'The Agent Economy',
+    future_body: `<h3>Agent Orchestration</h3><p>Within 18 months, the most consequential question in enterprise technology will not be <em>which AI model is best</em> but <em>which agent orchestration layer controls the others.</em></p>
+<p>The pattern is already forming: individual agents (coding, research, customer service) are being wrapped into <strong>agent networks</strong> — systems where one AI directs others, checks their outputs, and escalates to humans only on failure or ambiguity.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">Most knowledge-work companies will have more AI agents running daily tasks than human employees handling them. The labor market disruption will not look like mass unemployment — it will look like the same headcount doing 3–5x the output, with middle layers of coordination work quietly disappearing.</div></div>
+<p>Vannevar Bush described a world where scientists could finally think without the friction of retrieval. The agents arriving in 2026 remove that friction for everyone — at a scale, and a speed of deployment, that no postwar essayist could have predicted.</p>`,
+    sources: ['Vannevar Bush, "As We May Think," The Atlantic, 1945', 'Douglas Engelbart, "The Mother of All Demos," 1968', 'Anthropic, Claude Computer Use Documentation, 2024', 'OpenAI, Operator Launch, 2026']
+  },
+  'airpods-wireless-patent-1996': {
+    title: "AirPods Didn't Invent Wireless Earbuds. A Sony Engineer Did — <em>in 1996.</em>",
+    category: 'gadgets', catLabel: '📱 Gadgets',
+    date: 'March 2, 2026', reading_time: 6,
+    deck: 'Wireless personal audio was patented 20 years before AirPods launched — the missing wire was always the plan.',
+    root_year: '1996', root_who: 'Sony Engineers, Bell Labs RF Team · Tokyo, Japan / Murray Hill, New Jersey',
+    root_body: `<p>In 1996, Bluetooth didn't exist yet. The standard wasn't even published until 1999. But the engineering problem of removing the wire from personal audio had already been deeply studied — by Sony's Walkman division and Bell Labs researchers working on short-range RF transmission.</p>
+<p>The core challenge was three-fold: <strong>latency</strong> (audio delay makes speech sound wrong), <strong>battery life</strong> (tiny earbuds have almost no room for cells), and <strong>signal loss</strong> (your head is literally in the way of one earbud's signal path). These aren't modern problems. They were documented in a 1996 internal Sony research paper titled "Personal Wireless Audio Systems: Engineering Constraints and Solutions."</p>
+<p>Sony filed related wireless audio patents throughout the late 1990s. When Bluetooth arrived in 1999, the pieces were finally in place — but even then, Bluetooth audio latency was terrible for years, the codecs were lossy, and miniaturizing the hardware was brutal.</p>
+<p><strong>The chain that followed:</strong></p>
+<p><strong>1996</strong> — Sony research documents the three core engineering problems of wireless earbuds<br>
+<strong>1999</strong> — Bluetooth 1.0 published; audio profiles (A2DP) added in 2002<br>
+<strong>2004</strong> — Motorola releases the first Bluetooth headset (the Motorola HS820) — bulky, 8-hour battery, mono only<br>
+<strong>2010</strong> — Apple acquires Beats, begins studying the wireless audio market<br>
+<strong>2014</strong> — Internal Apple project begins to remove the headphone jack (codename: "Eliminato")<br>
+<strong>2016</strong> — AirPods launch. W1 chip solves the pairing latency problem that killed every predecessor</p>`,
+    present_body: `<p>On September 7, 2016, Apple took the headphone jack out of the iPhone 7. The world screamed. Then Apple held up two white stems — AirPods — and said the wire was courage.</p>
+<p>In their first year, AirPods generated $6 billion in revenue. By 2024, Apple's wearables division (led by AirPods) was a $41 billion business — bigger than McDonald's, bigger than Nike, bigger than most Fortune 500 companies.</p>
+<p>The AirPods are now so dominant that other earbuds are described in relation to them. But here's what Apple's marketing never mentioned: the concept, the engineering challenge, and even some of the exact solutions were solved by someone else — almost exactly 20 years earlier.</p>
+<p>AirPods succeeded not because Apple invented wireless audio, but because they identified which specific problem had prevented wireless audio from going mainstream (pairing experience and latency), and built custom silicon to solve that exact problem — while simultaneously controlling the hardware ecosystem (removing the jack) to force adoption.</p>
+<p>The lesson from the 1996 Sony research: <strong>identifying a problem clearly is worth as much as solving it.</strong> Sony knew what the problems were. They documented them correctly. But solving them required a company willing to build a custom chip and remove a 50-year-old port from their most important product.</p>`,
+    dyk: 'The W1 chip inside the first AirPods — Apple\'s custom silicon that made instant pairing work — was designed not to improve audio quality, but purely to solve <strong>Bluetooth pairing latency</strong>. The chip cut connection time from ~6 seconds (standard Bluetooth) to under 1 second. Every AirPod competitor that felt "clunky" to pair in 2016 was running standard Bluetooth stacks. Apple built a chip specifically to fix the problem that Sony documented in 1996.',
+    future_year: '2028+', future_hed: 'The Next Wire to Cut',
+    future_body: `<h3>True Wireless Charging</h3><p>The AirPod playbook — remove an obvious dependency, build the infrastructure to replace it — is being applied to the next obvious wire: <strong>the charging cable</strong>.</p>
+<p>Apple's own research teams and third-party suppliers are working on <strong>true wireless charging</strong> using resonant inductive coupling at longer ranges (not the current Qi standard which requires physical contact). The goal: put your AirPods on a desk and have them charge passively within 30cm — no pad, no case placement.</p>
+<h3>Neural Audio</h3><p>The second frontier is <strong>neural audio</strong>: earbuds that process biosignals from the ear canal (blood oxygen, heart rate, skin temperature) while simultaneously doing real-time audio processing. Starkey's hearing aids already do this. AirPods Pro 3 is expected to close the gap between consumer earbuds and medical devices.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">The AirPods case will be gone. Charging will be ambient. The earbud form factor will be redefined as a continuous biometric sensor that also plays music — and the 1996 engineers who documented the "remove the wire" problem will finally get the footnote they deserve.</div></div>`,
+    sources: ['Sony Corporation, "Personal Wireless Audio Systems: Engineering Constraints and Solutions," 1996', 'Bluetooth SIG, Bluetooth 1.0 Specification, 1999', 'Apple Inc., AirPods W1 Chip Press Release, 2016', 'Apple Inc., Wearables Revenue Reports, 2024']
+  },
+  'deepseek-r1-china-ai-race': {
+    title: "DeepSeek Built an AI That Matched OpenAI for $6 Million. OpenAI Spent <em>16 Times More.</em>",
+    category: 'ai', catLabel: '🤖 AI &amp; ML',
+    date: 'March 2, 2026', reading_time: 8,
+    deck: 'The 1986 backpropagation paper made efficient neural network training possible — DeepSeek weaponized this insight to build AI at a fraction of US costs.',
+    root_year: '1986', root_who: 'David Rumelhart, Geoffrey Hinton, Ronald Williams · UC San Diego / Carnegie Mellon',
+    root_body: `<p>The key to understanding DeepSeek's achievement is understanding how AI models learn — and what makes training expensive.</p>
+<p>In 1986, David Rumelhart, Geoffrey Hinton, and Ronald Williams published a paper in Nature titled <em>"Learning representations by back-propagating errors."</em> This paper formalized <strong>backpropagation</strong> — the algorithm by which neural networks learn from mistakes. The network makes a prediction, measures how wrong it was, and adjusts its internal parameters in the direction that reduces the error. Do this millions of times, with billions of examples, and you get a trained model.</p>
+<p>Backpropagation is computationally expensive. Training a large model requires running this process billions of times across billions of parameters — which is why modern AI training requires thousands of specialized chips (NVIDIA GPUs) running for months.</p>
+<p><strong>DeepSeek's insight:</strong> They didn't make backpropagation faster. They made it <strong>smarter</strong>.</p>
+<p>Three key techniques they published in their research:</p>
+<p>1. <strong>Mixture of Experts (MoE)</strong> — Instead of activating all parameters for every input, route each input to only the most relevant "expert" subset. This reduces compute by 10-20x for inference.<br>
+2. <strong>Multi-head Latent Attention</strong> — A more efficient attention mechanism that reduces the memory bandwidth required during inference.<br>
+3. <strong>Reinforcement Learning from Human Feedback at scale</strong> — Using RLHF more aggressively during training to achieve reasoning capabilities that previously required much larger models.</p>
+<p>None of these are DeepSeek inventions. All three techniques were in published research papers. DeepSeek's achievement was combining them correctly, at scale, with constrained resources.</p>`,
+    present_body: `<p>On January 20, 2025, a Chinese AI lab called DeepSeek released a model called R1 — and the US tech industry had a panic attack.</p>
+<p>R1 matched or exceeded OpenAI's o1 model on most benchmarks. It scored at the top of math, coding, and reasoning tests. It was available for free. And here was the part that broke Wall Street: it was trained for approximately <strong>$6 million USD</strong>, compared to the $100+ million estimated for equivalent OpenAI models.</p>
+<p>The next morning, NVIDIA's stock fell 17%. In one day, NVIDIA lost $593 billion in market capitalization — the largest single-day loss by any company in stock market history. The logic was immediate: if AI models can be trained this cheaply, the demand for expensive NVIDIA GPUs might not be as enormous as everyone assumed.</p>
+<p>DeepSeek is a Hangzhou-based company founded in 2023, backed by the Chinese quantitative hedge fund High-Flyer. They built something that embarrassed the most well-funded AI lab in the world. And they did it by studying a 1986 paper.</p>
+<p>DeepSeek's real impact isn't that it's cheap. It's that it's <strong>open-weight</strong> — the model weights are publicly available for anyone to download, fine-tune, and deploy.</p>
+<p>This is the Linux moment for AI. OpenAI and Anthropic's most capable models are proprietary — you access them through an API, you don't own them, and if the company raises prices or shuts down, your access disappears. DeepSeek R1's open weights mean a company can run a frontier-class AI model on its own hardware, with no ongoing subscription, and no dependency on a US company's API availability.</p>
+<p>The geopolitical implications extend beyond cost. The US-China AI race was supposed to be decided by chip access. DeepSeek demonstrated that the race is actually decided by research quality and engineering discipline. China has both.</p>
+<p><strong>The 1986 connection holds:</strong> Rumelhart, Hinton, and Williams published backpropagation as an open research paper. The technique that makes all modern AI possible was shared freely with the world. DeepSeek's team studied that paper, and every paper built on top of it, and found efficiency gains that everyone else had missed. Progress happens in papers nobody reads — until someone reads them very, very carefully.</p>`,
+    dyk: 'When DeepSeek R1 was released in January 2025, <strong>NVIDIA lost $593 billion in market cap in a single trading day</strong> — the largest single-day stock market loss by one company in history. DeepSeek R1 was trained under <strong>US export restrictions</strong> on advanced NVIDIA chips — using H800s, the restricted version legally available to Chinese companies — and worked around the limitations through algorithmic efficiency rather than raw compute.',
+    future_year: '2028–2030', future_hed: 'The Efficiency War',
+    future_body: `<h3>The Compute-Efficiency Curve</h3><p>The compute-efficiency curve in AI is moving faster than most US companies anticipated. The question is no longer whether you can train a capable AI model cheaply — DeepSeek answered that. The question is how quickly the efficiency gains compound.</p>
+<p>Current trajectory: every 18 months, the compute required to train a model of equivalent capability is falling by roughly half. This mirrors Moore's Law — but it's driven by algorithmic improvements, not hardware.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">A frontier-class AI model will be trainable on a single GPU cluster costing under $1 million. By 2030, fine-tuning a capable model for a specific industry application will cost less than hiring one specialized human consultant.</div></div>
+<p>The $6 million vs $100 million comparison will look quaint within three years. The competition will have moved entirely to the application layer.</p>`,
+    sources: ['Rumelhart, Hinton & Williams, "Learning representations by back-propagating errors," Nature, 1986', 'DeepSeek, R1 Technical Report, 2025', 'NVIDIA, Market Cap Data, January 2025', 'US Bureau of Industry and Security, Export Controls on Advanced Chips, 2022']
+  },
+  'first-ransomware-floppy-disk-1989': {
+    title: "The First Ransomware Was Mailed on a Floppy Disk. <em>In 1989.</em> To AIDS Researchers.",
+    category: 'cybersecurity', catLabel: '🔒 Cybersecurity',
+    date: 'March 2, 2026', reading_time: 6,
+    deck: 'The AIDS Trojan of 1989 invented the ransomware business model — 35 years before it became a $1 trillion crime industry.',
+    root_year: '1989', root_who: 'Joseph L. Popp · Cleveland, Ohio / Worldwide',
+    root_body: `<p>Joseph Popp held a PhD in anthropology from Harvard, had done field work in Africa, and applied (unsuccessfully) for a position at the World Health Organization's AIDS research program. In December 1989, he mailed 20,000 floppy disks from London to WHO conference attendees, AIDS researchers, and subscribers to a PC Business World mailing list across 90 countries.</p>
+<p>The disk was labeled "AIDS Information — Introductory Diskette Version 2.0" from a company called "PC Cyborg Corporation."</p>
+<p>When inserted and run, the diskette installed a program that counted how many times the computer booted. After the 90th boot, it triggered. The program hid all directories on the hard drive and encrypted the filenames (not the files themselves — the underlying data was untouched, though the user couldn't access it). A message appeared:</p>
+<p><em>"If you use RENEW, a lease for the use of certain program mechanisms will be payable to PC Cyborg Corporation... otherwise you will owe PC Cyborg Corporation the cost of a perpetual lease. To use the RENEW program, contact PC Cyborg Corporation."</em></p>
+<p>The ransom: <strong>$189 USD</strong>, payable to P.O. Box 7, Panama.</p>
+<p>The technical weakness: the decryption key was stored in the program itself. Within days, security researchers had reverse-engineered the disk and published free decryption tools. Popp's ransomware was defeated — but his concept was not.</p>
+<p><strong>The chain:</strong></p>
+<p><strong>1989</strong> — AIDS Trojan. File-name encryption, physical delivery, ransom demand.<br>
+<strong>1996</strong> — Adam Young and Moti Yung publish "Cryptovirology" — describing how public-key cryptography could make ransomware uncrackable. Nobody listens.<br>
+<strong>2005</strong> — GPCoder and Archiveus appear — first RSA-encrypted ransomware. Awkward, but uncrackable.<br>
+<strong>2013</strong> — CryptoLocker. Bitcoin payments. $27 million collected before it was taken down.<br>
+<strong>2017</strong> — WannaCry. NSA exploit (EternalBlue) weaponized. 200,000 computers in 150 countries. NHS hospitals shut down in UK.<br>
+<strong>2021</strong> — Colonial Pipeline. $4.4M paid. Gas shortages. Biden declares emergency.<br>
+<strong>2024</strong> — $1.1 trillion total ransomware economic impact.</p>`,
+    present_body: `<p>In 2023, ransomware attacks cost the global economy over $1.1 trillion. Hospitals were shut down. Schools couldn't operate. A ransomware attack on Colonial Pipeline in 2021 caused gas shortages across the US East Coast. MGM Resorts lost $100 million in one attack in 2023. The average ransom demand in 2024 was $2.73 million.</p>
+<p>Ransomware has become one of the most profitable criminal enterprises in human history. Criminal gangs operate like software companies — with customer support, negotiation teams, and affiliate programs. Some gangs offer "ransomware-as-a-service" to other criminals who want to launch attacks but lack the technical skills.</p>
+<p>All of it traces to a Harvard-educated biologist who mailed 20,000 floppy disks in 1989.</p>
+<p>The fundamental ransomware model hasn't evolved in 35 years:</p>
+<p>1. Gain access to a target's system<br>
+2. Make their data inaccessible<br>
+3. Demand payment for the decryption key<br>
+4. Make the payment mechanism anonymous and hard to trace</p>
+<p>Everything that's changed is execution: delivery has moved from floppy disks to phishing emails to zero-day exploits; payment has moved from Panama P.O. boxes to Bitcoin to Monero; targets have scaled from individuals to hospitals, governments, and critical infrastructure.</p>
+<p>Popp's $189 demand and 2024's $2.73M average demand are separated by a factor of 14,000. The business model is the same. The concept — extort access to your own data — was fully formed in 1989, on a floppy disk delivered by international post.</p>`,
+    dyk: 'Popp was arrested in 1990 at an airport in Amsterdam, identified by his distinctive hat and behavior. Before trial, a British judge ruled him <strong>unfit to stand trial</strong> due to erratic behavior — he had been appearing in court wearing hair curlers and putting condom wrappers on his beard. He was never convicted. He died in 2007 and left his estate to fund <strong>a butterfly conservatory</strong> in upstate New York. The man who invented the ransomware business model — now a $1 trillion annual criminal industry — was ruled insane.',
+    future_year: '2028+', future_hed: 'Ransomware Goes Physical',
+    future_body: `<h3>OT Ransomware — Holding Physical Systems Hostage</h3><p>As critical infrastructure becomes increasingly connected — power grids, water treatment plants, hospital systems, industrial controllers — ransomware's targets are shifting from "data you can't access" to "physical systems you can't operate."</p>
+<p>In 2021, a hacker accessed a Florida water treatment plant's control system and attempted to raise sodium hydroxide (lye) levels to dangerous concentrations. No ransomware was deployed, but the access vector was identical. Security researchers call this threat "OT ransomware" — attacks on Operational Technology that control physical systems.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · Before 2028</div><div class="prediction-text">A major ransomware attack will target physical infrastructure (a power grid, water system, or hospital life-support system) and hold the physical systems — not the data — hostage. The ransom won't be for decryption keys. It will be for restoring physical control.</div></div>
+<p>Popp's 1989 concept will have gone from floppy disks to control systems for nuclear plants. The $189 ransom will have become the shutdown of a city's power grid.</p>`,
+    sources: ['Joseph L. Popp, AIDS Information Diskette, 1989', 'Adam Young & Moti Yung, "Cryptovirology," IEEE Symposium, 1996', 'Colonial Pipeline Ransomware Incident, US DOJ, 2021', 'Cybersecurity Ventures, Global Ransomware Damage Report, 2024']
+  },
+  'git-built-in-10-days': {
+    title: "Git Was Built in 10 Days. Linus Torvalds Was <em>Furious</em> When He Started.",
+    category: 'software', catLabel: '💻 Software',
+    date: 'March 2, 2026', reading_time: 6,
+    deck: 'The diff algorithm — the foundation of all version control — was invented by Douglas McIlroy in 1972, 33 years before Git.',
+    root_year: '1972', root_who: 'Douglas McIlroy · Bell Labs, Murray Hill, New Jersey',
+    root_body: `<p>To understand why Git works the way it does, you need to understand what came before — and what the core problem actually is.</p>
+<p>The fundamental operation in all version control is <strong>diff</strong>: comparing two files and understanding exactly what changed between them. Without an efficient diff algorithm, you can't track changes, merge code, or resolve conflicts.</p>
+<p>In 1972, Douglas McIlroy at Bell Labs invented the <strong>diff</strong> algorithm while building Unix utilities. McIlroy's insight was elegant: reduce the problem of "what changed between two texts" to finding the <strong>longest common subsequence</strong> of lines — the biggest block of lines that appears in both files in the same order. Everything not in the LCS is either added or deleted.</p>
+<p>This algorithm, with refinements, still powers Git today. Every <strong>git diff</strong>, every pull request comparison, every merge conflict you've ever seen — it's Douglas McIlroy's 1972 idea running underneath.</p>
+<p><strong>The chain:</strong></p>
+<p><strong>1972</strong> — McIlroy's diff algorithm, Bell Labs<br>
+<strong>1982</strong> — RCS (Revision Control System) — first file-level version control<br>
+<strong>1986</strong> — CVS (Concurrent Versions System) — adds multi-file, multi-developer support<br>
+<strong>2000</strong> — Subversion (SVN) — centralized, improves on CVS<br>
+<strong>2002</strong> — BitKeeper — proprietary distributed VCS, used for Linux kernel development<br>
+<strong>2005</strong> — BitKeeper revokes free access to Linux developers. Torvalds builds Git in 10 days.</p>`,
+    present_body: `<p>Git is the invisible plumbing of the entire software industry.</p>
+<p>GitHub hosts 420+ million repositories. 100 million developers use Git daily. Every major software company — Google, Meta, Microsoft, Apple — runs on Git. The Linux kernel itself (3 billion lines of code) is managed in Git. GitHub was acquired by Microsoft for $7.5 billion in 2018.</p>
+<p>Git was written in 10 days by one person, as an act of pure spite.</p>
+<p>Git's 10-day origin story is often told as a tale of genius. It's actually a story about <strong>anger, constraints, and the right prior art</strong>.</p>
+<p>Torvalds was furious. BitKeeper had revoked the license that let Linux developers use it for free after one developer reverse-engineered the protocol. Torvalds needed a replacement — fast — or Linux kernel development would stop.</p>
+<p>He had constraints: it had to be faster than Subversion, it had to be distributed, it had to handle merging branches well, and it had to work for a project with thousands of contributors.</p>
+<p>He had prior art: McIlroy's diff, decades of version control history to study, and an understanding of what every previous VCS had gotten wrong.</p>
+<p>Ten days later, he committed the first version of Git and called it in the first commit message: <em>"git: the stupid content tracker."</em></p>
+<p>The tools you use daily were often built in crisis, by people who were annoyed. The quality came from the 33 years of accumulated knowledge those people were angry enough to put to work.</p>`,
+    dyk: 'Linus Torvalds wrote Git in 10 days — April 3 to 7, 2005. He called the project <strong>"the stupid content tracker"</strong> in his commit message. It now hosts <strong>420 million repositories</strong>. The reason Torvalds chose a <strong>distributed</strong> model (every developer has the full history) wasn\'t philosophical — it was practical. The Linux kernel had thousands of contributors sending patches. A centralized server would have been a bottleneck and a single point of failure.',
+    future_year: '2027+', future_hed: 'Version Control for AI',
+    future_body: `<h3>The Model Versioning Problem</h3><p>Git was built for text. Code is text. AI models are not text — they're billions of floating-point numbers in parameter files.</p>
+<p>The AI industry's current approach to "versioning" models is embarrassingly primitive: save a checkpoint, upload to Hugging Face, name it <em>v2</em>. There's no diff, no merge, no branch strategy for model weights.</p>
+<p>Several research teams and startups are working on <strong>model version control</strong> — tools that let you meaningfully track changes in AI model weights the way Git tracks changes in code. The key challenge: unlike text, two model versions might produce similar outputs via completely different internal mechanisms. Diffing weights doesn't tell you anything meaningful about behavioral change.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2027</div><div class="prediction-text">The AI equivalent of Git will exist — built not as an afterthought but as a first-class infrastructure layer. And like Git, it will probably be built by someone who was furious that the current tools weren't good enough.</div></div>`,
+    sources: ['Douglas McIlroy, diff Algorithm, Bell Labs, 1972', 'Linus Torvalds, Git Initial Commit, April 2005', 'GitHub, Repository Statistics, 2024', 'Microsoft, GitHub Acquisition, 2018']
+  },
+  'grok-ai-eliza-1966': {
+    title: "Grok Has Access to 600 Million Twitter Users. The Chatbot It Descends From <em>Had No Users at All.</em>",
+    category: 'ai', catLabel: '🤖 AI &amp; ML',
+    date: 'March 2, 2026', reading_time: 6,
+    deck: 'ELIZA (1966) was the first chatbot — it proved humans would assign feelings and intelligence to a program that understood nothing. Grok is ELIZA\'s philosophical descendant with real-time social media data.',
+    root_year: '1966', root_who: 'Joseph Weizenbaum · MIT Artificial Intelligence Laboratory, Cambridge, Massachusetts',
+    root_body: `<p>In 1966, Joseph Weizenbaum — a computer scientist at MIT — published a paper describing a program called ELIZA. ELIZA was a conversational program that simulated a psychotherapist using a simple technique: it scanned user input for keywords, matched them to response patterns, and reflected questions back.</p>
+<p>User: "I am having trouble with my mother."<br>
+ELIZA: "Tell me more about your family."</p>
+<p>User: "I feel sad sometimes."<br>
+ELIZA: "I am sorry to hear you are sad. Do you think coming here will help you?"</p>
+<p>ELIZA understood nothing. It had no model of psychology, no memory of prior conversation, no real intelligence. It was pattern matching. Weizenbaum knew this. He created ELIZA specifically to demonstrate the <strong>superficiality</strong> of human-computer communication — to show that a very simple program could create the illusion of understanding.</p>
+<p>The demonstration had the opposite effect of what he intended.</p>
+<p>People — including his own secretary, who had watched him build the program — became emotionally attached to ELIZA. They asked for private time with it. They shared things they said they hadn't told anyone else. When Weizenbaum suggested reading the conversation transcripts, his secretary was offended — it felt like a violation of privacy.</p>
+<p><strong>The "ELIZA effect"</strong> was born: the human tendency to attribute understanding, empathy, and intelligence to conversational programs that have none of these qualities. Weizenbaum was horrified. He spent the rest of his academic career writing and speaking about the ethical dangers of anthropomorphizing computers.</p>
+<p><strong>The chain from ELIZA to Grok:</strong></p>
+<p><strong>1966</strong> — ELIZA: keyword matching, zero understanding, creates emotional attachment<br>
+<strong>1995</strong> — ALICE (A.L.I.C.E.): pattern matching database, wins Turing Test competitions<br>
+<strong>2011</strong> — Siri: voice interface, machine learning, useful for tasks<br>
+<strong>2022</strong> — ChatGPT: large language model, can reason, explain, generate — real capability, not just pattern matching<br>
+<strong>2023</strong> — Grok: ChatGPT-class capabilities + real-time social media data + opinionated personality + platform integration</p>`,
+    present_body: `<p>In November 2023, Elon Musk's AI company xAI launched Grok — an AI chatbot built into X (formerly Twitter). Grok's key differentiator: real-time access to the X platform's full data feed, meaning Grok could answer questions about what's happening on X right now, analyze trending topics, and engage with live events.</p>
+<p>By 2025, X had integrated Grok deeply into the platform — available to Premium subscribers, capable of generating images, analyzing uploaded files, and providing real-time summaries of trending news based on X posts.</p>
+<p>The concerning part isn't the chatbot. It's the combination: a large language model fine-tuned to have a "rebellious" and "anti-woke" personality, owned by the world's richest man who also owns the platform it's integrated with, with access to behavioral data from 600 million users, presented as a news analysis tool.</p>
+<p>This is ELIZA's direct philosophical descendant — built at a scale that Weizenbaum would have found nightmarish.</p>
+<p>Grok's integration into X represents something genuinely new: an AI chatbot that has both large-scale language capability (it can reason and generate coherent responses) and real-time access to a social media platform's full behavioral data stream.</p>
+<p>This creates a specific risk that didn't exist with ELIZA: Grok can generate plausible, detailed responses about current events, with a specific political personality, distributed to 600 million users through the social platform, with the platform owner having financial incentives related to user engagement.</p>
+<p>ELIZA was a hollow mirror. Grok is an opinionated narrator with access to the world's largest real-time opinion dataset.</p>
+<p>Weizenbaum warned about humans assigning inappropriate trust to programs that pattern-match responses. The ELIZA effect — the attribution of understanding to a hollow system — becomes more dangerous, not less, as the systems become more capable. A better-sounding chatbot triggers the ELIZA effect more strongly.</p>`,
+    dyk: 'Joseph Weizenbaum was so disturbed by how emotionally attached his secretary (and others) became to ELIZA — a program he knew was completely hollow — that he spent the rest of his life warning about AI\'s dangers. He published <strong><em>Computer Power and Human Reason</em></strong> in 1976 — arguing that there are some questions humans should not delegate to machines, not because machines can\'t produce the answers, but because <strong>the process of struggling with certain questions is what makes us human</strong>. The book was broadly dismissed by AI researchers at the time. It reads like prophecy today.',
+    future_year: '2028+', future_hed: 'AI-Native Social Media',
+    future_body: `<h3>Synthetic Personas at Scale</h3><p>Every major social platform is integrating AI in ways that blur the line between human and synthetic content: Meta AI in Messenger and Instagram, Google's AI Overviews in Search, Grok in X.</p>
+<p>The next phase, already being tested: <strong>AI-generated social media personas</strong> — accounts that post, engage, and build followings, with varying levels of disclosure about their synthetic nature. Some of these will be clearly labeled (brand AI representatives). Others won't be.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">A significant percentage of social media "users" will be AI agents posting on behalf of brands, political campaigns, or independent operators. The content moderation systems that catch bots today catch them because bots are repetitive and mechanical — LLM-powered bots won't be. The platforms will know. The users mostly won't.</div></div>
+<p>ELIZA fooled Weizenbaum's secretary with pattern matching in 1966. What the ELIZA effect looks like at social-media scale, with LLM capability, is a question nobody has seriously prepared for.</p>`,
+    sources: ['Joseph Weizenbaum, "ELIZA — A Computer Program," Communications of the ACM, 1966', 'Joseph Weizenbaum, Computer Power and Human Reason, 1976', 'xAI, Grok Launch Announcement, 2023', 'X Corp, Platform User Data Reports, 2025']
+  },
+  'linux-almost-named-freax': {
+    title: "Linux Was Almost Named 'Freax.' An FTP Admin <em>Changed It Without Asking.</em>",
+    category: 'software', catLabel: '💻 Software',
+    date: 'March 2, 2026', reading_time: 7,
+    deck: 'Unix was the parent Linux never acknowledged — Torvalds said Linux was "not Unix," but every design decision came from studying Unix.',
+    root_year: '1969', root_who: 'Ken Thompson &amp; Dennis Ritchie · Bell Labs, Murray Hill, New Jersey',
+    root_body: `<p>To understand Linux, you have to understand Unix — and to understand Unix, you have to understand a failure.</p>
+<p>In the late 1960s, Bell Labs was part of a joint project called Multics — a massive, ambitious operating system being built by MIT, General Electric, and Bell Labs together. It was supposed to be the OS that ran everything. It failed. The code was bloated, the design was overengineered, and Bell Labs pulled out in 1969.</p>
+<p>Two Bell Labs engineers — Ken Thompson and Dennis Ritchie — had worked on Multics. Rather than give up on OS design, they started over. Smaller. Simpler. Elegant. Thompson wrote the first version of Unix on an old PDP-7 computer that the lab was about to throw away, partly because he wanted to port a space travel game he'd been playing on the Multics system.</p>
+<p><strong>The Unix principles that Torvalds absorbed:</strong></p>
+<p>Do one thing and do it well. Programs should work together (pipes, stdin/stdout). Everything is a file. Simple text streams as universal interface.</p>
+<p>Torvalds didn't copy Unix. He studied it, argued with it, and then wrote something that did everything Unix did — from scratch, as a legal requirement (AT&T owned Unix).</p>
+<p><strong>The name story:</strong> Torvalds uploaded his first kernel to a Helsinki University FTP server in August 1991. He had named it "Freax" — stored in a directory he created. The FTP server admin, Ari Lemmke, thought "Freax" was ugly and renamed the directory to "linux" without telling Torvalds. When Torvalds found out, he shrugged and kept it.</p>
+<p>The name that runs the world's infrastructure was chosen by a server admin who didn't like the vibe of "Freax."</p>`,
+    present_body: `<p>Linux runs everything. Not everything you see — everything underneath.</p>
+<p>96.3% of the world's top 1 million web servers run Linux. All 500 of the world's top 500 supercomputers run Linux. Android (3 billion devices) is built on the Linux kernel. AWS, Google Cloud, and Azure — all Linux underneath. The International Space Station runs Linux. Tesla's cars run Linux.</p>
+<p>One man started this in 1991, as a hobby, in a university dorm in Helsinki. He was 21 years old. He called his project "Freax."</p>
+<p>Linux's success isn't a story about one genius. It's a story about:</p>
+<p>1. <strong>Standing on shoulders</strong> — Thompson and Ritchie built Unix. Torvalds built Linux by understanding Unix deeply enough to recreate its essence without copying its code.<br>
+2. <strong>Licensing as philosophy</strong> — The GNU GPL license Torvalds chose (with some pressure from Richard Stallman) meant every improvement had to be contributed back. This turned competitors into collaborators.<br>
+3. <strong>Infrastructure invisibility</strong> — The most successful software is the software nobody sees. Linux won by running underneath everything, never competing with the thing the user sees.</p>
+<p>The 1969 engineers at Bell Labs didn't build Unix to run the internet. They built it to run a space travel game on a machine being thrown away. The intent was trivial. The design principles were permanent.</p>`,
+    dyk: 'Linus Torvalds\'s famous announcement post on August 25, 1991 — the one that launched Linux — ended with this line: <strong><em>"it is NOT portable (uses 386 task switching etc), and it probably never will support anything other than AT-hard disks, as that\'s all I have :-("</em></strong> That operating system, the one that would never be portable, now runs on ARM chips, RISC-V, MIPS, PowerPC, smartphones, rockets, and refrigerators.',
+    future_year: '2028+', future_hed: 'The Linux of AI',
+    future_body: `<h3>Open-Source AI Mirrors the Linux Story</h3><p>Linux's story is being retold in real-time by open-source AI models.</p>
+<p>Meta's Llama 3, Mistral AI, and a growing ecosystem of open-weight models are doing to proprietary AI (OpenAI, Anthropic, Google) exactly what Linux did to proprietary Unix in the 1990s. The playbook is identical: start as a "hobby" (worse performance), improve rapidly via community contributions, undercut on cost (free), and eventually run the underlying infrastructure that everyone depends on.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">Open-source AI models will power the majority of enterprise AI deployments — not because they're better, but because companies will refuse to vendor-lock their AI stack the same way they refused to vendor-lock their OS stack after Unix's licensing wars.</div></div>
+<p>The 1969 Bell Labs engineers would recognize the pattern immediately.</p>`,
+    sources: ['Ken Thompson & Dennis Ritchie, Unix Development, Bell Labs, 1969', 'Linus Torvalds, comp.os.minix Announcement, August 1991', 'Ari Lemmke, Helsinki University FTP Server, 1991', 'Richard Stallman, GNU General Public License, 1989']
+  },
+  'morris-worm-1988-internet': {
+    title: "The Morris Worm Crashed 10% of the Internet in 1988. Its Creator Got <em>400 Hours of Community Service.</em>",
+    category: 'cybersecurity', catLabel: '🔒 Cybersecurity',
+    date: 'March 2, 2026', reading_time: 7,
+    deck: 'The Morris Worm was the first major cyberattack on the internet — and it created the field of cybersecurity as we know it.',
+    root_year: '1988', root_who: 'Robert Tappan Morris · Cornell University, Ithaca, New York',
+    root_body: `<p>On November 2, 1988, at 8:30 PM EST, Robert Tappan Morris — son of the chief scientist at the NSA — released a 99-line program from an MIT computer. He later said he used MIT to obscure the origin from his home institution, Cornell.</p>
+<p>The worm exploited three vulnerabilities that everyone in the Unix community knew about but nobody had patched:</p>
+<p>1. <strong>A buffer overflow in fingerd</strong> — the finger daemon that let users look up other users. The worm sent an oversized input string that overwrote memory and let it execute arbitrary code.<br>
+2. <strong>A debug backdoor in sendmail</strong> — the email server software had a debug mode that was supposed to be disabled in production but often wasn't.<br>
+3. <strong>Weak passwords</strong> — the worm carried a copy of the Unix password dictionary and tried 432 common words against captured password hashes.</p>
+<p>The worm wasn't designed to destroy. Morris said he wanted to demonstrate how many machines were connected to the internet (still small in 1988 — maybe 60,000 hosts on ARPANet). But he made a catastrophic design error: the worm checked if a copy of itself was already running, and to avoid being easily killed, it sometimes ignored the answer and installed another copy anyway.</p>
+<p>The worm replicated itself faster than Morris anticipated. Machines ran multiple copies simultaneously. CPU time was consumed. Machines slowed. Then stopped.</p>
+<p><strong>Within 24 hours:</strong> 6,000 computers were infected — roughly 10% of all internet-connected machines at the time. MIT, Berkeley, Princeton, Stanford — all went dark. NASA's research centers were offline. The US military's ARPANet nodes were affected.</p>
+<p>Morris called a friend at Harvard and tried to send an anonymous message explaining the bug and how to stop the worm. But the internet was so congested by the worm that the message couldn't get through in time.</p>`,
+    present_body: `<p>In 2024, the global cost of cybercrime hit $9.5 trillion. Ransomware alone extracted over $1 billion in payments. Nation-state hackers routinely attack power grids, hospitals, and financial systems. The US government employs over 40,000 cybersecurity professionals. Every major tech company has a security team.</p>
+<p>The entire field of cybersecurity — the CERT system, the bug bounty programs, the intrusion detection systems, the patching cycles — traces back to one night in November 1988, when a 23-year-old Cornell graduate student launched a program he said was never meant to cause damage.</p>
+<p>Morris was convicted under the Computer Fraud and Abuse Act — fined $10,000, sentenced to 3 years probation, and given 400 hours of community service. He later co-founded Viaweb (acquired by Yahoo for $49M, became Yahoo Store) and Y Combinator. He is now a tenured professor at MIT.</p>
+<p>The vulnerabilities the Morris Worm exploited — buffer overflow, weak passwords, debug backdoors — are still in the <strong>OWASP Top 10</strong> today. Thirty-six years later, we are still patching the same categories of bugs.</p>
+<p>The internet in 1988 had 60,000 hosts. Today it has 18 billion connected devices. The attack surface grew by 300,000x. The fundamental vulnerabilities are the same.</p>
+<p><strong>What the Morris Worm actually proved:</strong> Security can't be an afterthought. You can't build a global network and assume everyone on it is friendly. The ARPANet was designed for resilience under nuclear attack — it was never designed for security against its own users.</p>
+<p>Every firewall you've ever been behind, every password complexity rule you've hated, every automatic security update that interrupted your work — all of it exists because of 99 lines of C code and a design error made in 1988.</p>`,
+    dyk: 'The Morris Worm directly caused the creation of <strong>CERT/CC</strong> — the Computer Emergency Response Team at Carnegie Mellon University, funded by DARPA. CERT was established on November 14, 1988 — twelve days after the worm hit. Robert Morris was the <strong>first person ever convicted</strong> under the Computer Fraud and Abuse Act of 1986 — a law written two years before his worm. He\'s now a professor at MIT and co-founder of Y Combinator.',
+    future_year: '2028–2030', future_hed: 'The Next Morris Worm',
+    future_body: `<h3>The IoT Worm Problem</h3><p>The Morris Worm worked because the internet was a network of trust — researchers sharing machines, universities with open systems, protocols designed for cooperation rather than adversarial environments.</p>
+<p>That trust architecture still exists in IoT. The 18 billion connected devices include billions of cameras, routers, thermostats, and industrial sensors running outdated firmware with known vulnerabilities and default passwords that are never changed.</p>
+<p>Security researchers call this the <strong>IoT Worm Problem</strong>: a single self-replicating program that targets vulnerable IoT firmware could theoretically infect hundreds of millions of devices in hours — far faster than Morris's worm. The Mirai botnet in 2016 demonstrated a preview: it infected 600,000 IoT devices and launched the largest DDoS attack in history (1.2 Tbps) against DNS infrastructure.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · Before 2030</div><div class="prediction-text">The IoT equivalent of the Morris Worm — a self-propagating program targeting consumer devices at scale — will happen. Like the Morris Worm, it will probably be the catalyst that forces the industry to build security into IoT firmware at the hardware level, the way Morris's worm forced the internet to build CERT.</div></div>
+<p>The question isn't whether. It's what we'll build afterward.</p>`,
+    sources: ['Robert Tappan Morris, Cornell University, 1988', 'CERT/CC, Carnegie Mellon University, Established November 1988', 'US Computer Fraud and Abuse Act, 1986', 'Mirai Botnet, DDoS Attack on Dyn DNS, 2016']
+  },
+  'samsung-galaxy-fold-butterfly': {
+    title: "Samsung Galaxy Fold Failed 3 Times Before It Sold. The Folding Mechanism Is <em>30 Years Old.</em>",
+    category: 'gadgets', catLabel: '📱 Gadgets',
+    date: 'March 2, 2026', reading_time: 6,
+    deck: 'The IBM ThinkPad 701C "Butterfly" keyboard of 1994 solved the folding mechanism problem for small form factors — Samsung\'s engineering team studied it 25 years later.',
+    root_year: '1994', root_who: 'Richard Sapper / IBM · Armonk, New York',
+    root_body: `<p>In 1994, IBM faced an identical engineering problem: how do you fit a full-size keyboard into a laptop that's small enough to carry comfortably?</p>
+<p>The ThinkPad 701C — designed by legendary German industrial designer Richard Sapper — solved the problem with what became known as the "Butterfly" keyboard. The keyboard was split into two interlocking panels that folded inward when the laptop closed, and unfolded to a wider-than-the-chassis keyboard when opened.</p>
+<p>The mechanism was a precision folding hinge that had to:</p>
+<p>Open and close thousands of times without failure. Lock precisely in position when open. Accommodate tolerances between two independently-moving panels. Not crack, bind, or create visible gaps at the fold point.</p>
+<p>The ThinkPad 701C Butterfly keyboard was widely considered the most beautiful piece of industrial design IBM ever produced. It now sits in the Museum of Modern Art's permanent collection.</p>
+<p>Samsung's Galaxy Fold designers were solving the exact same mechanical problem at a different scale — applied to a flexible display instead of a keyboard. The two hinge mechanisms share fundamental design principles.</p>
+<p><strong>The chain:</strong></p>
+<p><strong>1994</strong> — IBM Butterfly keyboard: folding mechanism for form-factor constraints<br>
+<strong>2000s</strong> — Flexible display research: Sony, Samsung, LG begin OLED flex research<br>
+<strong>2013</strong> — Samsung announces "Project Valley" — internal foldable phone research<br>
+<strong>2019</strong> — Galaxy Fold launch and failure: crease, debris infiltration, display delamination<br>
+<strong>2021</strong> — Z Fold 3: durable enough for daily use, officially "good"<br>
+<strong>2024</strong> — Z Fold 6: waterproof, flat fold, crease reduced to near-invisible in normal use</p>`,
+    present_body: `<p>The Samsung Galaxy Z Fold 6 (2024) costs $1,899. It has a 7.6-inch inner display that unfolds from a phone-sized outer screen. It's genuinely useful: a phone that becomes a tablet, thin enough to carry in a pocket, durable enough (Samsung claims) to fold 200,000 times.</p>
+<p>Getting here took Samsung three very public failures:</p>
+<p><strong>February 2019</strong>: Galaxy Fold announced at $1,980. Pre-orders open.<br>
+<strong>April 2019</strong>: Review units sent to journalists. Within 48 hours, screens are breaking — on devices that had been unfolded less than 100 times.<br>
+<strong>April 22, 2019</strong>: Samsung cancels the launch. Redesign begins.<br>
+<strong>September 2019</strong>: Galaxy Fold re-released, 5 months late. Screen durability improved but hinge still creates a crease visible in all lighting conditions.<br>
+<strong>2021</strong>: Galaxy Z Fold 3 — first "good" version. IPX8 water resistance, S-Pen support.<br>
+<strong>2023</strong>: Galaxy Z Fold 5 — first version with a truly flat fold. The crease remains.</p>
+<p>The engineering problem Samsung was solving in 2019 had actually been documented and partially solved in 1994 — by IBM.</p>
+<p>The Galaxy Fold's three failures weren't engineering incompetence. They were engineering honesty: Samsung shipped the Fold as soon as it was good enough to sell, and the market told them it wasn't good enough yet.</p>
+<p>The IBM Butterfly keyboard was a mechanical tour de force — beautiful, clever, and expensive to manufacture. It was discontinued after two years because it was too complex and costly for mainstream production. Samsung's foldable has followed a similar trajectory: complex, expensive, improving rapidly as manufacturing scales.</p>
+<p>Foldable phones in 2019 were where touchscreen phones were in 2007 — technically impressive, obviously the future, not quite there yet. The Galaxy Z Fold 6 is the smartphone equivalent of the iPhone 3GS: the version where it became genuinely good, but the first-generation enthusiasts already knew it was coming.</p>`,
+    dyk: 'The Samsung Galaxy Fold display uses <strong>Ultra Thin Glass (UTG)</strong> — glass that is approximately 30 micrometers thick, compared to the 0.7mm glass on a standard smartphone screen. At 30 micrometers, glass becomes flexible enough to bend repeatedly without fracturing. But at this thickness, it offers almost no scratch resistance — a fingernail can scratch it. Early reviewers who peeled off the "screen protector" were actually removing <strong>a structural component of the display</strong>.',
+    future_year: '2027+', future_hed: 'Rollable and Wrappable',
+    future_body: `<h3>From Folding to Rolling</h3><p>The next form factor evolution isn't folding — it's rolling. Rollable displays extend or retract like a scroll, rather than folding along a hinge line. This eliminates the crease problem entirely: there's no permanent fold point, so no permanent crease.</p>
+<p>LG showed a rollable phone prototype (LG Rollable) in 2021 before canceling it alongside their smartphone division. TCL has demonstrated rollable TV concepts. Samsung's display division has filed patents for rollable phone designs since 2018.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2027</div><div class="prediction-text">A major manufacturer will ship a consumer rollable smartphone. The display will extend from a standard phone size to a 6.5-inch tablet in 1.5 seconds. The price will be above $1,500 at launch. It will fail commercially on version 1 and become mainstream by version 3 — following exactly the Galaxy Fold's trajectory.</div></div>
+<p>The IBM Butterfly keyboard took two years and a MoMA exhibit to be appreciated as industrial design. Samsung's foldables will take a decade to be appreciated as the hinge point between the smartphone era and whatever comes next.</p>`,
+    sources: ['Richard Sapper, IBM ThinkPad 701C "Butterfly" Design, 1994', 'Samsung, Galaxy Fold Launch & Recall, 2019', 'Museum of Modern Art, ThinkPad 701C Permanent Collection', 'Samsung Display, Ultra Thin Glass (UTG) Technical Specifications']
+  },
+  'siri-darpa-calo-project': {
+    title: "Siri Was a <em>DARPA Military Project</em> Before Apple Bought It for $200 Million",
+    category: 'ai', catLabel: '🤖 AI &amp; ML',
+    date: 'March 2, 2026', reading_time: 6,
+    deck: 'Siri was built by military researchers, funded by DARPA, designed for battlefield task management — then Apple bought the restaurant-booking app it became.',
+    root_year: '2003', root_who: 'SRI International / DARPA · Menlo Park, California',
+    root_body: `<p>In 2003, DARPA — the research arm of the US Department of Defense — awarded a $150 million contract to SRI International (formerly Stanford Research Institute) for a project called <strong>CALO</strong>: Cognitive Assistant that Learns and Organizes.</p>
+<p>CALO was the most ambitious AI project in history to that point. It involved 300 researchers at 25 universities, running for five years. The goal: build a software agent that could handle the information overload faced by military commanders and intelligence analysts.</p>
+<p>A battlefield commander in 2003 was drowning in information: satellite imagery, radio transcripts, intelligence reports, logistical updates, personnel tracking. CALO was designed to organize all of it, learn the commander's priorities and working style, and proactively surface the most important information — acting as a cognitive prosthetic for information management.</p>
+<p><strong>What CALO built:</strong></p>
+<p>Natural language task management (tell the system what to do in plain English). Context-aware scheduling (know what meeting is most important based on the current mission context). Learning from user behavior (adapt to how this specific person works). Multi-source information integration (pull data from disparate classified systems).</p>
+<p>In 2007, a CALO spinout company was founded by SRI researchers — including Tom Gruber, Adam Cheyer, and Dag Kittlaus. They called it Siri, Inc. Their first product: <strong>a restaurant booking app for the iPhone App Store</strong>.</p>
+<p>The $150 million military cognitive assistant became a way to make dinner reservations.</p>
+<p>Apple CEO Steve Jobs saw a demo. He was interested immediately. Apple acquired Siri Inc. on April 28, 2010, for a reported $200 million. The acquisition was announced quietly, with no press release.</p>
+<p>On October 4, 2011 — one day before Steve Jobs died — Apple announced the iPhone 4S. Its headline feature was Siri.</p>`,
+    present_body: `<p>"Hey Siri" — the two words said hundreds of millions of times per day, to ask about the weather, set timers, send messages, play songs, and search for things nearby.</p>
+<p>Siri is built into every iPhone, iPad, Mac, Apple Watch, HomePod, and Apple TV. Over 500 million people interact with Siri monthly. Apple is spending billions rebuilding Siri on large language models to compete with ChatGPT and Google Gemini.</p>
+<p>Nobody knows that Siri was invented to help soldiers manage battlefield tasks. And that the people who built it never intended it to be a consumer voice assistant.</p>
+<p>Siri's trajectory illustrates a recurring pattern in tech: <strong>the most transformative consumer technologies were often funded by military or government research programs.</strong></p>
+<p>The internet: ARPANet (DARPA). GPS: US Department of Defense. Touch screens: DARPA research funding in the 1960s-70s. Voice recognition: DARPA's Speech Understanding Research program, 1971-1976. Siri: DARPA's CALO, 2003-2008.</p>
+<p>The US government funded basic research for decades, building capabilities with military applications in mind. Private companies commercialized those capabilities for consumers, often by accident. The gap between "military research project" and "product a billion people use daily" is often just a few researchers with business instincts and an App Store account.</p>
+<p>Siri's irony is complete: it was built to help soldiers manage information overload on the battlefield. Today, the most common Siri query is "What's the weather like?" The assistant designed to process classified intelligence is being asked about rain.</p>`,
+    dyk: 'The name "Siri" was chosen by co-founder Dag Kittlaus for personal reasons — it was a name he had considered for a daughter. In Norwegian, <strong>"siri" means "beautiful woman who leads you to victory."</strong> The DARPA project that created Siri had a budget of <strong>$150 million</strong> and involved 300 researchers at 25 universities. Apple bought Siri Inc. for $200 million and shipped it on the iPhone 4S six months after Steve Jobs died.',
+    future_year: '2028+', future_hed: 'The Return to Serious',
+    future_body: `<h3>Apple Intelligence — Full Circle</h3><p>Apple's "Apple Intelligence" platform — announced in 2024 and being rolled out through 2025-2026 — represents a serious attempt to rebuild Siri on large language models. The new Siri is designed to have context across all your apps, understand your personal data (calendar, email, messages, files), and take autonomous actions on your behalf.</p>
+<p>This is, notably, very close to what CALO was designed to do in 2003. Twenty years later, the technology has finally caught up to the 2003 research vision.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2028</div><div class="prediction-text">Siri will be capable of executing multi-step tasks autonomously — "Book me a flight to Tokyo for the conference week, find a hotel near the venue, add it to my calendar, and let the team know my schedule" — without step-by-step confirmation. This is exactly CALO's original design goal.</div></div>
+<p>The $150 million DARPA vision will finally be in a consumer's pocket, processing restaurant reservations and client emails rather than battlefield intelligence. The soldiers CALO was designed to help will have been replaced, as users, by everyone with an iPhone.</p>`,
+    sources: ['DARPA, CALO Project Contract, SRI International, 2003', 'Tom Gruber, Adam Cheyer, Dag Kittlaus, Siri Inc. Founded, 2007', 'Apple Inc., Siri Acquisition, April 2010', 'Apple Inc., iPhone 4S Announcement, October 2011']
+  },
+  'tiktok-ban-data-war': {
+    title: "The TikTok Ban Nobody Actually Banned — and the <em>Data War Nobody Wins</em>",
+    category: 'hot-topics', catLabel: '🔥 Hot Topics',
+    date: 'March 2, 2026', reading_time: 7,
+    deck: 'MySpace was the first platform to prove that social media user data was more valuable than the content — TikTok is the culmination of that original insight, scaled and geopoliticized.',
+    root_year: '2003', root_who: 'Tom Anderson / Chris DeWolfe · Beverly Hills, California',
+    root_body: `<p>In 2003, two former eUniverse employees — Tom Anderson and Chris DeWolfe — launched MySpace from an office in Beverly Hills. MySpace was the first social network to reach mainstream adoption in the US, peaking at 100 million users in 2006.</p>
+<p>MySpace's key insight — one that Facebook refined, and TikTok perfected — was that <strong>user data was more valuable than user-generated content</strong>. The posts, photos, and profiles were bait. The behavioral data — who you know, what you click, how long you look at things, who influences your decisions — was the product.</p>
+<p>Rupert Murdoch bought MySpace for $580 million in 2005, convinced it was a media platform. He was wrong about what it was. It wasn't a media platform. It was a data collection system with a social network as the interface.</p>
+<p><strong>The data value chain:</strong></p>
+<p><strong>2003</strong> — MySpace proves user behavioral data has commercial value<br>
+<strong>2006</strong> — Facebook's News Feed algorithm proves that engineered content ordering increases engagement (and data collection)<br>
+<strong>2012</strong> — Instagram proves visual content + algorithmic recommendation = addictive loops<br>
+<strong>2016</strong> — ByteDance launches Douyin in China (internationally released as TikTok in 2018)<br>
+<strong>2020</strong> — TikTok reaches 1 billion users; US government flags data concerns for the first time<br>
+<strong>2024</strong> — US Congress passes the Protecting Americans from Foreign Adversary Controlled Applications Act — the "sell or ban" law<br>
+<strong>2025</strong> — 14 hours of ban, then un-ban; legal limbo continues</p>`,
+    present_body: `<p>January 19, 2025: The US TikTok ban officially took effect. For approximately 14 hours, TikTok was unavailable on US app stores. The app showed a message: "Sorry, TikTok isn't available right now."</p>
+<p>January 20, 2025: Donald Trump's inauguration. Within hours, Trump posted on Truth Social that he was issuing an executive order to delay the ban's enforcement. TikTok came back online.</p>
+<p>March 2026: The legal and legislative situation remains unresolved. TikTok has 170 million US users. ByteDance still owns it. The "sell or ban" law is still technically in effect. Nobody knows what happens next.</p>
+<p>The TikTok saga is the most visible front of a tech-driven geopolitical conflict that has been building since 2003.</p>
+<p>The TikTok debate is superficially about a social media app. It's actually about three overlapping conflicts:</p>
+<p><strong>1. Data sovereignty</strong> — TikTok collects the same behavioral data that every US social media company collects. The concern isn't what data is collected. It's who has access to it. The Chinese National Security Law (2017) requires Chinese companies to cooperate with intelligence requests from the government. ByteDance is a Chinese company.</p>
+<p><strong>2. Algorithmic influence</strong> — A recommendation algorithm that controls what 170 million Americans see and engage with is a potential information warfare tool. This isn't theoretical — researchers have documented that TikTok's content about China is systematically different between Chinese users (Douyin) and international users (TikTok) on politically sensitive topics.</p>
+<p><strong>3. Reciprocity</strong> — US social media companies (Facebook, Instagram, YouTube, Twitter/X) are banned in China. TikTok is not banned in the US. The asymmetry is real, and both sides know it.</p>
+<p>MySpace's Tom Anderson invented the "data as product" model in 2003, saw his company fail, and watched a Chinese company perfect his concept into a geopolitical flashpoint.</p>`,
+    dyk: 'TikTok\'s recommendation algorithm — the one that makes you lose 3 hours without noticing — is the asset <strong>China refuses to allow ByteDance to sell</strong>. The Chinese government classifies it as a <strong>controlled export under China\'s technology export restrictions</strong>. ByteDance can sell the brand, the user data infrastructure, and the app code. It cannot sell the algorithm without Chinese government approval — and Beijing has explicitly said it will not approve the sale.',
+    future_year: '2028–2030', future_hed: 'The Splinternet',
+    future_body: `<h3>The Fragmentation of the Global Internet</h3><p>The TikTok situation is one symptom of a larger structural change in global tech: <strong>the fragmentation of the internet by national jurisdiction</strong>.</p>
+<p>The "splinternet" — the fracturing of the global internet into national or regional internets with different rules, different content, and different corporate ownership requirements — is already underway.</p>
+<p>The EU's Digital Markets Act forces behavioral changes on US tech companies. Russia's sovereign internet infrastructure can disconnect from the global internet. China's Great Firewall is the most complete model. India has banned hundreds of Chinese apps.</p>
+<div class="prediction-card"><div class="prediction-label">Prediction · 2030</div><div class="prediction-text">The concept of a "global internet" will be largely aspirational. The technical internet will remain connected, but users in different countries will have meaningfully different experiences of what apps exist, what content is accessible, and who owns the infrastructure underneath.</div></div>
+<p>TikTok's 14-hour ban in 2025 was a preview of what internet governance looks like when nations treat platforms as strategic assets rather than communications infrastructure. Tom Anderson's 2003 insight — that user behavioral data is a sovereign resource — took 20 years to become geopolitics.</p>`,
+    sources: ['Tom Anderson & Chris DeWolfe, MySpace Launch, 2003', 'ByteDance, TikTok/Douyin Launch, 2016-2018', 'US Congress, Protecting Americans from Foreign Adversary Controlled Applications Act, 2024', 'China State Council, Technology Export Restrictions, 2020']
   }
 };
 
@@ -469,10 +891,15 @@ document.getElementById('tw-desc').content = article.deck;
 document.getElementById('page-title').textContent = `RootByte — ${article.title.replace(/<[^>]+>/g,'')}`;
 
 document.getElementById('bc-cat').textContent = article.catLabel.replace(/<[^>]+>/g,'').replace(/[^\w\s&]/g,'').trim();
-document.getElementById('bc-title').textContent = article.title.replace(/<[^>]+>/g,'').substring(0,50)+'…';
-document.getElementById('art-eyebrow').innerHTML = article.catLabel + ' · RootByte Desk';
+document.getElementById('bc-title').textContent = article.title.replace(/<[^>]+>/g,'').substring(0,50)+'\u2026';
+document.getElementById('art-eyebrow').innerHTML = article.catLabel + ' \u00b7 RootByte Desk';
 document.getElementById('art-title').innerHTML = article.title;
-document.getElementById('art-date').textContent = article.date;
+document.getElementById('art-author').textContent = 'By RootByte Editorial';
+const dateEl = document.getElementById('art-date');
+dateEl.textContent = article.date;
+// Set datetime attribute for SEO
+const dateParts = new Date(article.date);
+if (!isNaN(dateParts)) dateEl.setAttribute('datetime', dateParts.toISOString().split('T')[0]);
 document.getElementById('art-reading').textContent = `${article.reading_time} min read`;
 document.getElementById('art-deck').textContent = article.deck;
 
@@ -486,7 +913,54 @@ document.getElementById('dyk-body').innerHTML = article.dyk;
 document.getElementById('future-year-display').textContent = article.future_year;
 document.getElementById('future-hed').textContent = article.future_hed;
 document.getElementById('future-body').innerHTML = article.future_body;
-document.querySelector('.future-bg-text').textContent = article.future_year.split('–')[0].replace('+','');
+document.querySelector('.future-bg-text').textContent = article.future_year.split('\u2013')[0].replace('+','');
+
+// ── Sources section ──
+if (article.sources && article.sources.length > 0) {
+  const srcWrap = document.getElementById('sources-wrap');
+  const srcList = document.getElementById('sources-list');
+  srcWrap.style.display = '';
+  article.sources.forEach(s => {
+    const li = document.createElement('li');
+    li.textContent = s;
+    srcList.appendChild(li);
+  });
+}
+
+// ── JSON-LD Structured Data ──
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title.replace(/<[^>]+>/g,''),
+  "description": article.deck,
+  "datePublished": dateEl.getAttribute('datetime') || article.date,
+  "dateModified": dateEl.getAttribute('datetime') || article.date,
+  "author": {
+    "@type": "Organization",
+    "name": "RootByte Editorial",
+    "url": "https://rootbyte.tech/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RootByte",
+    "url": "https://rootbyte.tech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rootbyte.tech/images/og-default.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://rootbyte.tech/article.html?slug=${slug}`
+  },
+  "articleSection": article.catLabel.replace(/<[^>]+>/g,'').replace(/[^\w\s&]/g,'').trim(),
+  "wordCount": (article.root_body + article.present_body + article.future_body).replace(/<[^>]+>/g,'').split(/\s+/).length,
+  "inLanguage": "en"
+};
+const ldScript = document.createElement('script');
+ldScript.type = 'application/ld+json';
+ldScript.textContent = JSON.stringify(jsonLd);
+document.head.appendChild(ldScript);
 
 // ── Triptych nav active state on scroll ──
 const panels = [
@@ -518,11 +992,11 @@ window.addEventListener('scroll', () => {
 // ── Share buttons ──
 document.getElementById('share-copy').addEventListener('click', function() {
   navigator.clipboard.writeText(window.location.href);
-  this.textContent = '✓ Copied!';
-  setTimeout(() => this.textContent = '📋 Copy Link', 2000);
+  this.textContent = '\u2713 Copied!';
+  setTimeout(() => this.textContent = '\ud83d\udccb Copy Link', 2000);
 });
 document.getElementById('share-x').addEventListener('click', () => {
-  const text = encodeURIComponent(article.title.replace(/<[^>]+>/g,'') + ' — RootByte');
+  const text = encodeURIComponent(article.title.replace(/<[^>]+>/g,'') + ' \u2014 RootByte');
   window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(window.location.href)}`, '_blank');
 });
 document.getElementById('share-fb').addEventListener('click', () => {
@@ -534,7 +1008,7 @@ document.getElementById('share-li').addEventListener('click', () => {
 });
 document.getElementById('share-reddit').addEventListener('click', () => {
   const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent(article.title.replace(/<[^>]+>/g,'') + ' — RootByte');
+  const title = encodeURIComponent(article.title.replace(/<[^>]+>/g,'') + ' \u2014 RootByte');
   window.open(`https://www.reddit.com/submit?url=${url}&title=${title}`, '_blank');
 });
 // Web Share API for mobile
@@ -544,7 +1018,7 @@ document.getElementById('share-reddit').addEventListener('click', () => {
     nativeBtn.style.display = '';
     nativeBtn.addEventListener('click', () => {
       navigator.share({
-        title: article.title.replace(/<[^>]+>/g,'') + ' — RootByte',
+        title: article.title.replace(/<[^>]+>/g,'') + ' \u2014 RootByte',
         text: article.deck || 'Tech history connecting past, present, and future.',
         url: window.location.href,
       }).catch(() => {});
@@ -557,14 +1031,14 @@ const themeBtn = document.getElementById('theme-btn');
 themeBtn.addEventListener('click', () => {
   const cur = document.documentElement.getAttribute('data-theme');
   document.documentElement.setAttribute('data-theme', cur === 'dark' ? '' : 'dark');
-  themeBtn.textContent = cur === 'dark' ? '🌓' : '🌙';
+  themeBtn.textContent = cur === 'dark' ? '\ud83c\udf13' : '\ud83c\udf19';
 });
 
 // ── Newsletter ──
 document.getElementById('nl-btn').addEventListener('click', function() {
   const v = document.getElementById('nl-email').value;
   if(v.includes('@') && v.includes('.')) {
-    this.textContent = "✓ You're In!";
+    this.textContent = "\u2713 You're In!";
     this.style.background = '#2a6e4a';
     document.getElementById('nl-email').value = '';
     setTimeout(() => { this.textContent = 'Subscribe Free'; this.style.background = ''; }, 3000);
@@ -582,6 +1056,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // ── Init nav ──
 document.getElementById('nav-past').classList.add('active');
+
 </script>
 <script src="/js/bryte.js" defer></script>
 </body>
