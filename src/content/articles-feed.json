@@ -1,13 +1,155 @@
 {
-  "generated": "2026-03-24T00:00:00.000Z",
-  "totalArticles": 16,
+  "generated": "2026-03-31T00:00:00.000Z",
+  "totalArticles": 23,
   "articles": [
+    {
+      "slug": "voice-cloning-ai-1939-voder",
+      "title": "AI Can Clone Your Voice in 3 Seconds. The First Synthetic Voice Took 10 Operators \u2014 in 1939.",
+      "date": "2026-03-31",
+      "category": "ai",
+      "tags": [
+        "ai",
+        "voice-cloning",
+        "deepfake",
+        "bell-labs",
+        "voder",
+        "elevenlabs",
+        "speech-synthesis"
+      ],
+      "reading_time": "7 min read",
+      "root_year": 1939,
+      "root_who": "Homer Dudley",
+      "hero_image": "/images/heroes/hero-voice-cloning-1939.svg"
+    },
+    {
+      "slug": "password-breach-mit-ctss-1961",
+      "title": "Your Password Has Probably Been Leaked. The First Computer Password Was Stolen in 1962.",
+      "date": "2026-03-31",
+      "category": "cybersecurity",
+      "tags": [
+        "cybersecurity",
+        "passwords",
+        "breach",
+        "mit",
+        "ctss",
+        "passkeys",
+        "authentication"
+      ],
+      "reading_time": "7 min read",
+      "root_year": 1961,
+      "root_who": "Fernando Corbat\u00f3",
+      "hero_image": "/images/heroes/hero-password-breach-1961.svg"
+    },
+    {
+      "slug": "smartwatch-health-pulsar-1972",
+      "title": "Your Smartwatch Can Detect a Heart Attack. The First Digital Watch Could Barely Tell Time.",
+      "date": "2026-03-31",
+      "category": "devices",
+      "tags": [
+        "devices",
+        "smartwatch",
+        "apple-watch",
+        "health",
+        "pulsar",
+        "wearable",
+        "ecg"
+      ],
+      "reading_time": "7 min read",
+      "root_year": 1972,
+      "root_who": "Hamilton Watch Company",
+      "hero_image": "/images/heroes/hero-smartwatch-1972.svg"
+    },
+    {
+      "slug": "drone-delivery-hewitt-sperry-1917",
+      "title": "Amazon Delivers Packages by Drone. The First Unmanned Aircraft Was Built for War in 1917.",
+      "date": "2026-03-31",
+      "category": "gadgets",
+      "tags": [
+        "gadgets",
+        "drones",
+        "amazon",
+        "dji",
+        "military",
+        "delivery",
+        "evtol"
+      ],
+      "reading_time": "7 min read",
+      "root_year": 1917,
+      "root_who": "Peter Hewitt & Elmer Sperry",
+      "hero_image": "/images/heroes/hero-drone-1917.svg"
+    },
+    {
+      "slug": "quantum-computing-feynman-1981",
+      "title": "IBM Just Hit 1,000 Qubits. The Physicist Who Demanded Quantum Computers Died Before Seeing One.",
+      "date": "2026-03-31",
+      "category": "hot-topics",
+      "tags": [
+        "quantum-computing",
+        "feynman",
+        "ibm",
+        "google",
+        "qubits",
+        "physics",
+        "cryptography"
+      ],
+      "reading_time": "8 min read",
+      "root_year": 1981,
+      "root_who": "Richard Feynman",
+      "hero_image": "/images/heroes/hero-quantum-1981.svg"
+    },
+    {
+      "slug": "tor-dark-web-us-navy-1995",
+      "title": "2 Billion People Use Technology Built for the Dark Web. The US Navy Created It on Purpose.",
+      "date": "2026-03-31",
+      "category": "internet",
+      "tags": [
+        "internet",
+        "tor",
+        "dark-web",
+        "privacy",
+        "navy",
+        "onion-routing",
+        "encryption"
+      ],
+      "reading_time": "7 min read",
+      "root_year": 1995,
+      "root_who": "Paul Syverson, Michael Reed & David Goldschlag",
+      "hero_image": "/images/heroes/hero-tor-navy-1995.svg"
+    },
+    {
+      "slug": "open-source-stallman-printer-1983",
+      "title": "Open Source Runs 96% of the World's Servers. It Started Because One Man Couldn't Fix a Printer.",
+      "date": "2026-03-31",
+      "category": "software",
+      "tags": [
+        "software",
+        "open-source",
+        "linux",
+        "gnu",
+        "stallman",
+        "github",
+        "free-software"
+      ],
+      "reading_time": "7 min read",
+      "root_year": 1980,
+      "root_who": "Richard Stallman",
+      "hero_image": "/images/heroes/hero-open-source-1983.svg"
+    },
     {
       "slug": "ai-agents-2026-vannevar-bush",
       "title": "AI Agents Are Taking Over Your Computer in 2026. The Man Who Imagined This Died in 1974.",
       "date": "2026-03-24",
       "category": "ai",
-      "tags": ["ai", "agents", "claude", "openai", "vannevar-bush", "history", "automation", "llm"],
+      "tags": [
+        "ai",
+        "agents",
+        "claude",
+        "openai",
+        "vannevar-bush",
+        "history",
+        "automation",
+        "llm"
+      ],
       "reading_time": "7 min read",
       "root_year": 1945,
       "root_who": "Vannevar Bush",
@@ -18,7 +160,15 @@
       "title": "Grok Has Access to 600 Million Twitter Users. The Chatbot It Descends From Had No Users at All.",
       "date": "2026-03-02",
       "category": "hot-topics",
-      "tags": ["ai", "grok", "eliza", "twitter", "x", "chatbot", "history"],
+      "tags": [
+        "ai",
+        "grok",
+        "eliza",
+        "twitter",
+        "x",
+        "chatbot",
+        "history"
+      ],
       "reading_time": "6 min read",
       "root_year": 1966,
       "root_who": "Joseph Weizenbaum",
@@ -26,10 +176,16 @@
     },
     {
       "slug": "tiktok-ban-data-war",
-      "title": "The TikTok Ban Nobody Actually Banned — and the Data War Nobody Wins",
+      "title": "The TikTok Ban Nobody Actually Banned \u2014 and the Data War Nobody Wins",
       "date": "2026-03-02",
       "category": "hot-topics",
-      "tags": ["tiktok", "bytedance", "china", "social-media", "data-privacy"],
+      "tags": [
+        "tiktok",
+        "bytedance",
+        "china",
+        "social-media",
+        "data-privacy"
+      ],
       "reading_time": "7 min read",
       "root_year": 2003,
       "root_who": "Tom Anderson / MySpace",
@@ -40,7 +196,13 @@
       "title": "DeepSeek Built an AI That Matched OpenAI for $6 Million. OpenAI Spent 16 Times More.",
       "date": "2026-03-02",
       "category": "ai",
-      "tags": ["ai", "deepseek", "openai", "china", "machine-learning"],
+      "tags": [
+        "ai",
+        "deepseek",
+        "openai",
+        "china",
+        "machine-learning"
+      ],
       "reading_time": "8 min read",
       "root_year": 1986,
       "root_who": "Rumelhart, Hinton, Williams",
@@ -51,7 +213,13 @@
       "title": "Siri Was a DARPA Military Project Before Apple Bought It for $200 Million",
       "date": "2026-03-02",
       "category": "ai",
-      "tags": ["ai", "siri", "apple", "darpa", "voice-assistant"],
+      "tags": [
+        "ai",
+        "siri",
+        "apple",
+        "darpa",
+        "voice-assistant"
+      ],
       "reading_time": "6 min read",
       "root_year": 2003,
       "root_who": "SRI International / DARPA",
@@ -62,7 +230,12 @@
       "title": "The First Ransomware Was Mailed on a Floppy Disk in 1989. To AIDS Researchers.",
       "date": "2026-03-02",
       "category": "cybersecurity",
-      "tags": ["cybersecurity", "ransomware", "history", "aids-trojan"],
+      "tags": [
+        "cybersecurity",
+        "ransomware",
+        "history",
+        "aids-trojan"
+      ],
       "reading_time": "6 min read",
       "root_year": 1989,
       "root_who": "Joseph L. Popp",
@@ -73,7 +246,13 @@
       "title": "The Morris Worm Crashed 10% of the Internet in 1988. Its Creator Got Community Service.",
       "date": "2026-03-02",
       "category": "cybersecurity",
-      "tags": ["cybersecurity", "morris-worm", "internet", "hacking", "history"],
+      "tags": [
+        "cybersecurity",
+        "morris-worm",
+        "internet",
+        "hacking",
+        "history"
+      ],
       "reading_time": "7 min read",
       "root_year": 1988,
       "root_who": "Robert Tappan Morris",
@@ -84,7 +263,13 @@
       "title": "Samsung Galaxy Fold Failed 3 Times Before It Sold. The Folding Mechanism Is 30 Years Old.",
       "date": "2026-03-02",
       "category": "gadgets",
-      "tags": ["samsung", "galaxy-fold", "foldable", "gadgets", "ibm"],
+      "tags": [
+        "samsung",
+        "galaxy-fold",
+        "foldable",
+        "gadgets",
+        "ibm"
+      ],
       "reading_time": "6 min read",
       "root_year": 1994,
       "root_who": "Richard Sapper / IBM",
@@ -92,10 +277,16 @@
     },
     {
       "slug": "airpods-wireless-patent-1996",
-      "title": "AirPods Didn't Invent Wireless Earbuds. A Sony Engineer Did — in 1996.",
+      "title": "AirPods Didn't Invent Wireless Earbuds. A Sony Engineer Did \u2014 in 1996.",
       "date": "2026-03-02",
       "category": "gadgets",
-      "tags": ["airpods", "apple", "sony", "wireless", "earbuds"],
+      "tags": [
+        "airpods",
+        "apple",
+        "sony",
+        "wireless",
+        "earbuds"
+      ],
       "reading_time": "6 min read",
       "root_year": 1996,
       "root_who": "Sony Research / Bell Labs",
@@ -106,7 +297,13 @@
       "title": "Git Was Built in 10 Days. Linus Torvalds Was Furious When He Started.",
       "date": "2026-03-02",
       "category": "software",
-      "tags": ["git", "linux", "linus-torvalds", "open-source", "software"],
+      "tags": [
+        "git",
+        "linux",
+        "linus-torvalds",
+        "open-source",
+        "software"
+      ],
       "reading_time": "6 min read",
       "root_year": 1972,
       "root_who": "Douglas McIlroy",
@@ -117,7 +314,13 @@
       "title": "Linux Was Almost Named 'Freax.' An FTP Admin Changed It Without Asking.",
       "date": "2026-03-02",
       "category": "software",
-      "tags": ["linux", "open-source", "unix", "linus-torvalds", "software"],
+      "tags": [
+        "linux",
+        "open-source",
+        "unix",
+        "linus-torvalds",
+        "software"
+      ],
       "reading_time": "7 min read",
       "root_year": 1969,
       "root_who": "Ken Thompson & Dennis Ritchie",
@@ -128,7 +331,13 @@
       "title": "The ROOT of the Internet: How TCP/IP Changed Everything",
       "date": "2026-02-18",
       "category": "internet",
-      "tags": ["networking", "protocols", "internet", "tcp-ip", "foundations"],
+      "tags": [
+        "networking",
+        "protocols",
+        "internet",
+        "tcp-ip",
+        "foundations"
+      ],
       "reading_time": "8 min read",
       "root_year": 1962,
       "root_who": "Cerf & Kahn",
@@ -139,7 +348,13 @@
       "title": "ChatGPT Is 3 Years Old. The Math Behind It Is 83.",
       "date": "2026-02-22",
       "category": "ai",
-      "tags": ["ai", "chatgpt", "openai", "neural-networks", "history"],
+      "tags": [
+        "ai",
+        "chatgpt",
+        "openai",
+        "neural-networks",
+        "history"
+      ],
       "reading_time": "8 min read",
       "root_year": 1943,
       "root_who": "Warren McCulloch & Walter Pitts",
@@ -150,7 +365,13 @@
       "title": "The WiFi Inventor Australia Doesn't Know It Has",
       "date": "2026-02-18",
       "category": "internet",
-      "tags": ["wifi", "csiro", "australia", "patent", "wireless"],
+      "tags": [
+        "wifi",
+        "csiro",
+        "australia",
+        "patent",
+        "wireless"
+      ],
       "reading_time": "6 min read",
       "root_year": 1992,
       "root_who": "CSIRO Sydney",
@@ -158,10 +379,15 @@
     },
     {
       "slug": "first-touchscreen-1965",
-      "title": "The First Touchscreen Wasn't Apple — It Was Made in 1965",
+      "title": "The First Touchscreen Wasn't Apple \u2014 It Was Made in 1965",
       "date": "2026-02-18",
       "category": "devices",
-      "tags": ["touchscreen", "apple", "history", "hardware"],
+      "tags": [
+        "touchscreen",
+        "apple",
+        "history",
+        "hardware"
+      ],
       "reading_time": "6 min read",
       "root_year": 1965,
       "root_who": "E.A. Johnson",
@@ -172,7 +398,12 @@
       "title": "IBM's First Hard Drive Weighed a Ton. Its Inventor Was Almost Erased From History.",
       "date": "2026-02-18",
       "category": "devices",
-      "tags": ["ibm", "hard-drive", "storage", "history"],
+      "tags": [
+        "ibm",
+        "hard-drive",
+        "storage",
+        "history"
+      ],
       "reading_time": "6 min read",
       "root_year": 1956,
       "root_who": "Reynold Johnson",

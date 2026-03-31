@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f0e0c"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="80" x2="800" y2="80"/><line x1="0" y1="160" x2="800" y2="160"/>
+    <line x1="0" y1="240" x2="800" y2="240"/><line x1="0" y1="320" x2="800" y2="320"/>
+    <line x1="160" y1="0" x2="160" y2="400"/><line x1="320" y1="0" x2="320" y2="400"/>
+    <line x1="480" y1="0" x2="480" y2="400"/><line x1="640" y1="0" x2="640" y2="400"/>
+  </g>
+  <!-- Printer (left side) -->
+  <g transform="translate(160, 180)">
+    <!-- Printer body -->
+    <rect x="-70" y="-20" width="140" height="60" rx="4" fill="#1a1916" stroke="#7a7060" stroke-width="1.5"/>
+    <!-- Paper input tray -->
+    <rect x="-50" y="-35" width="100" height="18" rx="2" fill="#1a1916" stroke="#7a7060" stroke-width="1"/>
+    <!-- Paper coming out -->
+    <rect x="-40" y="40" width="80" height="4" rx="1" fill="#f5f0e8" opacity="0.3"/>
+    <rect x="-35" y="48" width="70" height="4" rx="1" fill="#f5f0e8" opacity="0.2"/>
+    <!-- Printer slot -->
+    <rect x="-55" y="35" width="110" height="6" rx="1" fill="#0f0e0c"/>
+    <!-- Status light -->
+    <circle cx="50" cy="-5" r="3" fill="#c9342a" opacity="0.6"/>
+    <!-- Feed slot on top -->
+    <rect x="-45" y="-22" width="90" height="3" rx="1" fill="#0f0e0c"/>
+  </g>
+  <!-- Code brackets flowing out of printer -->
+  <g stroke="#2a6e4a" stroke-width="2" fill="none" opacity="0.6">
+    <!-- Left bracket -->
+    <path d="M240,230 L230,240 L230,260 L240,270"/>
+    <!-- Slash -->
+    <line x1="250" y1="270" x2="270" y2="230"/>
+    <!-- Right bracket -->
+    <path d="M280,230 L290,240 L290,260 L280,270"/>
+  </g>
+  <g stroke="#d4730f" stroke-width="1.5" fill="none" opacity="0.4">
+    <path d="M240,290 L232,298 L232,312 L240,320"/>
+    <line x1="248" y1="320" x2="264" y2="290"/>
+    <path d="M272,290 L280,298 L280,312 L272,320"/>
+  </g>
+  <!-- Transition zone -->
+  <g stroke="#7a7060" stroke-width="1" stroke-dasharray="4,4" opacity="0.25">
+    <line x1="330" y1="200" x2="430" y2="200"/>
+  </g>
+  <!-- Lock breaking open (center-right) -->
+  <g transform="translate(500, 170)">
+    <!-- Closed lock (faded, behind) -->
+    <g opacity="0.15">
+      <rect x="-25" y="0" width="50" height="40" rx="4" fill="#7a7060"/>
+      <path d="M-15,0 Q-15,-30 0,-30 Q15,-30 15,0" fill="none" stroke="#7a7060" stroke-width="3"/>
+    </g>
+    <!-- Open lock (prominent) -->
+    <rect x="-25" y="0" width="50" height="40" rx="4" fill="#1a1916" stroke="#2a6e4a" stroke-width="2"/>
+    <!-- Shackle - open -->
+    <path d="M-15,0 Q-15,-30 0,-30 Q15,-30 15,-15" fill="none" stroke="#2a6e4a" stroke-width="3"/>
+    <!-- Keyhole -->
+    <circle cx="0" cy="15" r="6" fill="#2a6e4a" opacity="0.4"/>
+    <rect x="-2" y="15" width="4" height="12" rx="1" fill="#2a6e4a" opacity="0.4"/>
+    <!-- Break/burst lines -->
+    <g stroke="#c9342a" stroke-width="1.5" opacity="0.5">
+      <line x1="30" y1="-10" x2="45" y2="-18"/>
+      <line x1="32" y1="5" x2="48" y2="5"/>
+      <line x1="30" y1="20" x2="44" y2="26"/>
+      <line x1="-30" y1="-8" x2="-44" y2="-16"/>
+      <line x1="-32" y1="8" x2="-46" y2="8"/>
+    </g>
+  </g>
+  <!-- Gear/cog motifs -->
+  <g transform="translate(650, 200)">
+    <!-- Large gear -->
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#d4730f" stroke-width="1.5" opacity="0.3"/>
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#d4730f" stroke-width="1" opacity="0.2"/>
+    <circle cx="0" cy="0" r="10" fill="#d4730f" opacity="0.15"/>
+    <!-- Gear teeth -->
+    <g fill="#d4730f" opacity="0.3">
+      <rect x="-5" y="-48" width="10" height="12" rx="1"/>
+      <rect x="-5" y="36" width="10" height="12" rx="1"/>
+      <rect x="-48" y="-5" width="12" height="10" rx="1"/>
+      <rect x="36" y="-5" width="12" height="10" rx="1"/>
+      <rect x="25" y="-38" width="10" height="12" rx="1" transform="rotate(45,30,-32)"/>
+      <rect x="-35" y="-38" width="10" height="12" rx="1" transform="rotate(-45,-30,-32)"/>
+      <rect x="25" y="26" width="10" height="12" rx="1" transform="rotate(-45,30,32)"/>
+      <rect x="-35" y="26" width="10" height="12" rx="1" transform="rotate(45,-30,32)"/>
+    </g>
+  </g>
+  <!-- Small gear -->
+  <g transform="translate(690, 140)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#c9342a" stroke-width="1.5" opacity="0.25"/>
+    <circle cx="0" cy="0" r="6" fill="#c9342a" opacity="0.12"/>
+    <g fill="#c9342a" opacity="0.25">
+      <rect x="-4" y="-26" width="8" height="9" rx="1"/>
+      <rect x="-4" y="17" width="8" height="9" rx="1"/>
+      <rect x="-26" y="-4" width="9" height="8" rx="1"/>
+      <rect x="17" y="-4" width="9" height="8" rx="1"/>
+    </g>
+  </g>
+  <!-- Freedom / open flow lines -->
+  <g stroke="#2a6e4a" stroke-width="1" opacity="0.15">
+    <path d="M300,100 Q400,80 500,100 Q600,120 700,100" fill="none"/>
+    <path d="M300,110 Q400,90 500,110 Q600,130 700,110" fill="none"/>
+    <path d="M300,320 Q400,340 500,320 Q600,300 700,320" fill="none"/>
+    <path d="M300,330 Q400,350 500,330 Q600,310 700,330" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#0f0e0c"/>
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="80" x2="800" y2="80"/><line x1="0" y1="160" x2="800" y2="160"/>
+    <line x1="0" y1="240" x2="800" y2="240"/><line x1="0" y1="320" x2="800" y2="320"/>
+    <line x1="160" y1="0" x2="160" y2="400"/><line x1="320" y1="0" x2="320" y2="400"/>
+    <line x1="480" y1="0" x2="480" y2="400"/><line x1="640" y1="0" x2="640" y2="400"/>
+  </g>
+  <!-- Old Voder mechanical device -->
+  <rect x="120" y="140" width="160" height="120" rx="6" fill="#1a1916" stroke="#7a7060" stroke-width="1.5"/>
+  <rect x="135" y="155" width="130" height="70" rx="3" fill="#0f0e0c" stroke="#7a7060" stroke-width="1"/>
+  <!-- Voder keys/controls -->
+  <g fill="#7a7060" fill-opacity="0.6">
+    <rect x="140" y="235" width="12" height="18" rx="1"/><rect x="156" y="235" width="12" height="18" rx="1"/>
+    <rect x="172" y="235" width="12" height="18" rx="1"/><rect x="188" y="235" width="12" height="18" rx="1"/>
+    <rect x="204" y="235" width="12" height="18" rx="1"/><rect x="220" y="235" width="12" height="18" rx="1"/>
+    <rect x="236" y="235" width="12" height="18" rx="1"/><rect x="252" y="235" width="12" height="18" rx="1"/>
+  </g>
+  <!-- Voder speaker grille lines -->
+  <g stroke="#d4730f" stroke-opacity="0.4" stroke-width="1">
+    <line x1="145" y1="165" x2="255" y2="165"/><line x1="145" y1="175" x2="255" y2="175"/>
+    <line x1="145" y1="185" x2="255" y2="185"/><line x1="145" y1="195" x2="255" y2="195"/>
+    <line x1="145" y1="205" x2="255" y2="205"/><line x1="145" y1="215" x2="255" y2="215"/>
+  </g>
+  <!-- Sound waves emanating from Voder -->
+  <g stroke="#c9342a" fill="none" stroke-width="1.5">
+    <path d="M290,200 Q310,170 310,200 Q310,230 290,200" opacity="0.8"/>
+    <path d="M310,200 Q340,150 340,200 Q340,250 310,200" opacity="0.6"/>
+    <path d="M335,200 Q375,130 375,200 Q375,270 335,200" opacity="0.4"/>
+    <path d="M365,200 Q415,110 415,200 Q415,290 365,200" opacity="0.25"/>
+  </g>
+  <!-- Transition arrow / flow -->
+  <g stroke="#7a7060" stroke-width="1" stroke-dasharray="4,4" opacity="0.5">
+    <line x1="430" y1="200" x2="500" y2="200"/>
+  </g>
+  <!-- Modern microphone silhouette -->
+  <g fill="none" stroke="#c9342a" stroke-width="2">
+    <rect x="570" y="130" width="60" height="100" rx="30"/>
+    <line x1="600" y1="230" x2="600" y2="280"/>
+    <line x1="575" y1="280" x2="625" y2="280"/>
+    <path d="M545,200 Q545,260 600,260 Q655,260 655,200" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <!-- Modern sound waves from mic -->
+  <g stroke="#d4730f" fill="none" stroke-width="1.5">
+    <path d="M635,180 Q650,160 650,180 Q650,200 635,200" opacity="0.7"/>
+    <path d="M650,170 Q670,145 670,185 Q670,225 650,210" opacity="0.5"/>
+    <path d="M665,160 Q690,130 690,185 Q690,240 665,220" opacity="0.3"/>
+  </g>
+  <!-- Waveform line across bottom -->
+  <path d="M80,340 Q120,320 160,340 Q200,360 240,340 Q280,320 320,340 Q360,360 400,340 Q440,320 480,340 Q520,360 560,340 Q600,320 640,340 Q680,360 720,340" fill="none" stroke="#c9342a" stroke-width="1" opacity="0.3"/>
+  <!-- Accent dots -->
+  <circle cx="200" cy="200" r="3" fill="#d4730f" opacity="0.5"/>
+  <circle cx="600" cy="180" r="3" fill="#c9342a" opacity="0.6"/>
+</svg>
